@@ -1,0 +1,478 @@
+TODO za HRLaTeX projekt...
+\NewEntry
+TODO - Provjeriti
+\NewFolder
+\NewEntry
+koje kombinacije prave probleme s hrvatskim znakovima (PDF itd..)
+\NewEntry
+\usepackage[utf8]{inputenc}
+
+
+(na tetexu ne radi... provjeriti na miktexu)
+\NewEntry
+XINDY
+\NewEntry
+proTeX
+\NewEntry
+TeXLive
+\NewEntry
+Licence - dodati creative commons?
+\EndFolder
+\NewEntry
+Podprojekti
+
+popis podprojekata koje jos nismo poceli - u koje se drugi ljudi mogu ukljuciti...
+
+- spellcheck projekt (hrlatex spellcheck)
+
+\NewFolder
+\NewEntry
+Sortiranje
+
+keywords: linguistic sorting
+- kontrakcije lj, nj, dž kod sortiranja
+  (iznimka 'nadživjeti')
+
+
+
+
+
+
+- Unicode - collations and linguistic sorting
+    Unicode Collation Algorithm - UCA
+
+- ICU - international components of unicode
+(sorting aspekt), mislim da je Xerces baziran na tome...
+
+
+\NewEntry
+Hipenacija:
+(rastavljanje rijeci na kraju retka)
+
+patgen
+
+- kako natjerati LaTeX da mi 'pokaze' kako hipenira....
+
+http://linux.com.hk/penguin/man/1/patgen.html
+
+
+>>>>>>>>>>>>>>.
+ The  patgen program reads the  dictionary_file containing a list of hyphenated words and the  pattern_file containing previously-generated patterns (if any) for a particular language, and produces the  patout_file with (previously- plus newly-generated) hyphenation patterns for that language. The  translate_file defines language specific values for the parameters  left_hyphen_min " and " right_hyphen_min used by (TX's hyphenation algorithm and the external representation of the lower and upper case version(s) of all `letters' of that language. Further details of the pattern generation process such as hyphenation levels and pattern lengths are requested interactively from the user's terminal. Optionally  patgen creates a new dictionary file  pattmp. n showing the good and bad hyphens found by the generated patterns, where  n is the highest hypenation level. 
+\NewFolder
+\NewEntry
+wiki TeX kaze da se iz rucno generirane hipenacije pravi tablica... (prouci to)
+
+
+
+\NewEntry
+pitati Mirjanu kak i di da potrazim pravila hipenacije hrvatskog jezika
+\EndFolder
+\NewEntry
+Predlosci dokumenata (templates)
+
+- plain templates (bez klasa (?) i bez stilova)
+- fancy templates (s klasama i stilovima)
+\NewFolder
+\NewEntry
+Prezentacije
+
+prosper
+ha-prosper
+
+beamer
+
+powerdot - trazi svjeze xkeyval i pstricks (bolje samo za miktex)
+\NewEntry
+TeXnic Center
+\NewEntry
+Kile
+
+/usr/share/apps/kile/templates
+\EndFolder
+\NewEntry
+Examples
+\NewFolder
+\NewEntry
+udzbenik (hrbook.cls)
+\EndFolder
+\NewEntry
+Kodne stranice
+
+
+
+-----
+- trebam imena za glyphove
+- glyph - prijevod? "znak"?
+
+- ASCII
+- CP437, CP852 (DosLatin2), CP1250
+- MacCentralEuropean
+- ISO8859-2, latin2
+- Unicode (ISO-10646)
+	- kodiranja UCS-16
+	- UTF-8 (UTF2)
+	- UTF-7
+	- UTF-16
+	- UCS-2, UCS-4
+
+# ---  CP1250, latin2 Unicode
+	0xC8	0xC8  0x010C	#LATIN CAPITAL LETTER C WITH CARON    ?
+	0xC6	0xC6  0x0106	#LATIN CAPITAL LETTER C WITH ACUTE    ?
+	0xD0	0xD0  0x0110	#LATIN CAPITAL LETTER D WITH STROKE   ?
+	0x8A	0xA9  0x0160	#LATIN CAPITAL LETTER S WITH CARON    ?
+	0x8E	0xAE  0x017D	#LATIN CAPITAL LETTER Z WITH CARON    ?
+
+	0xE8	0xE8  0x010D	#LATIN SMALL LETTER C WITH CARON      ?
+	0xE6	0xE6  0x0107	#LATIN SMALL LETTER C WITH ACUTE      ?
+	0xF0	0xF0  0x0111	#LATIN SMALL LETTER D WITH STROKE     ?
+	0x9A	0xB9  0x0161	#LATIN SMALL LETTER S WITH CARON      ?
+	0x9E	0xBE  0x017E	#LATIN SMALL LETTER Z WITH CARON      ?
+
+
+reference:
+	- J. Spolsky
+	- http://www.jbrowse.com/text/charsets.html#ISO-8859
+	- http://www.microsoft.com/truetype/unicode/1250.htm
+	- http://www.unicode.org/
+
+
+Primjeri
+	- cat test.cp1250.txt | recode -f CP1250..latin2
+\NewFolder
+\NewEntry
+recode
+
+GNU recode, bilo bi zanimljivo prosiriti recode tako da moze raditi konverzije 
+sa \v{c} itd...
+
+Trenutno recode to radi, ali samo sa francuskim... (historical reasons).
+
+
+
+enca
+ - "enca -L croatian dokument.txt" pogadja kodnu stranicu dokumenta
+   (jel cp1250, latin2, utf-8 itd..)
+\NewEntry
+"Feature" s tabbing i \'c
+\NewEntry
+inputenc
+\NewFolder
+\NewEntry
+unicode
+
+\usepackage[utf8x]{inputenc}
+
+http://www.ctan.org/tex-archive/help/Catalogue/entries/unicode.html
+\EndFolder
+\EndFolder
+\NewEntry
+Normalizacija
+
+
+Problemi:
+	- normalizacija kod unosa hrvatskih slova
+	'\v c' = '\v{c}' = '{\v c}' itd...
+	- lomljenje linija u source-u kod \\dj ...
+\NewEntry
+Izrada indeksa/kazala
+
+1 - odbaci xindy
+
+2 - makeindex postprocessing...
+	- sva hrvatska slova su TeX normalizirana, izbacena na pocetak...
+	To treba skenirati i presortirati.
+	- skeniranje tokena
+	- hrvatsko sortiranje - !!!
+
+
+Implementacija
+	a) C (flex)
+		- ubaciti u isti path kao i makeindex
+		- "hr_make_index primjer"
+		     program napravi main.ind -> main.hr.ind
+		- mogao bi napraviti style koji promijeni \\printindex 
+		  makro i ukljucuje main.hr.ind....
+
+	b) perl implementacija sortiranja...
+
+Distribuiranje
+	- SF.net
+	- probati uvaliti na CTAN
+\NewFolder
+\NewEntry
+nova ideja
+
+napraviti u dva dijela
+1. supstitucija lj->lzzzj, nj->nzzzj, (dz nema taj problem)
+\EndFolder
+\NewEntry
+Installer
+\NewFolder
+\NewEntry
+Debian .deb
+
+napraviti man page
+http://www.schweikhardt.net/man_page_howto.html
+
+(kolko ih treba napraviti? - za svaki util?)
+\NewEntry
+Win32 NSIS installer
+
+- radi
+- dodaj LaTeX e-help u paket..
+\EndFolder
+\NewEntry
+Fontovi
+
+DeclareFontTextCommand ili tako nekako - vidi fntguide.pdf
+\NewEntry
+hrlatex.sty
+\NewFolder
+\NewEntry
+typeout - nek napise poruku s opcijama...
+\NewEntry
+opcije
+ - win - pass cp1250 to inputenc
+ - iso - pass latin2 to inputenc
+\EndFolder
+\NewEntry
+aspell-hr
+\EndFolder
+\NewEntry
+WEB
+
+- Napraviti word dokument sa skicama sadrzaja...
+
+- naci neki ok design - za prvu ruku
+- drupal? vidjeti kak se to moze instalirati na titan. i moze li se.
+
+- credo - organizirati latex razvoj... itd. 
+- impressum
+- about - vrlo kratki sazetak na pocetku stranice
+
+
+\NewFolder
+\NewEntry
+Clanci/tutoriali za web
+
+"Dobre navike u LaTeX-u"
+	- tilda...
+	- \\nofiles
+	- draft opcija
+	- \\section[aaa]{aaa\\footnote{bbb}} fusnote u naslovima..
+
+"Niste znali"
+	- {centering} rather than {center} which inserts no extra space and does not add a page break point.
+	- \\begin{samepage}...\\end{samepage}
+	- fore sa razmacima u tablicama...
+	- verbatim... http://www.tex.ac.uk/cgi-bin/texfaq2html?label=verbfile
+
+\NewFolder
+\NewEntry
+MathML
+
+- u okviru neceg na temu "objavljivanje matematickog teksta na webu"
+- browseri su OK, ali treba instalirati fontove - dakle, jos nije vrijeme za to.
+
+
+Resources:
+Wolfram
+http://en.wikipedia.org/wiki/MathML
+\NewEntry
+"Top 10" clanci
+\NewFolder
+\NewEntry
+Top 10 paketa za koje mozda niste culi
+	- framed...
+	- fixme
+	- alltt
+\NewEntry
+Top 10 (esencijalnih) paketa
+	- babel
+	- hyperref (backref)
+	- geometry
+	- graphics
+	- fancyhdr
+	- crop
+	- inputenc
+\EndFolder
+\NewEntry
+Grafika
+- pstoedit
+- ps2eps (dobar trik)
+\NewEntry
+Izrada indeksa
+
+- problemi sa sortiranjem. 
+\NewEntry
+IDE - clanci o softveru
+\NewFolder
+\NewEntry
+Kile
+
+- %BEGIN %END hack
+\NewEntry
+Zašto volim TeXnicCenter
+\EndFolder
+\EndFolder
+\NewEntry
+Tehnikalije
+\NewFolder
+\NewEntry
+meta tags
+\NewEntry
+linkovi
+ 
+	dodaj link na (5 godina) stare tug stranice sa startne tug.hr
+\NewEntry
+SourceForge link - banner
+
+group id:
+127490
+\NewEntry
+- printer friendly style sheet
+\EndFolder
+\NewEntry
+Sto sa starim tug stranicama?
+\EndFolder
+\NewEntry
+Distribucija
+
+- SourceForge
+- CTAN ? (contrib sekcija za pocetak?)
+
+
+TeTeX
+	- 'mktexlsr'  je ekviv. 'initexmf --update-fndb'
+\NewFolder
+\NewEntry
+Sourceforge.net
+
+PAZI! 
+- source
+- binarno (installer za win32)
+  (zip, tar.bz2, tar.gz)
+\NewFolder
+\NewEntry
+Release	
+
+- source release
+- windows binary
+\EndFolder
+\NewEntry
+CTAN
+ - rijesi Make target
+\NewEntry
+Installeri
+	- "HRLaTeX - LaTeX dodaci"
+	- "HR text tools" - za debian, *nix, i cygwin
+\NewFolder
+\NewEntry
+HRLaTeX - LaTeX dodaci
+\NewEntry
+"HR text tools" 
+- za debian, *nix, i cygwin
+
+rekodiranja
+enca
+
+
+
+WIN
+- preporucan cygwin (provjeri jel cygwin ima ispell)
+zbog: ispell, recode,
+\NewFolder
+\NewEntry
+- rekodiranja
+\NewEntry
+- spelling
+\EndFolder
+\EndFolder
+\EndFolder
+\NewEntry
+etc.
+\NewFolder
+\NewEntry
+mozda pod Informacije i Prikazi
+
+
+----------------------------------
+
+Pozdrav!
+
+U 12 mjesecu zavrsava iProjekt "HRLaTeX - lokalizacija LaTeX-a za
+Hrvatsku" (financiralo MZOS) u kojem sam ja jedan od izvodjaca. Ideja
+projekta je bila rijesiti neke lokalizacijske LaTeX probleme, ali i
+napraviti predloske (template) za ceste tipove dokumenata i uopce
+olaksati koristenje LaTeXa kod nas (u HR). Npr. tu bi bili predlosci za
+ispite, zadace i dr. za nastavnike/profesore matematike. Trudimo se to
+maksimalno pojednostaviti za krajnjeg korisnika.
+
+Npr. ja cu napraviti instalaciju koja ce nadograditi WinEdt (i npr.
+TeXnic center ili druge TeX editor programe) tako da "New Document"
+pored standardnih nudi/predlaze nase tipove dokumenata kao npr.
+	- Novi ispit
+	- Nova zadaca
+	itd.
+(tako nesto vec imam za FSB)
+
+U 3. mjesecu izlazi sljedeci Poucak pa bi dotad na webu mogli objaviti
+neke primjere ispita itd., a u clanku u rubrici "Informacije i prikazi"
+pozvati da se to pogleda, komentira dizajn i sl. Npr. - Pierre - ti bi
+mogao biti prvi...
+
+Nama bi to bilo odlicno za publiciranje projekta. Na ovaj nacin elegantno rjesavamo taj problem.
+
+Whaddaya think?
+
+Pozdrav,
+	Marcelnk?
+\EndFolder
+\NewEntry
+Ideje
+\NewFolder
+\NewEntry
+Okrugli stol:
+	- sa sirom ekipom (Caklovic, Sanja Singer, Netko iz npr. SK - Stefica Poljski,...)
+\NewEntry
+KDE Servisni meniji
+
+pogledaj howto za to (nadji ga)
+
+http://www.kde-look.org/content/show.php?content=11436
+LaTeX Service Menu
+
+http://www.kde-look.org/content/show.php?content=21146
+\NewEntry
+ltxdoc klasa....
+\EndFolder
+\NewEntry
+Management
+
+
+\NewFolder
+\NewEntry
+Kupovina
+\NewFolder
+\NewEntry
+Fontovi
+[Adobe]
+basic $99      -> http://store.adobe.com/type/browser/P/P_1902.html
+value pack $69 -> http://store.adobe.com/type/browser/P/P_1900.html
+[Bitstream]
+          $199 -> http://www.myfonts.com/products/bitstream/cambridge/
+\NewEntry
+TUG membership
+\EndFolder
+\NewEntry
+GNU GPL.
+\EndFolder
+\NewEntry
+Milestones
+\NewFolder
+\NewEntry
+M1 - Release za kraj projekta
+\NewEntry
+M2 - DiscoRice
+ - hipenacija
+\EndFolder

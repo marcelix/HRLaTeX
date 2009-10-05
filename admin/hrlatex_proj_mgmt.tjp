@@ -1,0 +1,56 @@
+project myProjectId "My Project" "1.0" 2006-01-16 2006-07-16
+
+task start "Project Start" {
+  milestone
+  start 2006-01-16
+}
+
+rate 1.0
+
+# resources.............
+
+resource dev "Developers" {
+  resource marcelix "Marcelix"
+  resource damir    "Damir"
+}
+
+
+# accounts..............
+
+account dev "Developing cost" cost
+
+task FR "zavrsetak iProjekta" {
+
+task firstrelease "Prvi javni SF release" {
+  effort 5d
+  allocate marcelix
+  depends start
+  complete 30
+}
+
+
+task sf_upload "File Release" {
+  milestone
+  allocate marcelix
+  depends FR.firstrelease
+
+}
+
+task testfr "Test prvog release" {
+  effort 3d
+  allocate marcelix
+  allocate damir
+  depends FR.firstrelease
+}
+
+}
+
+
+
+
+taskreport "Gantt chart" {
+  headline "Gantt dijagram"
+  columns hierarchindex, name, start, end, effort, duration, chart
+  loadunit days
+}
+

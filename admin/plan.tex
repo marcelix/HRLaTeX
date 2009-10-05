@@ -1,0 +1,249 @@
+\documentclass[openany, a4paper]{memoir}
+\usepackage[croatian]{babel}
+%\usepackage[Rejne]{fncychap}
+\usepackage[cp1250]{inputenc}
+\usepackage[linkcolor=blue, urlcolor=blue, colorlinks]{hyperref}
+\usepackage{titlesec}
+\usepackage[a4paper,left=2.2cm,top=2cm,right=1.6cm,
+bottom=2cm%
+%,showframe
+]{geometry}
+
+\usepackage{palatino}
+
+\usepackage{titletoc}
+
+
+% Essential packages
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage[draft]{fixme}
+\usepackage[dvips]{graphicx}
+\usepackage{rotating}
+\usepackage{multido}
+
+\renewcommand{\thechapter}{\Roman{chapter}}
+
+
+
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+
+
+
+
+\title{HR\LaTeX}
+
+\begin{document}
+
+
+%\multiput(x coord,y coord)(delta x,delta y){number of copies}{object}
+
+%\maketitle
+
+\marginpar{\rotatebox{90}{\Huge  HR\LaTeX}}
+
+
+
+  \tableofcontents
+  \newpage
+  {\small \listoffixmes }
+
+
+
+
+  \chapter{Instalacija}
+  \section{Windows}
+  \subsection{\TeX distribucije}
+  \href{http://www.miktex.org/}{MikTeX}
+%
+  \subsection{Editori}
+  Komercijalno (WinEdt) ili \emph{free} (TeXnicCenter).
+
+  \subsection{Ghostscript}
+
+
+  \section{Linux/Mac}
+  \subsection{tetex}
+
+
+  \section{\LaTeX$\xrightarrow{\ \text{pdflatex}\ }$PDF}
+  \section{\LaTeX$\xrightarrow{\ \text{dvips}\    }$PS$\xrightarrow{\ \text{ps2pdf}\ }$PDF}
+
+
+
+
+  \chapter{Primjeri, uzorci dokumenata}
+
+
+  \section{Knjige}
+    Za podlogu uzeti ``Diferencijalne jednadžbe'' od Z.~Šikiæa (ta je najsreðenija).
+    Za kasnije spajanje u individualne class datoteke treba složiti da se
+    raskomadana preambula spoji u jednu datoteku i da se to trpa u klasu.
+
+  \subsection{Udžbenik}
+  Sveuèilišni udžbenik
+
+  \subsection{memoir klasa}
+
+  \subsection{Zbirka zadataka}
+
+  \subsection{Doktorska disertacija}
+
+  \subsection{Magistarski rad}
+
+  \subsection{Diplomski rad}
+
+  \section{Èlanci}
+  \subsection{article}
+  \subsection{amsart}
+
+  \section{Slajdovi}
+
+
+  \section{Osnovno}
+    \subsection{babel}
+    \begin{verbatim}
+        \usepackage[babel]{croatian}
+    \end{verbatim}
+
+    \subsection{inputenc}
+    \begin{verbatim}
+        \usepackage[cp1250]{inputenc}
+    \end{verbatim}
+
+%============================================================
+
+  \chapter{``New Document Templates'' za programe editore}
+  \section{WinEdt}
+
+  \section{\TeX niccenter}
+    Ima \emph{feature} ``Document $\rightarrow$ new from template''.
+
+
+
+
+
+
+
+
+  \chapter{WWW}
+
+
+
+  \section{Sadržaji na webu}
+
+
+    \subsection{Tutoriali}
+        \begin{itemize}
+            \item  instalacija za win32, linux
+            \item  grafika
+            \begin{itemize}
+              \item crtanje
+              \begin{itemize}
+                \item vektorske slike (eps format iz npr. Corel Draw, Illustrator, xfig itd.)
+                \item rasterski formati (bitmape)
+              \end{itemize}
+              \item Mathematica
+              \item \texttt{psfrag} paket (s slikama iz Mathematice)
+              \item pstricks
+            \end{itemize}
+            \item  fontovi
+            \item  izrada kazala (makeindex) !!!\\
+            (stilovi, zamrzavanje indeksa, ruèno dovršavanje,...)
+            \item  najkorisniji paketi:
+            babel, inputenc, amsmath, hyperref, geometry, layout, crop, fixme,   \fxnote{shorttoc}
+            \fxnote{grupirati neke u ``napredniju'' grupu}
+
+            \item  ``provjera znanja'' -- jednostavan dokument, cijeli dokumentiran..
+            (tilda u paragrafu, itd.)
+        \end{itemize}
+
+    \subsection{Novosti - preko bloga}
+        Nove verzije programa (editori, \TeX distribucija, Ghostscript, GSView, \dots)
+        Nove dobre knjige, dobri tutoriali na webu, linkovi...
+
+    \newpage
+    \subsection{FAQ - Èesta pitanja}
+
+        To možemo na kraju...
+
+        Skica FAQ-a (popis tema):
+        \begin{enumerate}
+        \item Detaljan popis simbola za \LaTeX (comprehensive \LaTeX symbol list)
+        \item Komotnije tablice
+        \texttt{%
+        $\backslash$renewcommand\{$\backslash$arraystretch\}\{1.15\}
+        }
+        \begin{verbatim}
+            \renewcommand{\arraystretch}{1.15}
+        \end{verbatim}
+        \end{enumerate}
+
+
+        Napredno:
+        \begin{enumerate}
+          \item TDS - (\emph{eng.}~\TeX directory structure)
+        \end{enumerate}
+
+
+
+
+    \newpage
+    \section{Tehnièki detalji}
+        \subsection{SourceForge.net hrlatex}
+        Registrirano.
+
+        \subsection{Domena}
+        Registracija www.tug.hr domene.
+
+        \subsection{Tehnièka pozadina (software)}
+
+        \subsubsection{WordPress}
+        Instalirati WordPress 1.5.x s LetterHead temom (podsjeca na tiskane knjige)
+        \subsubsection{MediaWiki wiki}
+            mediawiki (oprobano), radi na \texttt{titan.fsb.hr} stroju
+
+
+        \subsubsection{RSS - via WordPress}
+
+
+
+
+  \chapter{Lokalizacija}
+
+    \section{Lokalizacije paketa}
+
+    \begin{itemize}
+        \item fixme.sty
+        \item ??
+    \end{itemize}
+
+
+
+
+
+
+  \chapter{Nabava}
+    \section{Raèunalo}
+        \subsection{opis}
+        AMD64 PC raèunalo s 19" LCD monitorom + laserski Lexmark printer
+
+
+    \section{Knjige}
+        \begin{enumerate}
+            \item H. Kopka, P. Daly: Guide to \LaTeX
+        \end{enumerate}
+        Naruèeno 27.05.2005.
+
+
+
+  \appendix
+
+  \chapter{About}
+
+
+  \fxnote{titlesec, titletoc}
+  \fxnote{Prijevod ``List of Corrections''}
+
+\end{document}

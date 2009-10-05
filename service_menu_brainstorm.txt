@@ -1,0 +1,38 @@
+---------------------------------------------------
+Installation
+---------------------------------------------------
+
+Copy the file
+
+iconv-servicemenu.desktop
+
+to
+
+$KDEDIR/share/apps/konqueror/servicemenus/
+
+and you are done!
+
+---------------------------------------------------
+Usage
+---------------------------------------------------
+
+Select the file(s) to convert and select "convert to
+utf-8" from the actions submenu of the right-mouse-
+button menu. A new (converted) file with suffix _utf-8
+is created in the same directory. The original file is
+left untouched, in case anything went wrong ;-).
+
+
+
+
+
+
+#=========================
+
+iconv -f latin-1 -t utf_8 %u -o %u_utf-8
+
+
+
+vidi 
+man kde-config 
+kde-config --localprefix

@@ -1,0 +1,11 @@
+0.1.2 -- 31/01/2006  
+	short doc
+
+0.1.1 -- 23/01/2006
+	ispravke..
+
+0.1.0 -- 20/01/2006 
+	prvi javni release
+
+0.2.0 -- 2006/06/20
+	CTAN upload hrlatex.zip

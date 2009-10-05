@@ -1,0 +1,54 @@
+
+
+Ocitovanje po fazama:
+---------------------------------------
+1. Faza 
+- registracija [OK]
+- obnova weba, link na stari web [OK]
+
+2. Faza
+- hrvatsko sortiranje [dodatno]
+- napuštena ideja oko koristenja xindy alata [vidi prijedbu]
+- prvi primjeri dokumenata  [OK]
+- beta verzija weba [OK]
+
+3. Faza
+- dovršenje web portala [OK]
+- kompliciraniji primjerci dokumenata [OK]
+
+4. Faza
+- uvrštenje rezultata u CTAN -> planiramo za 06/2005 - za to vrijeme (a i kasnije) rezultati ce biti javno dostupni preko weba
+- uvrstenje u TeX distribucije -> automatski nakon uvrstenja u CTAN
+- hipenacijske tablice - prva iteracija [OK]
+- primjer sveuèilišnog udžbenika [OK]
+
+
+
+Dodatno u projektu:
+---------------------------------------
+1. alat za korektno samostalno hrvatsko sortiranje (korektno i za slova 'Lj', 'Nj' itd.)
+2. alati za konverzije izmedju kodnih stranica i izmedju TeX sourceva (latin2<->cp1250<->TeX)
+3. primjeri i predlošci za prezentacije (slajdove) s više razlièitih paketa (prosper, beamer, powerdot)
+4. automatizirane instalacije dodataka za windows i debian (linux) platforme
+5. radi se na podrsci za spelling
+6. RSS kanal s vijestima na web-u.
+
+
+Napomene:
+---------------------------------------
+1. napustena je ideja oko koristenja xindy alata za izradu indeksa/kazala iz dva razloga:
+  cini se da se na razvoju alata ne radi (star je 2 godine); potencijalna publika je premala jer postoji samo verzija za *nix koja nije uvrstena u standardne tex distribucije
+  Umjesto toga
+2. Dodatke 1 i 2 planiramo pakirati zajedno u podprojekt 'hr-text-tools', kasnije mozda nesto slicno za spelling.
+
+
+
+
+Primjedbe:
+---------------------------------------
+1. Procedura oko registracije domene je bila prekomplicirana, preduga
+2. Obrazac za zavrsni izvjestaj rusi word aplikaciju -- ispunjavanje formulara ne bi smjelo biti toliko komplicirano
+
+
+
+Tim æe nastaviti raditi na projektu i njegovim poboljsanjima.

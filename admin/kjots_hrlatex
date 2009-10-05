@@ -1,0 +1,205 @@
+\NewEntry kodiranja (encodings)
+\ID 1
+encoding 
+-----
+- trebam imena za glyphove
+- glyph - prijevod? "znak"?
+
+- ASCII
+- CP437, CP852 (DosLatin2), CP1250
+- MacCentralEuropean
+- ISO8859-2, latin2
+- Unicode (ISO-10646)
+	- kodiranja UCS-16
+	- UTF-8 (UTF2)
+	- UTF-7
+	- UTF-16
+	- UCS-2, UCS-4
+
+# ---  CP1250, latin2 Unicode
+	0xC8	0xC8  0x010C	#LATIN CAPITAL LETTER C WITH CARON    ?
+	0xC6	0xC6  0x0106	#LATIN CAPITAL LETTER C WITH ACUTE    ?
+	0xD0	0xD0  0x0110	#LATIN CAPITAL LETTER D WITH STROKE   ?
+	0x8A	0xA9  0x0160	#LATIN CAPITAL LETTER S WITH CARON    ?
+	0x8E	0xAE  0x017D	#LATIN CAPITAL LETTER Z WITH CARON    ?
+
+	0xE8	0xE8  0x010D	#LATIN SMALL LETTER C WITH CARON      ?
+	0xE6	0xE6  0x0107	#LATIN SMALL LETTER C WITH ACUTE      ?
+	0xF0	0xF0  0x0111	#LATIN SMALL LETTER D WITH STROKE     ?
+	0x9A	0xB9  0x0161	#LATIN SMALL LETTER S WITH CARON      ?
+	0x9E	0xBE  0x017E	#LATIN SMALL LETTER Z WITH CARON      ?
+
+
+reference:
+	- J. Spolsky
+	- http://www.jbrowse.com/text/charsets.html#ISO-8859
+	- http://www.microsoft.com/truetype/unicode/1250.htm
+	- http://www.unicode.org/
+
+
+Primjeri
+	- cat test.cp1250.txt | recode -f CP1250..latin2
+\NewEntry tetex i utf8
+\ID 2
+provjeriti
+\\usepackage[utf8]{inputenc}
+
+
+(na tetexu ne radi... provjeriti na miktexu)
+\NewEntry sub-projekti
+\ID 4
+subprojects
+
+popis podprojekata koje jos nismo poceli - u koje se drugi ljudi mogu ukljuciti...
+
+- spellcheck projekt (hrlatex spellcheck)
+
+\NewEntry alati
+\ID 3
+recode
+enca
+\NewEntry Template projekt
+\ID 5
+Template subproject....
+
+- plain templates (bez klasa (?) i bez stilova)
+- fancy templates (s klasama i stilovima)
+\NewEntry Indeksiranje
+\ID 6
+1 - odbaci xindy
+
+2 - makeindex postprocessing...
+	- sva hrvatska slova su TeX normalizirana, izbacena na pocetak...
+	To treba skenirati i presortirati.
+	- skeniranje tokena
+	- hrvatsko sortiranje
+
+
+Implementacija
+	a) C (flex)
+		- ubaciti u isti path kao i makeindex
+		- "hr_make_index primjer"
+		     program napravi main.ind -> main.hr.ind
+		- mogao bi napraviti style koji promijeni \\printindex 
+		  makro i ukljucuje main.hr.ind....
+
+	b) perl implementacija sortiranja...
+
+Distribuiranje
+	- SF.net
+	- probati uvaliti na CTAN
+\NewEntry WEB
+\ID 7
+WEB
+
+- Napraviti word dokument sa skicama sadrzaja...
+
+- naci neki ok design - za prvu ruku
+- drupal? vidjeti kak se to moze instalirati na titan. i moze li se.
+
+- credo - organizirati latex razvoj... itd. 
+- impressum
+- about - vrlo kratki sazetak na pocetku stranice
+
+
+\NewEntry Deployment
+\ID 8
+
+
+Distribucija
+- Sourceforge
+- CTAN ? (contrib sekcija za pocetak?)
+
+
+TeTeX
+	- 'mktexlsr'  je ekviv. 'initexmf --update-fndb'
+\NewEntry HR sorting
+\ID 9
+sortiranje
+
+- Unicode - collations and linguistic sorting
+    Unicode Collation Algorithm - UCA
+
+- ICU - international components of unicode
+(sorting aspekt), mislim da je Xerces baziran na tome...
+
+
+- kontrakcije lj, nj
+\NewEntry SpellCheck projekt
+\ID 10
+Problemi:
+	- normalizacija kod unosa hrvatskih slova
+	- lomljenje linija u source-u kod \\dj ...
+\NewEntry Clanak u Poucku
+\ID 11
+mozda pod Informacije i Prikazi
+
+
+----------------------------------
+
+Pozdrav!
+
+U 12 mjesecu zavrsava iProjekt "HRLaTeX - lokalizacija LaTeX-a za
+Hrvatsku" (financiralo MZOS) u kojem sam ja jedan od izvodjaca. Ideja
+projekta je bila rijesiti neke lokalizacijske LaTeX probleme, ali i
+napraviti predloske (template) za ceste tipove dokumenata i uopce
+olaksati koristenje LaTeXa kod nas (u HR). Npr. tu bi bili predlosci za
+ispite, zadace i dr. za nastavnike/profesore matematike. Trudimo se to
+maksimalno pojednostaviti za krajnjeg korisnika.
+
+Npr. ja cu napraviti instalaciju koja ce nadograditi WinEdt (i npr.
+TeXnic center ili druge TeX editor programe) tako da "New Document"
+pored standardnih nudi/predlaze nase tipove dokumenata kao npr.
+	- Novi ispit
+	- Nova zadaca
+	itd.
+(tako nesto vec imam za FSB)
+
+U 3. mjesecu izlazi sljedeci Poucak pa bi dotad na webu mogli objaviti
+neke primjere ispita itd., a u clanku u rubrici "Informacije i prikazi"
+pozvati da se to pogleda, komentira dizajn i sl. Npr. - Pierre - ti bi
+mogao biti prvi...
+
+Nama bi to bilo odlicno za publiciranje projekta. Na ovaj nacin elegantno rjesavamo taj problem.
+
+Whaddaya think?
+
+Pozdrav,
+	Marcelnk?
+\NewEntry Hyphenation
+\ID 12
+Hipenacija:
+
+	- wiki TeX kaze da se iz rucno generirane hipenacije pravi tablica... (prouci to)
+
+	- pitati Mirjanu kak i di da potrazim pravila hipenacije hrvatskog jezika
+\NewEntry Normalizacija
+\ID 14
+
+\NewEntry Ideje - koje clanke napisati
+\ID 13
+"Top 10 (esencijalnih) paketa"
+	- babel
+	- hyperref (backref)
+	- geometry
+	- graphics
+	- fancyhdr
+	- crop
+	- inputenc
+
+"Top 10 paketa za koje mozda niste culi"
+	- framed...
+	- fixme
+	- alltt
+
+"Dobre navike u LaTeX-u"
+	- tilda...
+	- \\nofiles
+	- draft opcija
+	- \\section[aaa]{aaa\\footnote{bbb}} fusnote u naslovima..
+
+"Niste znali"
+	- {centering} rather than {center} which inserts no extra space and does not add a page break point.
+	- \\begin{samepage}...\\end{samepage}
+	- fore sa razmacima u tablicama...
+	- verbatim... http://www.tex.ac.uk/cgi-bin/texfaq2html?label=verbfile
