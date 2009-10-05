@@ -1,0 +1,44 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{hrlatex}[2005/12/10 v0.1
+                        LaTeX Macros for HRLaTeX project]
+
+% BEGIN TODO
+%  napravi opcije za paket
+% - cp1250 (default)
+% - i ostale... za prenosenje u inputenc
+% END TODO
+
+
+%kodna stranica za upisivanje teksta
+%BEGIN
+\RequirePackage[cp1250]{inputenc}
+%END
+
+% font
+%BEGIN
+\RequirePackage[T1]{fontenc}
+\RequirePackage[errorshow,loading,pausing]{tracefnt}
+%END
+
+
+% jezik
+%BEGIN
+\RequirePackage[croatian]{babel}
+%END
+
+
+\RequirePackage{amsopn}
+
+\typeout{}
+\typeout{	HRLaTeX croatian localization style file  }
+\typeout{}
+
+
+%BEGIN standardni matematicki operatori
+
+%sinh arc i ostale funkcije...
+% za ovo treba ucitati amsopn
+\DeclareMathOperator{\tg}{tg}
+\DeclareMathOperator{\arctg}{arctg}
+\DeclareMathOperator{\ctg}{ctg}
+%END

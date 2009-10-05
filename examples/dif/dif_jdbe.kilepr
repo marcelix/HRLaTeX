@@ -1,0 +1,70 @@
+[General]
+img_extIsRegExp=false
+img_extensions=.eps .pdf .dvi .ps .fig .gif .jpg .jpeg .png
+lastDocument=file:///home/marcelix/work/hrlatex/out/examples/dif/conf_font.tex
+masterDocument=
+name=dif_jdbe
+pkg_extIsRegExp=false
+pkg_extensions=.cls .sty .dtx
+src_extIsRegExp=false
+src_extensions=.tex .ltx .bib .mp
+
+[Tools]
+MakeIndex=
+QuickBuild=
+
+[item:conf_font.tex]
+archive=true
+column=0
+encoding=ISO 8859-1
+highlight=LaTeX
+line=15
+open=true
+
+[item:conf_operatori.tex]
+archive=true
+column=0
+encoding=ISO 8859-1
+highlight=LaTeX
+line=7
+open=true
+
+[item:conf_teoremi.tex]
+archive=true
+column=0
+encoding=ISO 8859-1
+highlight=LaTeX
+line=0
+open=true
+
+[item:dif_jdbe.tex]
+archive=true
+column=0
+encoding=CP 1250
+highlight=LaTeX
+line=20
+open=true
+
+[item:dif_jdbe_index.tex]
+archive=true
+column=0
+encoding=ISO 8859-1
+highlight=LaTeX
+line=0
+open=true
+
+[item:djklasa.cls]
+archive=true
+column=93
+encoding=ISO 8859-1
+highlight=LaTeX
+line=0
+open=true
+
+[item:pogl01.tex]
+archive=true
+column=0
+encoding=CP 1250
+highlight=LaTeX
+line=0
+open=true

@@ -1,0 +1,172 @@
+% essential packages
+\usepackage{amsmath, amssymb}
+
+
+\usepackage{enumerate}
+\usepackage{paralist}
+\usepackage{longtable}
+
+\usepackage{makeidx}
+\usepackage[final]{showkeys}
+
+
+\makeindex
+
+
+%
+%  FiXme
+%
+\usepackage[final]{fixme}
+
+
+\usepackage{multicol}
+
+
+\usepackage[ps2pdf]{hyperref}   % last to be loaded!
+
+
+
+\fussy
+
+
+
+\graphicspath{{eps/}}
+
+
+
+
+
+\newcommand{\FIXREF}[1]{
+{\scriptsize\marginpar{\underline{\tiny \texttt{FIXREF:}}\\[1ex] \tiny #1}}}
+
+
+
+
+\makeatletter
+\let\FIXME\@gobble
+\makeatother
+
+
+
+
+
+
+
+\include{page_parameters}
+
+\include{conf_font}
+
+\include{conf_teoremi}
+
+\include{conf_operatori}
+
+
+
+
+
+
+
+
+
+\newcommand{\chapterwithquote}[2]{
+\chapter{#1}
+\begin{flushright}
+\small \emph{\parbox[t]{25em}{#2}}
+\end{flushright}}
+
+
+
+\newcommand{\rjesenje}[1]{\marginpar{\tiny \textcolor{red}{\emph{zad.}} \textbf{\theexercise}
+\raggedright
+ #1 \\
+\ \emph{\hfill\jobname.\thechapter.rj} }}
+
+
+%\newenvironment{solution}
+%{\subsubsection*{Rje\v{s}enje.}}
+%{
+%%\hfil $\blacksquare$
+%}
+
+
+
+
+\newenvironment{preface}[1]{
+  \chapter*{#1}
+  \markboth{\MakeUppercase \prefacename}{\MakeUppercase  \prefacename}
+  \addcontentsline{toc}{chapter}{#1}
+  }
+  {}
+
+
+
+
+
+\xdefinecolor{myblue}{rgb}{0.4, 0.6, 0.8}
+
+\setcounter{topnumber}{5}
+\renewcommand\topfraction{1}
+\setcounter{bottomnumber}{3}
+\renewcommand\bottomfraction{.3}
+\setcounter{totalnumber}{5}
+\renewcommand\textfraction{0}
+\renewcommand\floatpagefraction{.5}
+\setcounter{dbltopnumber}{2}
+\renewcommand\dbltopfraction{.7}
+\renewcommand\dblfloatpagefraction{.5}
+
+
+
+\newcommand{\stavisliku}[1]{
+\begin{center}
+\includegraphics{#1}
+\end{center}
+}
+
+
+
+\newenvironment{rjzad}
+{} {}
+
+
+\newcommand{\plavapozadina}[1]{
+\medskip
+\noindent
+\fbox{%
+\parbox{\linewidth-3\fboxsep-2\fboxrule}{%
+#1 }
+}%fbox
+\medskip }
+
+\newcommand{\tamnoplavapozadina}[1]{
+\colorbox{myblue!70}{
+\parbox{\linewidth-3\fboxsep-2\fboxrule}{
+#1 }}
+\bigskip }
+
+\newenvironment{okvir}[1][Naslov okvira]
+{
+\begin{list}{}
+{
+   \setlength{\topsep}{0.25ex}
+   \setlength{\leftmargin}{0pt}
+}
+  \centering\item\relax \large\textbf{\textsf{{\MakeUppercase{#1}}}}
+\end{list}}
+{
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+\newcommand{\slika}{
+\begin{center}
+\textcolor{gray}{\Huge \fbox{\textbf{SLIKA}}}
+\end{center}
+}

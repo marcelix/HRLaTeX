@@ -1,0 +1,16 @@
+Package: hr-text
+Version: 0.1.2-2
+Section: text
+Priority: optional
+Architecture: all 
+Depends: perl
+Recommends: flex 
+Suggests: enca,recode
+Installed-Size: 1024
+Maintainer: Marcel Maretic <marcelix@users.sourceforge.net>
+Description: Text utils for croatian (LaTeX) users.
+ - Convert between various encodings (tex, cp1250, latin-2, utf-8)
+ - Sort by croatian rules  ( ...  l < lj < m < n < nj ... )
+ .
+  Longer description. TODO.
+ .

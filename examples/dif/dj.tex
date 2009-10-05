@@ -1,0 +1,69 @@
+\documentclass[
+11pt,
+%openany,
+twoside,
+openright,
+final
+]{djklasa}
+
+
+\input{preambula}
+
+    \title{    Diferencijalne jednadžbe }
+    \author{   Zvonimir Šikiæ           }
+    \date{}
+    \version{0.1}
+
+\begin{document}
+
+%\layout
+%\typestandardlayout
+
+\frontmatter
+
+    \maketitle
+
+    \newpage
+
+    \tableofcontents
+
+    {\small \listoffixmes }
+
+\mainmatter
+
+
+\newpage
+
+    \include{pogl01}  % dif. jdbe
+    \include{pogl02}  % separabilna dif. jdba
+    \include{pogl03}  % opc. o dif. jdb-ama prvog reda
+    \include{pogl04}  % lin. jdba drugog reda sa konstantnim koef.
+    \include{pogl05}  % lin. jdba drugog reda i specijalne funkcije
+    \include{pogl06}  % opc. o dif. jdbi drugog reda
+
+
+
+    \clearpage
+    \backmatter
+
+    \renewcommand{\indexname}{Kazalo}
+    \phantomsection
+    \addcontentsline{toc}{chapter}{\indexname}
+
+
+% INDEX !!!!!!!
+% ------------------------
+%\printindex
+\include{dif_jdbe_index}
+
+% ------------------------
+
+
+
+
+
+
+\input{font_test}
+
+
+\end{document}

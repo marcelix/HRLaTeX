@@ -1,0 +1,9 @@
+prouci sto ide u normalne pakete
+- dtx file
+- ins file
+
+- poseban make target koji radi taj zip
+
+
+Sadrzaj:
+- perl skripte

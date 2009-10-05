@@ -1,0 +1,77 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[croatian]{babel}
+\newtheorem{teorem}{Teorem}[section]
+\newtheorem{propozicija}{Propozicija}[section]
+\newtheorem{korolar}{Korolar}[section]
+\newtheorem{lema}{Lema}[section]
+
+\begin{document}
+
+\title{naslov prvi red\\
+   naslov drugi red}
+
+%------------------autor(i)----------------------------------
+\author{ime1\thanks{...}\\
+    adresa1 redak1\\
+    adresa1 redak2\\
+    adresa1 redak3
+    \and
+    ime2\thanks{...}\\
+    adresa2 redak1\\
+    adresa2 redak2\\
+    adresa2 redak3
+    \and
+    ime3\thanks{...}\\
+    adresa3 redak1\\
+    adresa3 redak2\\
+    adresa3 redak3}
+%-----------------autor(i) kraj------------------------------
+
+\date{unesite datum}
+\maketitle
+
+\begin{abstract}
+Kratki uvodni tekst
+\end{abstract}
+
+%--------prva sekcija i njene podsekcije--------------------
+\section{sekcija1}
+neki tekst
+\subsection{podsekcija1}
+neki tekst
+\subsubsection{podpodsekcija1}
+neki tekst
+\paragraph{odlomak}
+neki tekst
+\subparagraph{pododlomak}
+neki tekst
+%-------prva sekcija i njene podsekcije kraj----------------
+
+%--------druga sekcija i njene podsekcije--------------------
+\section{sekcija2}
+neki tekst
+\subsection{podsekcija2}
+neki tekst
+\subsubsection{podpodsekcija2}
+neki tekst
+\paragraph{odlomak}
+neki tekst
+\subparagraph{pododlomak}
+neki tekst
+%-------druga sekcija i njene podsekcije kraj----------------
+
+%i sad dalje sekcija3 i njene podsekcije, pa sekcija4 i tako dalje po potrebi
+
+
+%-----------------------------------------------------------------------------
+%-------------bibliografija---------------------------------------------------
+
+\begin{thebibliography}{99} %ako je manje od 10 referenci stavimo 9 umjesto 99
+\bibitem{oznaka1} referenca1
+\bibitem{oznaka2} referenca2
+\end{thebibliography}
+
+%-------------bibliografija kraj-----------------------------------------------
+%------------------------------------------------------------------------------
+
+\end{document}

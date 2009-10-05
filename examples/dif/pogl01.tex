@@ -1,0 +1,968 @@
+\chapter{Uvodni primjeri}
+\label{pogl:1}
+
+
+
+
+%\minitoc
+
+
+
+Diferencijalna jednad\v{z}ba ona je jednad\v{z}ba koja nepoznatu
+funkciju $y$ povezuje s njezinim derivacijama $y'$, $y''$, \dots .
+Problem postavljanja i rje\v{s}avanja diferencijalnih
+jednad\v{z}bi, \v{c}ije nepoznate funkcije opisuju veze me\dj{}u
+fizikalnim veli\v{c}inama koje nas zanimaju, jedan je od
+naj\v{c}e\v{s}\'cih problema matemati\v{c}kog modeliranja u
+prirodnim znanostima i tehnici. U uvodnom poglavlju ilustrirat
+\'cemo ga s nekoliko jednostavnijih primjera, a potom \'cemo se
+sustavno pozabaviti striktno matemati\v{c}kim problemom
+rje\v{s}avanja diferencijalnih jednad\v{z}bi.
+\medskip
+
+Najjednostavnije diferencijalne jednad\v{z}be oblika
+$$\frac{dy}{dx}=f(x)$$
+rje\v{s}avamo neposrednom integracijom
+$$y=\int f(x) dx +C.$$
+
+Zbog toga i rje\v{s}avanje mnogo slo\v{z}enijih diferencijalnih
+jednadžbi èesto zovemo integracijom tih jednadžbi.
+
+Osim ovih najjednostavnijih diferencijalnih jednadžbi vjerojatno poznajete i
+neke složenije. Ako je brzina rasta velièine $y$, koja ovisi o
+velièini $t$, proporcionalna samoj velièini $y$, onda ona
+zadovoljava diferencijalnu jednadžbu
+\begin{equation}\label{eq:1.1}
+\frac{dy}{dt}=ky.
+\end{equation}
+Lako se provjerava da je rje\v{s}enje te jednad\v{z}be
+\begin{equation}\label{eq:1.2}
+y=y(t_0) e^{k(t-t_0)} \quad \text{ ili }\quad y=y(0)e^{kt}   \quad
+\text{ ako je }\quad t_0=0.
+\end{equation}
+
+Primijetimo da za svaku velièinu $y$, koja eksponencijalno ovisi o
+$t$, vrijedi
+ $$\frac{y(t+s)}{y(t)}=\frac{y(0)e^{k(t+s)}}{y(0)e^{kt}}=e^{ks},\quad\text{ tj. }\quad
+   \frac{y(t+s)}{y(t)}=\frac{y(s)}{y(0)}.$$
+
+To zna\v{c}i da postotak porasta (ili pada) veli\v{c}ine $y$ na
+intervalu duljine $s$ ne ovisi o po\v{c}etku tog intervala $t$.
+Taj tip rasta zovemo uniformnim\index{uniformni rast}, pa slijedi da je svaki
+eksponencijalni rast\index{eksponencijalni rast} ujedno i uniformni. Vrijedi i obratno: svaki
+uniformni rast nužno je i eksponencijalni. Naime, iz uvjeta
+uniformnosti $y(t+s)/y(t)=y(s)/y(0)$ nakon deriviranja po $s$
+slijedi
+ $$y'(t+s)=\frac{y(t)y'(s)}{y(0)},$$
+pa uvr\v{s}tavanjem $s=0$ i uvo\dj{}enjem pokrate $k=y'(0)/y(0)$,
+dobivamo
+
+
+\begin{equation*}\label{eq:1.1b}
+ y'(t)=ky(t),
+\end{equation*}
+\v{s}to zna\v{c}i da $y$ eksponencijalno ovisi o $t$.
+
+
+Mnoge fizikalne veli\v{c}ine $y$ zadovoljavaju diferencijalnu
+jednadžbu \eqref{eq:1.1}, stoga eksponencijalno (uniformno) rastu
+u odnosu na $t$ ako je $k>0$, odnosno eksponencijalno (uniformno)
+padaju u odnosu na $t$ ako je $k<0$. S nekim fenomenima opisanim
+ovom diferencijalnom jednad\v{z}bom vjerojatno ste se susreli.
+Jedan od njih koji se tako\dj{}er svodi na rješavanje
+diferencijalne jednad\v{z}be \eqref{eq:1.1}, obra\dj{}ujemo u
+slijede\'{c}em primjeru.
+
+\begin{enumerate}[(A)]
+ \item \textbf{Jednad\v{z}ba strujnog kruga}
+ \index{diferencijalna jednadžba!strujnog kruga}
+
+Najjednostavniji strujni krug sadr\v{z}i izvor elektri\v{c}ne
+energije, npr.~generator ili bateriju te otpornik koji se koristi
+tom energijom, npr. \v{z}arulju.
+
+%\slika
+%\includegraphics{eps/SL_01}
+\stavisliku{eps/SL_01}
+%0101, str. 2.
+
+Zatvorimo li sklopku, struja $J$ pote\'{c}i \'{c}e otpornikom,
+\v{s}to \'{c}e uzrokovati pad napona (tj. elektri\v{c}ni
+potencijali na krajevima otpornika bit \'{c}e razli\v{c}iti).
+Eksperimentalno se pokazuje da vrijedi Ohmov zakon:
+ $$U_R=RJ,$$
+tj. pad napona du\v{z} otpornika proporcionalan je trenutnoj
+struji $J$. Konstanta proporcionalnosti $R$ zove se otporom
+otpornika.
+
+Va\v{z}an element strujnog kruga mo\v{z}e biti induktor. On se
+opire promjeni struje, analogno masi koja se opire promjeni
+gibanja. Eksperimentom se pokazuje da vrijedi sljede\'{c}i zakon:
+ $$U_L=L\frac{dJ}{dt},$$
+tj. pad napona du\v{z} induktora proporcionalan je trenutnoj
+brzini promjene struje~$J$. Konstanta proporcionalnosti $L$ zove
+se indukcijom induktora.
+
+Drugi Kirchhoffov zakon\index{drugi Kirchhoffov zakon} (o naponima) ustvr\dj{}uje da je ukupni
+pad napona du\v{z} zatvorenog strujnog kruga jednak nuli, tj. da
+je napon izvora kojim se napaja strujni krug jednak zbroju padova
+napona po ostalim elementima strujnoga kruga. Dakle, tok struje
+$J$ u strujnom krugu s otporom $R$, indukcijom $L$ i izvorom
+konstantnog napona $U$ odreðen je diferencijalnom jednadžbom
+ $$U=L\frac{dJ}{dt}+RJ.$$
+
+%\slika %0102, str. 3.
+\stavisliku{eps/SL_02}
+
+Ta se diferencijalna jednad\v{z}ba razlikuje od diferencijalne
+jednad\v{z}be \eqref{eq:1.1}, ali uz supstituciju $h=RJ-U$ ona
+\'{c}e, zbog $\displaystyle\frac{dh}{dt}=R\frac{dJ}{dt}$,
+prije\'{c}i u jednad\v{z}bu
+ $$\frac{dh}{dt}=-\frac{R}{L}h,$$
+koja je oblika \eqref{eq:1.1}, uz $\displaystyle k=-\frac{R}{L}$.
+Njezino je rje\v{s}enje oblika \eqref{eq:1.2}
+ $$h=h(0)e^{-\frac{R}{L}t}.$$
+Ako strujni krug priklju\v{c}ujemo na izvor u trenutku $t=0$, onda
+je $J(0)=0$, tj. $h(0)=-U$, pa je
+ $$h=-Ue^{-\frac{R}{L}t},\quad RJ-U=-Ue^{-\frac{R}{L}t},\ \text{ tj.
+ }\ J=\frac{U}{R}\left(1-e^{-\frac{R}{L}t}\right).$$
+
+Graf funkcije $J(t)$ prikazan je na slici:
+
+%\slika %0103, str. 4
+\stavisliku{eps/SL_03}
+
+Ako je strujni krug priklju\v{c}en na izvor izmjeni\v{c}nog napona
+$U=U_0\cos\omega t$, onda $J(t)$ zadovoljava diferencijalnu
+jednad\v{z}bu
+ $$L\frac{dJ}{dt}+RJ=U_0\cos\omega t.$$
+
+Ona je ne\v{s}to slo\v{z}enija, ali se mo\v{z}e rije\v{s}iti
+upotrebom kompleksnih funkcija realnoga argumenta. Naime, stvarni
+napon $U_0\cos\omega t$ mo\v{z}emo shvatiti kao realni dio
+kompleksnoga ``napona''
+ $$\overline{U}=U_0e^{i\omega t}=U_0\cos \omega t+iU_0\sin \omega t,$$
+a stvarnu struju $J$ kao realni dio kompleksne struje
+ $$\overline{J}=J+iH.$$
+Ako je $\overline{J}$ rje\v{s}enje kompleksne diferencijalne
+jednad\v{z}be
+ $$L\frac{d\overline{J}}{dt}+R\overline{J}=\overline{U},$$
+onda je
+\begin{align*}
+ L\frac{d(J+iH)}{dt}+R(J+iH) & = U_0\cos \omega t+iU_0\sin \omega t,\\
+ \left(L\frac{dJ}{dt}+RJ\right)+i\left(L\frac{dH}{dt}+RH\right) & = U_0\cos \omega t+iU_0\sin \omega t,
+\end{align*}
+odakle slijedi
+ $$L\frac{dJ}{dt}+RJ=U_0\cos \omega t.$$
+
+Realni dio rje\v{s}enja kompleksne diferencijalne jednad\v{z}be
+jest rje\v{s}enje na\v{s}e po\v{c}etne realne diferencijalne
+jednad\v{z}be. Dakle, rije\v{s}imo li kompleksnu diferencijalnu
+jednad\v{z}bu, rije\v{s}ili smo na\v{s} problem. No, lako vidimo
+da je funkcija $\overline{J}=J_0e^{i(\omega t+\beta)}$ (s jo\v{s}
+neodre\dj{}enim realnim parametrima $J_0$ i $\beta$) jedno
+rje\v{s}enje na\v{s}e kompleksne diferencijalne jednad\v{z}be ako
+je
+ $$Liw\overline{J}+R\overline{J}=\overline{U},\ \text{ tj. ako je }\
+   \overline{J}=\frac{\overline{U}}{R+iLw}.$$
+To \'{c}e biti ispunjeno ako je
+ $$|\overline{J}|=\left|\frac{\overline{U}}{R+iLw}\right|=
+   \frac{|\overline{U}|}{|R+iLw|},\ \text{ tj. }\
+   J_0=\frac{U_0}{\sqrt{R^2+L^2w^2}}$$
+i ako je
+ $$\arg\overline{J}=\arg\frac{\overline{U}}{R+iLw}=\arg\overline{U}-\arg(R+iLw),$$
+tj.
+ $$\omega t+\beta=\omega t-\arctg\frac{L\omega}{R},\quad \beta=-\arctg\frac{L\omega}{R}.$$
+
+Dakle, jedno kompleksno rje\v{s}enje na\v{s}e kompleksne
+diferencijalne jednad\v{z}be je
+ $$\overline{J}=\frac{U_0}{\sqrt{R^2+L^2\omega^2}}e^{i\left(
+ \omega t-\arctg\frac{L\omega}{R}\right)},$$
+odakle slijedi da je i jedno rje\v{s}enje polazne realne
+diferencijalne jednad\v{z}be njegov realni dio
+ $$J=\frac{U_0}{\sqrt{R^2+L^2\omega^2}}\cos \left(\omega t-\arctg\frac{L\omega}{R}\right).$$
+
+Sva ostala rje\v{s}enja te diferencijalne jednad\v{z}be na\'{c}i
+\'{c}emo sustavnim postupkom u sljede\'{c}em poglavlju. Ovdje smo
+samo \v{z}eljeli prikazati prijelaz u kompleksno podru\v{c}je kao
+zna\v{c}ajnu tehniku za rje\v{s}avanje diferencijalnih
+jednad\v{z}bi. S njom \'{c}emo se sustavno koristiti u jednom od
+sljede\'{c}ih poglavlja.
+
+\item \textbf{Jedna\v{z}ba kosog hica}\index{diferencijalna jednadžba!kosog hica}
+\index{kosi hitac}
+
+
+Newtonov drugi zakon\index{Newtonov drugi zakon} gibanja
+ $$\overrightarrow{F}=m\vec{a},$$
+koji matemati\v{c}ki modelira gibanje \v{c}estice u polju sile
+$\overrightarrow{F}$, sustav je triju diferencijalnih
+jednad\v{z}bi. Naime, razlo\v{z}imo li vektor sile
+$\overrightarrow{F}$ na njegove Kartezijeve komponente
+ $$F_x, F_y, F_z,$$
+a vektor akceleracije na njegove Kartezijeve komponente
+ $$a_x=\frac{d^2x}{dt^2},\quad a_y=\frac{d^2y}{dt^2},\quad
+   a_z=\frac{d^2z}{dt^2},$$
+onda iz $\overrightarrow{F}=m\overrightarrow{a}$ dobijemo tri
+diferencijalne jednad\v{z}be
+ $$m\frac{d^2x}{dt^2}=F_x,\quad m\frac{d^2y}{dt^2}=F_y,\quad
+   m\frac{d^2z}{dt^2}=F_z,$$
+koje opisuju kako polo\v{z}aj \v{c}estice $((x(t),y(t),z(t))$
+ovisi o vremenu $t$ u polju sile $(F_x, F_y, F_z)$. Rije\v{s}iti
+problem gibanja \v{c}estice u zadanom polju sile
+$\overrightarrow{F}=(F_x, F_y, F_z)$, zna\v{c}i rije\v{s}iti
+gornji sustav od tri diferencijalne jednad\v{z}be.
+
+
+Jednadžba kosog hica je dobro poznat primjer.
+Smjestimo koordinatni sustav tako da je os $y$ paralelna sa silom
+te\v{z}e $mg$, dok je os $x$ vodoravna i s osi $y$ tvori ravninu u
+kojoj se ispaljuje projektil. Ako se on ispaljuje pod kutom
+$\alpha$ i s po\v{c}etnom brzinom $v_0$ (za $t=0$), onda
+diferencijalne jednad\v{z}be njegova gibanja izgledaju ovako:
+ $$m\frac{d^2x}{dt^2}=0,\quad m\frac{d^2y}{dt^2}=-mg,\quad
+   \text{ tj. }\quad \frac{d^2x}{dt^2}=0,\quad
+   \frac{d^2y}{dt^2}=-g.$$
+
+%\slika %0104, str. 6
+\stavisliku{eps/SL_04}
+
+Rje\v{s}enje tih jednad\v{z}bi
+ $$x=v_0t\cos \alpha\quad\text{i}\quad y=-\frac{1}{2}gt^2+v_0t\sin \alpha,$$
+koje zadovoljava uvjete $x(0)=0$, $\dot{x}(0)=v_0\cos \alpha$,
+$y(0)=0$, $\dot{y}(0)=v_0\sin\alpha$, opisuje gibanje projektila.
+Njegova putanja parametarski je odre\dj{}ena tim jednad\v{z}bama.
+Izra\v{c}unamo li parametar $t$ iz prve jednad\v{z}be i uvrstimo
+ga u drugu, dobit \'{c}emo eksplicitnu jednad\v{z}bu putanje
+ $$y=-\frac{g}{2v_0^2\cos^2 \alpha}x^2+(\tg\alpha)x,$$
+koja je oblika $y=ax^2+b$, dakle parabola.
+
+Tre\'{c}a diferencijalna jednad\v{z}ba za $z$ nije se pojavila u
+prethodnom slu\v{c}aju jer je gibanje ravninsko, pa smo
+koordinatne osi $x$, $y$ i $z$ mogli postaviti tako da se ravnina
+$xy$ poklapa s ravninom gibanja, \v{s}to zna\v{c}i da je
+$z(t)=0$. Ako istra\v{z}ujemo pravocrtno gibanje, onda koordinatnu
+os $x$ mo\v{z}emo postaviti u pravac gibanja, pa u tom slu\v{c}aju
+samo jedna diferencijalna jednad\v{z}ba
+ $$m\frac{d^2x}{dt^2}=F$$
+opisuje gibanje jer je tada $y(t)=z(t)=0$. Ako intenzitet kojim
+sila djeluje na \v{c}esticu ovisi samo o polo\v{z}aju \v{c}estice
+$x$, a ne ovisi o vremenu $t$, onda je $F$ funkcija jedne
+varijable $x$. Jednostavan slu\v{c}aj, u kojem je $F=-kx$
+($k>0$), dobro je poznat:
+
+\item \textbf{Jednad\v{z}ba harmonijskog oscilatora}
+\index{harmonijski oscilator}
+\index{diferencijalna jednadžba!harmonijskog oscilatora}
+
+Gibanje harmonijskog oscilatora (npr. opruge) jest gibanje pod
+utjecajem sile koja je proporcionalna otklonu od ravnote\v{z}nog
+polo\v{z}aja $x=0$, a usmjerena je prema tom polo\v{z}aju.
+
+%\slika %0104b, str. 7
+\stavisliku{eps/IZA_SL_04}
+
+
+Harmonijske oscilacije opisane su stoga jednad\v{z}bom
+ $$m\frac{d^2x}{dt^2}=-kx\ (k>0)$$
+ili, uz uobi\v{c}ajenu pokratu $\displaystyle
+\omega=\sqrt{\frac{k}{m}}$, jedna\v{z}bom
+\begin{equation}\label{eq:1.3}
+ \frac{d^2x}{dt^2}=-\omega^2x.
+\end{equation}
+Poznato je da svako rje\v{s}enje ove jednad\v{z}be ima oblik
+\begin{equation}\label{eq:1.4}
+ x=A\cos \omega t+B\sin \omega t,
+\end{equation}
+gdje su $A$ i $B$ proizvoljne konstante. Rje\v{s}enja se mogu
+zapisati i u obliku
+\begin{equation}\label{eq:1.4'}
+ x=a\cos (\omega t-\vartheta),
+\end{equation}
+gdje su $(a,\vartheta)$ polarne koordinate od $(A,B)$:
+
+%%\slika %0105, str. 7
+%\stavisliku{eps/SL_05b}
+%\ note{ova slika je ruzna}
+
+\begin{center}
+%\fbox
+{
+\setlength\unitlength{1mm}
+\begin{picture}(100,49)
+\put(0,0){\includegraphics{eps/SL_05b}}
+\put(15,6.5){$ \theta $}
+\put(65,30){ $\D A=\cos \theta$ }
+\put(65,24){ $\D B=\sin \theta$ }
+\end{picture}
+}
+\end{center}
+
+Uz po\v{c}etne uvjete $x(0)=x_0$ i
+$\displaystyle\frac{dx}{dt}(0)=v_0$ imamo jedinstveno rje\v{s}enje
+\begin{equation}\label{eq:1.5}
+ x=x_0\cos \omega t+\frac{v_0}{\omega}\sin \omega t.
+\end{equation}
+Fizi\v{c}ari o\v{c}ekuju da je gibanje \v{c}estice u zadanom polju
+sile potpuno determinirano ako su odre\dj{}eni po\v{c}etni
+polo\v{z}aj i po\v{c}etna brzina \v{c}estice. Jedinstvenost
+rje\v{s}enja \eqref{eq:1.5} pokazuje da je taj zahtjev zadovoljen.
+
+Diferencijalnu jednad\v{z}bu harmonijskog oscilatora mo\v{z}emo
+rije\v{s}iti i na sljede\'{c}i na\v{c}in. Napi\v{s}emo li
+jednadžbu \eqref{eq:1.3} u obliku
+ $$m\frac{d^2x}{dt^2}+m\omega^2x=0$$
+i pomno\v{z}imo je s $\displaystyle\frac{dx}{dt}$, dobit \'{c}emo
+ $$m\frac{dx}{dt}\frac{d^2x}{dt^2}+m\omega^2x\frac{dx}{dt}=0.$$
+Uzmemo li u obzir da je
+ $$\frac{d}{dt}\left(\frac{dx}{dt}\right)^2=2\frac{dx}{dt}\frac{d^2x}{dt^2}\quad \text{ i } \quad
+   \frac{d}{dt}x^2=2x\frac{dx}{dt},$$
+slijedi
+ $$\frac{d}{dt}\left(\frac{1}{2}m\left(\frac{dx}{dt}\right)^2+\frac{1}{2}m\omega^2x^2\right)=0,$$
+tj.
+\begin{equation}\label{eq:1.6}
+ \frac{1}{2}m\left(\frac{dx}{dt}\right)^2+\frac{1}{2}m\omega^2x^2=E,
+\end{equation}
+gdje je $E$ (kao zbroj kvadrata) pozitivna konstanta.
+Jednad\v{z}bu \eqref{eq:1.6}, koju smo izveli iz jednad\v{z}be
+harmonijskog oscilatora \eqref{eq:1.3}, zovemo jednad\v{z}bom
+energije harmonijskog oscilatora\index{diferencijalna jednadžba!energije harmonijskog oscilatora}.
+Naime,
+ $$E_k=\frac{1}{2}mv^2\quad\text{ i }\quad E_p=\frac{1}{2}m\omega^2x^2$$
+jesu kineti\v{c}ka i potencijalna energija harmonijskog
+oscilatora, pa jednadžba \eqref{eq:1.6} zna\v{c}i da se ukupna
+energija harmonijskog oscilatora ne mijenja, $E_k+E_p=E=
+konstanta$. Zapamtimo da se jednad\v{z}ba energije \eqref{eq:1.6}
+izvodi iz Newtonove jednadžbe gibanja \eqref{eq:1.3} mno\v{z}enjem
+sa $\displaystyle\frac{dx}{dt}$ te da se gledano matemati\v{c}ki
+radi o svo\dj{}enju jednad\v{z}be drugog reda (u kojoj se
+pojavljuje druga derivacija) na jednostavniju jednad\v{z}bu prvog
+reda (u kojoj se pojavljuje samo prva derivacija). Jednad\v{z}bu
+prvoga reda \eqref{eq:1.6} lako je rije\v{s}iti. Iz nje slijedi:
+\begin{gather*}
+\left(\frac{dx}{dt}\right)^2=\frac{2E}{m}-\omega^2x^2=\omega^2\left(\frac{2E}{\omega^2m}-x^2\right),\\
+\frac{dx}{dt}=\omega\sqrt{\frac{2E}{\omega^2m}-x^2}, \\
+\frac{dt}{dx}=\frac{1}{\omega}\frac{1}{\sqrt{a^2-x^2}},\quad\text{uz}\quad
+a^2=\frac{2E}{\omega^2m}.
+\end{gather*}
+Dakle,
+\begin{gather*}
+ t=\frac{1}{\omega}\int\frac{dx}{\sqrt{a^2-x^2}}=\frac{1}{\omega}\arcsin\frac{x}{a}+c, \\
+ \omega(t-c)=\arcsin\frac{x}{a}, \\
+\frac{x}{a}=\sin (\omega t-\omega c), \\
+x=a\sin(\omega t-\gamma),
+\end{gather*}
+uz $\gamma =\omega c$ i $\displaystyle a^2=\frac{2E}{\omega ^2m}$.
+Naravno, to je poznato rje\v{s}enje \eqref{eq:1.4'}, uz
+$\displaystyle \gamma=\vartheta-\frac{\pi}{2}$. Uo\v{c}imo da je
+kvadrat amplitude oscilacija $a^2$ proporcionalan energiji
+harmonijskog oscilatora $E$.
+
+Na sli\v{c}an na\v{c}in mogli bismo istra\v{z}iti gibanje
+\v{c}estice pod utjecajem sile, \v{c}iji je iznos proporcionalan
+otklonu od ravnote\v{z}nog polo\v{z}aja $x=0$, a koja je usmjerena
+nasuprot tom polo\v{z}aju.
+
+%\slika %0105b, str. 9
+\stavisliku{eps/IZA_SL_05}
+
+
+Gibanje je opisano jednad\v{z}bom
+ $$m\frac{d^2x}{dt^2}=kx\quad (k>0)$$
+ili, uz uobi\v{c}ajenu pokratu  $\displaystyle \omega
+=\sqrt{\frac{k}{m}}$, jednad\v{z}bom
+\begin{equation}\label{eq:1.7}
+ m\frac{d^2x}{dt^2}-m\omega ^2x=0.
+\end{equation}
+Jednad\v{z}ba \eqref{eq:1.7} razlikuje se od jednad\v{z}be
+harmonijskog oscilatora samo u predznaku uz drugi \v{c}lan i
+mo\v{z}e se rije\v{s}iti na isti na\v{c}in. Mno\v{z}enjem s
+$\displaystyle\frac{dx}{dt}$ dobit \'{c}emo:
+\begin{align}
+\begin{split}\notag
+m\frac{dx}{dt}\frac{d^2x}{dt^2}-m\omega^2x\frac{dx}{dt}&=0,  \\
+\frac{d}{dt}\left(\frac{1}{2}m\left(\frac{dx}{dt}\right)^2-\frac{1}{2}m
+\omega^2x^2\right)&=0,  \\
+\frac{1}{2}m\left(\frac{dx}{dt}\right)^2-\frac{1}{2}m\omega ^2x^2&=E,  \\
+\end{split}
+\end{align}
+\begin{align}
+\begin{split}\label{eq:1.8}
+\left(\frac{dx}{dt}\right)^2&=\frac{2E}{m}+\omega^2x^2=\omega^2\left(
+\frac{2E}{\omega^2m}+x^2\right),  \\
+\frac{dx}{dt}&=\omega \sqrt{\frac{2E}{\omega ^2m}+x^2},  \\
+\frac{dt}{dx}&=\frac{1}{\omega
+}\frac{1}{\sqrt{a^2+x^2}},\quad\text{uz}\quad
+a^2=\frac{2E}{\omega ^2m},  \\
+t&=\frac{1}{\omega }\int\frac{dx}{\sqrt{a^2+x^2}}=\Arsh\frac{x}{a}+c,  \\
+\omega (t-c)&=\Arsh\frac{x}{a},  \\
+\frac{x}{a}&=\sh(\omega t-\omega c),  \\
+x&=a\sh(\omega t-\gamma),\quad\text{uz}\quad \gamma=\omega
+c\quad\text{i}\quad a^2=\frac{2E}{\omega ^2 m}.
+\end{split}
+\end{align}
+
+\item \textbf{Linearizirana jednad\v{z}ba gibanja u to\v{c}ki
+stabilne ravnote\v{z}e}
+\index{linearizirana jednadžba!gibanja u toèki ravnoteže}
+\index{diferencijalna jednadžba!gibanja u toèki ravnoteže (linearizirana)}
+
+Op\'{c}i slu\v{c}aj pravocrtnog gibanja, u polju sile \v{c}iji
+intenzitet ne ovisi o vremenu, matemati\v{c}ki se modelira
+diferencijalnom jednad\v{z}bom
+\begin{equation}\label{eq:1.9}
+m\frac{d^2x}{dt^2}=f(x).
+\end{equation}
+
+Ako funkcija sile $f(x)$ i\v{s}\v{c}ezava u to\v{c}ki $x_0$,
+$f(x_0)=0$, onda tu to\v{c}ku zovemo \textbf{ravnote\v{z}nim
+polo\v{z}ajem}\index{ravnotežni položaj} gibanja. Naime, tada konstantna funkcija $x=x_0$
+zadovoljava jednad\v{z}bu gibanja, pa u takvom polju sile
+\v{c}estica mo\v{z}e mirovati u polo\v{z}aju $x_0$. Ako je k tome
+$f'(x_0)<0$ ($f$ pada u $x_0$), radi se o \textbf{stabilnom
+ravnote\v{z}nom polo\v{z}aju}\index{stabilni ravnotežni položaj}
+ jer je sila pozitivna za $x$ blizu
+$x_0$ i $x<x_0$, dok je negativna za $x$ blizu $x_0$ i $x>x_0$.
+Stoga sila gura \v{c}esticu prema polo\v{z}aju $x_0$, \v{c}im je
+\v{c}estica u blizini tog polo\v{z}aja:
+
+%\slika %0106, str. 10
+%\stavisliku{eps/SL_06}
+\begin{center}
+\includegraphics[width=12cm]{eps/SL_06}
+\end{center}
+
+Ako je $f'(x_0)>0$  ($f$ raste u $x_0$), radi se o
+\textbf{nestabilnom polo\v{z}aju ravnote\v{z}e}\index{nestabilni ravnotežni položaj},
+ jer sila u tom
+slu\v{c}aju gura \v{c}esticu od polo\v{z}aja $x_0$, \v{c}im se ona
+imalo odmakne od tog polo\v{z}aja:
+
+%\slika %0107, str. 11
+%\stavisliku{eps/SL_07}
+\begin{center}
+\includegraphics[width=12cm]{eps/SL_07}
+\end{center}
+
+
+Ove dvije mogu\'{c}nosti lijepo ilustrira \v{c}estica na dnu
+udoline i na vrhu brijega, u polju sile te\v{z}e.
+
+%\slika %0108, str. 11
+\stavisliku{eps/SL_08}
+
+Jednadžbu \eqref{eq:1.9} u op\'{c}em slu\v{c}aju nije lako
+rije\v{s}iti. Aproksimativno se rje\v{s}enje mo\v{z}e na\'{c}i
+tako da funkciju $f(x)$, u ravnote\v{z}nom polo\v{z}aju $x_0$,
+zamijenimo njezinom linearnom aproksimacijom
+$f(x_0)+f'(x_0)(x-x_0)$, tj. njezinim Taylorovim polinomom prvoga
+reda. U ravnote\v{z}nom je polo\v{z}aju $f'(x_0)=0$, pa iz
+jednadžbe \eqref{eq:1.9} dobijamo jednad\v{z}bu
+\begin{equation}\label{eq:1.10}
+ m\frac{d^2x}{dt^2}=f'(x_0)(x-x_0).
+\end{equation}
+koju zovemo linearnom aproksimacijom jednadžbe \eqref{eq:1.9} oko
+ravnote\v{z}nog polo\v{z}aja $x_0$. Ako je $x_0$ polo\v{z}aj
+stabilne ravnote\v{z}e, onda je $f'(x_0)<0$, pa uvr\v{s}tavanjem
+$y=x-x_0$ uz pokratu $k=-f'(x_0)>0$, dobijamo poznatu
+jednad\v{z}bu harmonijskih oscilacija
+ $$m\frac{d^2y}{dt^2}=-ky,\quad k>0.$$
+
+Dakle, u onoj mjeri u kojoj je to\v{c}na linearna aproksimacija
+sile, \v{c}estica harmonijski oscilira oko polo\v{z}aja stabilne
+ravnote\v{z}e, u skladu s rje\v{s}enjem \eqref{eq:1.4}
+linearizirane jednad\v{z}be. Vremenski period jedne linearizirane
+oscilacije iznosi $\displaystyle\frac{2\pi}{\sqrt{-f'(x_0)/m}}$.
+\v{C}estica koja se giba po to\v{c}nom zakonu \eqref{eq:1.9}
+tako\dj{}er oscilira oko polo\v{z}aja stabilne ravnote\v{z}e
+$x_0$, ali s vremenskim periodom koji ovisi o amplitudi oscilacija
+(kao \v{s}to \'{c}emo vidjeti na primjeru njihala). Kako amplitude
+postaju sve manje i te\v{z}e prema nuli, tako i period te\v{z}i
+prema periodu lineariziranih oscilacija.
+
+U slu\v{c}aju da je ravnote\v{z}ni polo\v{z}aj $x_0$ nestabilan,
+tj. $f'(x_0)>0$, uvr\v{s}tavanjem $y=x-x_0$ uz pokratu
+$k=f'(x_0)>0$, dobivamo jednad\v{z}bu
+ $$m\frac{d^2y}{dt^2}=ky,\quad k>0,$$
+\v{c}ije je rje\v{s}enje (usp. \eqref{eq:1.8})
+\begin{equation}\label{eq:1.11}
+ y=x-x_0=a\sh\left(\sqrt{f'(x_0)/m}(t-c)\right).
+\end{equation}
+
+Za ve\'{c}inu po\v{c}etnih uvjeta bit \'{c}e $a\ne 0$ i rješenje
+\eqref{eq:1.11} te\v{z}it \'{c}e k $\pm\infty$, za $t\to\infty$.
+To pokazuje nestabilnost ravnote\v{z}nog polo\v{z}aja $x=x_0$ (tj.
+$y=0$). Dakle, linearizacija u slu\v{c}aju nestabilne
+ravnote\v{z}e nije naro\v{c}ito korisna jer gotovo sva
+rje\v{s}enja \eqref{eq:1.11} na kraju napuste podru\v{c}je oko
+$x_0$ u kojem je linearna aproksimacija valjana.
+
+Ova op\'{c}a razmatranja ilustrirat \'{c}emo na primjeru
+jednostavnog njihala.
+
+\item \textbf{Linearizirana jednad\v{z}ba njihala}
+\index{linearizirana jednadžba!njihala}
+\index{diferencijalna jednadžba!njihala (linearizirana)}
+
+Pretpostavimo da na klatnu duljine $l$ (i zanemarive mase) visi
+\v{c}estica mase $m$. Gibaju\'{c}i se po kru\v{z}nici radijusa
+$l$, \v{c}estica prevaljuje put $s=l\vartheta$ . Tangencijalna
+komponenta sile te\v{z}e, koja jedina utje\v{c}e na gibanje po
+kru\v{z}noj putanji, iznosi $mg\sin\vartheta$, pa iz Newtonovog
+zakona slijedi diferencijalna jednad\v{z}ba njihala
+\begin{equation}\label{eq:1.12}
+ m\frac{d^2s}{dt^2}=ml\frac{d^2\vartheta}{dt^2}=-mg\sin\vartheta
+\end{equation}
+
+%\slika %0109, str. 12.
+\stavisliku{eps/SL_09}
+
+(minus zbog suprotne usmjerenosti tangencijalne komponente i kuta
+$\vartheta$). Funkcija sile $f(\vartheta)=-mg\sin\vartheta$
+odre\dj{}uje ravnote\v{z}ni polo\v{z}aj $\vartheta=0$, jer je
+$f(0)=0$. Radi se o polo\v{z}aju stabilne ravnote\v{z}e jer je
+$f'(0)=-mg<0$. Linearizirana jednad\v{z}ba njihala glasi
+ $$\frac{d^2\vartheta}{dt^2}=-\frac{g}{l}\vartheta,$$
+a njezino je rje\v{s}enje oblika \eqref{eq:1.5}
+ $$\vartheta=\vartheta_0\cos\sqrt{\frac{g}{l}}t+v_0\sqrt{\frac{l}{g}}\sin\sqrt{\frac{g}{l}}t,$$
+gdje je $\vartheta_0$ po\v{c}etni otklon njihala, a $v_0$ njegova
+po\v{c}etna brzina. (Ukoliko je poèetna brzina $v_0=0$, tj.
+ukoliko je klatno slobodno ispu\v{s}teno iz po\v{c}etnog
+polo\v{z}aja $\vartheta=\vartheta_0$, gibanje je opisano funkcijom
+$\displaystyle\vartheta=\vartheta_0\cos\sqrt{\frac{g}{l}}t$.)
+Dakle, vremenski period jednog punog lineariziranog titraja iznosi
+ $$T_0=2\pi\sqrt{\frac{l}{g}}.$$
+
+Gornje jednad\v{z}be za $\vartheta$ i $T_0$ dobro opisuju gibanje
+njihala i periode njihovih oscilacija, ako je otklon od
+ravnote\v{z}nog polo\v{z}aja malen. Stari zidni satovi s klatnom
+imaju male otklone klatna upravo zato da bi periodi oscilacija
+$T$, koji su vremenske jedinice, bili pribli\v{z}no jednaki
+(konstanti $T_0$ dakle i me\dj{}usobno). Ukratko, uz male otklone
+njihalo može poslu\v{z}iti kao dobar mehani\v{c}ki sat.
+
+Primijetimo da funkcija sile $f(\vartheta)=-mg\sin\vartheta$ ima
+jo\v{s} jedan ravnote\v{z}ni polo\v{z}aj $\vartheta=\pi$. Radi se
+o polo\v{z}aju nestabilne ravnote\v{z}e jer je $f'(\pi)=mg>0$.
+Linearizirana jednad\v{z}ba njihala oko nestabilnog polo\v{z}aja
+ravnote\v{z}e na vrhu glasi
+ $$\frac{d^2(\vartheta-\pi)}{dt^2}=\frac{g}{l}(\vartheta-\pi),$$
+a njezina su rje\v{s}enja oblika \eqref{eq:1.11}
+\begin{align*}
+ \vartheta-\pi & = a\sh\sqrt{\frac{g}{l}}(t-c),\quad\text{tj.} \\
+ \vartheta & = \pi+a\sh\sqrt{\frac{g}{l}}(t-c).
+\end{align*}
+
+Za ve\'{c}inu po\v{c}etnih uvjeta bit \'{c}e $a\ne 0$, pa \'{c}e
+njihalo napustiti polo\v{z}aj nestabilne ravnote\v{z}e na vrhu
+($\vartheta=\pi$), odlaze\'{c}i u podru\v{c}je u kojem ova
+aproksimacija nije valjana.
+
+\item \textbf{Jednad\v{z}ba njihala}
+\index{diferencijalna jednadžba!njihala}
+
+Poku\v{s}at \'{c}emo rije\v{s}iti (nelineariziranu) jednad\v{z}bu
+njihala \eqref{eq:1.12}
+ $$m\frac{d^2\vartheta}{dt^2}=-m\frac{g}{l}\sin\vartheta.$$
+
+Primijenit \'{c}emo standardni postupak mno\v{z}enja s
+$\displaystyle\frac{d\vartheta}{dt}$ kojim snizujemo red
+diferencijalne jednad\v{z}be, izvode\'{c}i odgovaraju\'{c}u
+jednad\v{z}bu energije njihala\index{diferencijalna jednadžba!energije njihala} (prvoga reda):
+\begin{gather*}
+m\frac{d\vartheta}{dt}\frac{d^2\vartheta}{dt^2}=-\frac{mg}{l}\sin\vartheta\frac{d\vartheta}{dt}, \\
+\frac{d}{dt}\left(\frac{1}{2}m\left(\frac{d\vartheta}{dt}\right)^2-
+\frac{mg}{l}\cos\vartheta\right)=0, \\
+\frac{1}{2}m\left(\frac{d\vartheta}{dt}\right)^2-\frac{mg}{l}\cos\vartheta=E.
+\end{gather*}
+
+Prvi \v{c}lan lijeve strane kineti\v{c}ka je energija kru\v{z}noga
+gibanja njihala, dok je drugi \v{c}lan njegova potencijalna
+energija. Pretpostavimo li da je njihalo slobodno ispu\v{s}teno iz
+po\v{c}etnog polo\v{z}aja $\vartheta_0$ bez po\v{c}etne brzine,
+slijedi da je
+$\displaystyle\frac{d\vartheta}{dt}(\vartheta_0)=0$, pa je
+$\displaystyle E=-\frac{mg}{l}\cos\vartheta_0$.
+
+Dakle,
+\begin{align*}
+\left(\frac{d\vartheta}{dt}\right)^2 &
+=\frac{2g}{l}(\cos\vartheta-\cos\vartheta_0), \\
+\frac{d\vartheta}{dt} & =
+\pm\sqrt{\frac{2g}{l}}\sqrt{\cos\vartheta-\cos\vartheta_0}, \\
+\frac{dt}{d\vartheta} &
+=\frac{\pm\sqrt{\frac{l}{2g}}}{\sqrt{\cos\vartheta-\cos\vartheta_0}}, \\
+t &
+=\pm\sqrt{\frac{l}{2g}}\int\frac{d\vartheta}{\sqrt{\cos\vartheta-\cos\vartheta_0}}.
+\end{align*}
+
+Neodre\dj{}eni integral podintegralne funkcije
+$(\cos\vartheta-\cos\vartheta_0)^{-\frac{1}{2}}$ nije mogu\'{c}e
+izraziti uz pomo\'{c} elementarnih funkcija, pa \'{c}emo se pri
+izra\v{c}unavanju poslu\v{z}iti beskona\v{c}nim redovima.
+Ograni\v{c}imo se pritom na izra\v{c}unavanje \v{c}etvrtine
+perioda jedne pune oscilacije $T$, koja je jednaka vremenu
+potrebnom da njihalo iz po\v{c}etnog polo\v{z}aja
+$\vartheta=\vartheta_0$ do\dj{}e u ravnote\v{z}ni položaj
+$\vartheta=0$:
+ $$\frac{T}{4}=\sqrt{\frac{l}{2g}}\int_0^{\vartheta_0}\frac{d\vartheta}{\sqrt{\cos\vartheta-\cos
+ \vartheta_0}}.$$
+Iz poznatih identiteta
+\begin{align*}
+ \cos\vartheta & =1-2\sin^2\frac{\vartheta}{2}, \\
+ \cos\vartheta_0 & =1-2\sin^2\frac{\vartheta_0}{2},
+\end{align*}
+slijedi
+ $$\frac{T}{4}=\sqrt{\frac{l}{2g}}\frac{1}{\sqrt{2}}\int^{\vartheta_0}_0\frac{d\vartheta}
+   {\sqrt{\sin^2\frac{\vartheta_0}{2}-\sin^2\frac{\vartheta}{2}}}.$$
+Provedemo li supstituciju
+ $$\sin\frac{\vartheta}{2}=\sin\frac{\vartheta_0}{2}\sin\varphi,$$
+tj.
+ $$\sin\frac{\vartheta}{2}=k\sin\varphi,\quad
+ k=\sin\frac{\vartheta_0}{2},$$
+lako nalazimo da je
+\begin{gather*}
+ \frac{1}{2}\cos\frac{\vartheta}{2}\frac{d\vartheta}{d\varphi}=k\cos\varphi,
+ \\
+ d\vartheta=\frac{2k\cos\varphi}{\cos\frac{\vartheta}{2}}\ d\varphi,
+ \\
+ d\vartheta=\frac{2k\cos\varphi}{\sqrt{1-k^2\sin^2\varphi}}\ d\varphi.
+\end{gather*}
+pa na\v{s} integral postaje
+\begin{align*}
+ \frac{T}{4} &
+ =\sqrt{\frac{l}{2g}}\frac{1}{\sqrt{2}}\int^{\frac{\pi}{2}}_0\frac{1}{\sqrt{k^2-k^2\sin^2\varphi}}
+ \frac{2k\cos\varphi}{\sqrt{1-k^2\sin^2\varphi}}\ d\varphi= \\
+ &
+ =\sqrt{\frac{l}{2g}}\frac{2}{\sqrt{2}}\int^{\frac{\pi}{2}}_0\frac{1}{k\cos\varphi}
+  \frac{k\cos\varphi}{\sqrt{1-k^2\sin^2\varphi}}\ d\varphi= \\
+&
+=\sqrt{\frac{l}{g}}\int_0^{\frac{\pi}{2}}\frac{d\varphi}{\sqrt{1-k^2\sin^2\varphi}},\quad
+k=\sin\frac{\vartheta_0}{2}.
+\end{align*}
+Primjenom Newtonove binomne formule nalazimo
+ $$(1-k^2\sin^2\varphi)^{-\frac{1}{2}}=1+\frac{1}{2}k^2\sin^2\varphi+\frac{1\cdot
+ 3}{2\cdot 4}k^4\sin^4\varphi+\frac{1\cdot 3\cdot 5}{2\cdot 4\cdot
+ 6}k^6\sin^6\varphi+\dots$$
+Taj red konvergira za $k^2\sin^2\varphi<1$, dakle za svaki
+$\varphi\in[0,2\pi]$, jer je $k^2<1$. Integracijom nalazimo:
+%\fxnote{sredi jednadzbu koja izlazi iz stranice}
+\begin{align*}
+ \frac{T}{4} &
+ =\sqrt{\frac{l}{g}}\int_0^{\frac{\pi}{2}}(1-k^2\sin^2\varphi)^{-\frac{1}{2}}\ d\varphi
+ = \\
+  & =\sqrt{\frac{l}{g}}\left[\int_0^{\frac{\pi}{2}}1d\varphi+\int_0^{\frac{\pi}{2}}
+    \frac{1}{2}k^2\sin^2\varphi\  d\varphi+\int_0^{\frac{\pi}{2}}\frac{1\cdot 3}{2\cdot 4}
+    k^4\sin^4\varphi \ d\varphi+\right.\\
+    &\qquad \qquad \left.+\int_0^{\frac{\pi}{2}}\frac{1\cdot 3\cdot 5}{2\cdot 4\cdot 6}
+    k^6\sin^6\varphi \ d\varphi+\dots\right]\\
+  & =\sqrt{\frac{l}{g}}\left[\frac{\pi}{2}+\frac{1}{2}k^2\frac{1}{2}\frac{\pi}{2}+
+   \frac{1\cdot 3}{2\cdot 4}k^2\frac{1\cdot 3}{2\cdot 4}\frac{\pi}{2}+
+   \frac{1\cdot 3\cdot 5}{2\cdot 4\cdot 6}k^2\frac{1\cdot 3\cdot 5}{2\cdot 4\cdot 6}\frac{\pi}{2}+\dots
+   \right],
+\end{align*}
+zato \v{s}to je
+ $$\int_0^{\frac{\pi}{2}}\sin^{2n}\varphi\  d\varphi=\frac{1\cdot 3\cdot\hdots\cdot
+ (2n-1)}{2\cdot 4\cdot\hdots\cdot 2n}\frac{\pi}{2}.$$
+Dakle
+ $$T=2\pi\sqrt{\frac{l}{g}}\left[1+\left(\frac{1}{2}\right)^2k^2+
+ \left(\frac{1\cdot 3}{2\cdot 4}\right)^2k^4+\left(\frac{1\cdot 3\cdot 5}{2\cdot 4\cdot
+ 6}\right)^2k^6+\dots\right].$$
+
+To je to\v{c}na vrijednost vremenskog perioda njihala\index{vremenski
+period njihala},
+ odnosno jedinica vremena zidnog sata s klatnom. Vidimo da ona ovisi o
+$\displaystyle k=\sin\frac{\vartheta_0}{2}$ , tj.~o amplitudi
+njihala $\vartheta_0$. Kako se smanjuje amplituda, smanjuje se i
+jedinica vremena, \v{s}to zna\v{c}i da sat nije savr\v{s}eno
+precizan. Ako je maksimalni otklon njihala $\alpha$, onda je
+njegov maksimalni period upravo gore izraèunati $T$ uz
+$k=\sin\frac{\alpha}{2}$. Minimalni period jest
+grani\v{c}ni period, koji se realizira kada otklon njihala
+te\v{z}i prema nuli, tj.~kada $k$ te\v{z}i prema nuli. On je
+jednak lineariziranom periodu $\displaystyle
+T_0=2\pi\sqrt{\frac{l}{g}}$ . To zna\v{c}i da je razlika
+najve\'{c}e i najmanje jedinice vremena, koju realizira njihalo s
+maksimalnim otklonom $\alpha$, jednaka $T_{\alpha}-T_0$.
+Maksimalna relativna promjena, u odnosu na standardnu
+lineariziranu jedinicu $T_0$, iznosi:
+\begin{align*}
+ \frac{T_{\alpha}-T_0}{T_0} & = \frac{2\pi\sqrt{\frac{l}{g}}
+ \left[1+\left(\frac{1}{2}\right)^2k^2+\left(\frac{1\cdot 3}{2\cdot 4}\right)^2k^4+\dots\right]
+ -2\pi\sqrt{\frac{l}{g}}}{2\pi\sqrt{\frac{l}{g}}}= \\
+ & = \frac{2\pi\sqrt{\frac{l}{g}}
+ \left[\left(\frac{1}{2}\right)^2k^2+\left(\frac{1\cdot 3}{2\cdot 4}\right)^2k^4+
+ \left(\frac{1\cdot 3\cdot 5}{2\cdot 4\cdot 6}\right)^2k^6+\dots\right]
+ }{2\pi\sqrt{\frac{l}{g}}}= \\
+ & = \left(\frac{1}{2}\right)^2k^2+\left(\frac{1\cdot 3}{2\cdot 4}\right)^2k^4+
+ \left(\frac{1\cdot 3\cdot 5}{2\cdot 4\cdot 6}\right)^2k^6+\dots <
+ \\
+ &
+ <\left(\frac{1}{2}\right)^2k^2+\left(\frac{1}{2}\right)^2k^4+\left(\frac{1}{2}\right)^2k^6+\hdots=
+ \frac{\frac{1}{4}k^2}{1-k^2}= \\
+ &
+ =\frac{\frac{1}{4}\sin^2\frac{\alpha}{2}}{1-\sin^2\frac{\alpha}{2}}=
+ \frac{1}{4}\frac{\sin^2\frac{\alpha}{2}}{\cos^2\frac{\alpha}{2}}=\frac{1}{4}\tg^2\frac{\alpha}{2}.
+\end{align*}
+
+Mo\v{z}emo zaklju\v{c}iti da zidni sat s klatnom duljine 2 m, koje
+se odmi\v{c}e od ravnote\v{z}nog polo\v{z}aja za $\pm 4$ cm,
+\v{s}to pribli\v{z}no odgovara vrijednosti
+$\displaystyle\tg\frac{\alpha}{2}=0.01$ (vidi sliku), ima relativnu pogre\v{s}ku koja iznosi
+$\displaystyle\frac{1}{4}\tg^2\frac{\alpha}{2}=\frac{1}{4}0.01^2=\frac{1}{40000}$.
+To zna\v{c}i da je njegova pogre\v{s}ka u toku 1 sata, tj. 3600
+sekundi, manja od $\displaystyle\frac{1}{40000}\cdot
+4000=\frac{1}{10}$ sekunde.
+
+%\slika %slika 0110, str. 18
+\stavisliku{eps/SL_10}
+ $$\tg\frac{\alpha}{2}=\frac{0.02}{2}=0.01$$
+
+\item \textbf{Jednad\v{z}ba gibanja u polju
+sile te\v{z}e (po zadanoj krivulji)}
+\index{diferencijalna jednadžba!gibanja u polju sile teže (po zadanoj \mbox{krivulji})}
+
+Gibanje \v{c}estice njihala po kru\v{z}noj putanji samo je jedan
+posebni slu\v{c}aj gibanja \v{c}estice po zadanoj krivulji u polju
+sile te\v{z}e. Mjerimo li duljinu luka krivulje $s$ tako da je $s>0$ za $x>0$,
+op\'{c}u jednad\v{z}bu gibanja izvodimo ovako:
+\begin{equation}\label{eq:1.13}
+ m\frac{d^2s}{dt^2}=-mg\sin\alpha=-mg\frac{dy}{ds}.
+\end{equation}
+
+%\slika %slika 0111, str. 18
+\stavisliku{eps/SL_11}
+
+Standardnim postupkom izvest \'{c}emo iz jednad\v{z}be \eqref{eq:1.13} odgovaraju\'{c}u jednad\v{z}bu energije:
+\begin{gather*}
+m\frac{ds}{dt}\frac{d^2s}{dt^2}=-mg\frac{dy}{ds}\frac{ds}{dt}=-mg\frac{dy}{dt},
+\\
+\frac{d}{dt}\left(\frac{1}{2}m\left(\frac{ds}{dt}\right)^2+mgy\right)=0,
+\\
+\frac{1}{2}m\left(\frac{ds}{dt}\right)^2+mgy=E.
+\end{gather*}
+Prvi je \v{c}lan kineti\v{c}ka energija dok je drugi \v{c}lan
+potencijalna energija u polju sile te\v{z}e $\vec{g}$.
+Iz jednad\v{z}be energije lako \'{c}emo izra\v{c}unati brzinu
+\v{c}estice, $\displaystyle
+v=\frac{ds}{dt}=\sqrt{\frac{2E}{m}-2gy}$. Ako je \v{c}estica
+ispu\v{s}tena s visine $y_0$ bez po\v{c}etne brzine,
+$\displaystyle\frac{ds}{dt}(y_0)=0$, onda je
+$\displaystyle\frac{E}{m}=gy_0$, pa je
+\begin{equation}\label{eq:1.14}
+ \frac{ds}{dt}=\sqrt{2g}\sqrt{y_0-y}.
+\end{equation}
+
+Primijetimo da brzina \v{c}estice ne ovisi o putanji nego samo o
+visinskoj razlici $y_0-y$. Daljnje rje\v{s}avanje jednadžbe
+\eqref{eq:1.14} ovisi o zadanoj krivulji $y=y(x)$.
+
+U slu\v{c}aju njihala vrijedi $s=l\vartheta$ i $\alpha=\vartheta$,
+pa imamo jednad\v{z}bu njihala \eqref{eq:1.12} kao posebni
+slu\v{c}aj opæe jednadžbe \eqref{eq:1.13}.
+
+\item \textbf{Jednad\v{z}ba tautohrone}
+\index{tautohrona}
+\index{diferencijalna jednadžba!tautohrone}
+
+Njihalo mo\v{z}emo koristiti kao sat zato \v{s}to je jednad\v{z}ba
+gibanja po kru\v{z}noj putanji
+ $$m\frac{d^2s}{dt^2}=-mg\sin\vartheta,$$
+za male $\vartheta$, dobro aproksimirana jednad\v{z}bom
+harmonijskih oscilacija
+ $$m\frac{d^2s}{dt^2}=-m\frac{g}{l}l\vartheta=-m\frac{g}{l}s,$$
+koja ima konstantne vremenske periode, neovisne o amplitudi
+oscilacija. Za razliku od kru\v{z}ne putanje koja ima
+\textbf{pribli\v{z}no} jednake vremenske periode, putanja $y=y(x)$
+imat \'{c}e uistinu jednake periode ako se njena jednad\v{z}ba
+ $$m\frac{d^2s}{dt^2}=-mg\frac{dy}{ds}$$
+to\v{c}no poklapa s jednad\v{z}bom harmonijskog oscilatora
+ $$m\frac{d^2s}{dt^2}=-\omega^2s.$$
+Takva se putanja zove tautohrona (gr\v{c}. "isto vrijeme") i
+usporedbom gornjih jednad\v{z}bi vidimo da je to svaka krivulja
+$y=y(x)$ koja zadovoljava jednad\v{z}bu
+ $$\frac{dy}{ds}=\frac{1}{a}s$$
+za neku pozitivnu konstantu $\displaystyle\frac{1}{a}$. Zbog
+$\displaystyle\left(\frac{dx}{ds}\right)^2+\left(\frac{dy}{ds}\right)^2=1$,
+iz te jednad\v{z}be slijedi i odgovaraju\'{c}a jednadžba za $x$:
+ $$\frac{dx}{ds}=\sqrt{1-\left(\frac{dy}{ds}\right)^2}=\sqrt{1-\frac{s^2}{a^2}}
+   =\frac{1}{a}\sqrt{a^2-s^2}.$$
+Integriramo li jednad\v{z}be za $x$ i $y$ po $s$, dobit \'{c}emo
+\begin{align*}
+x &
+=\frac{1}{a}\int\sqrt{a^2-s^2}ds=\frac{1}{a}\left(\frac{s}{2}\sqrt{a^2-s^2}+
+\frac{a^2}{2}\arcsin\frac{s}{a}\right)+c_1 = \\
+ &
+ =\frac{a}{2}\frac{s}{a}\sqrt{1-\left(\frac{s}{a}\right)^2}+\frac{a}{2}\arcsin\frac{s}{a}+c_1,
+ \\
+ y & = \frac{1}{2a}s^2+c_2.
+\end{align*}
+To su parametarske jednad\v{z}be tautohrone\index{tautohrona} (s parametrom $s$).
+Pre\dj{}emo li na novi parametar $\vartheta$, supstitucijom
+$\displaystyle\frac{s}{a}=\sin\frac{\vartheta}{2}$, dobit \'{c}emo
+\begin{align*}
+x & =
+\frac{a}{2}\sin\frac{\vartheta}{2}\cos\frac{\vartheta}{2}+\frac{a}{2}\frac{\vartheta}{2}+c_1=
+\frac{a}{4}(sin\vartheta+\vartheta)+ c_1,
+\\
+y & =
+\frac{a}{2}\sin^2\frac{\vartheta}{2}+c_2=\frac{a}{4}(1-\cos\vartheta)+c_2,
+\end{align*}
+jer je
+$\displaystyle\sin\frac{\vartheta}{2}\cos\frac{\vartheta}{2}=\frac{\sin\vartheta}{2}$
+i
+$\displaystyle\sin^2\frac{\vartheta}{2}=\frac{1-\cos\vartheta}{2}.$
+
+Uvedemo li pokratu $\displaystyle R=\frac{a}{4}$  i postavimo
+to\v{c}ku s parametrom $\vartheta=0$ u ishodi\v{s}te (tako da je
+$c_1=c_2=0$, vidimo da je tautohrona zapravo cikloida\index{cikloida} (usp. sliku
+\FIXME{pogl 1, str. 21., ref na sl 12}):
+
+$$x=R\vartheta+R\sin\vartheta,\quad y=R-R\cos\vartheta.$$
+
+%\slika %slika 1012, str. 21.
+\stavisliku{eps/SL_12}
+
+
+Dakle, teorijski savr\v{s}en sat realizira se gibanjem \v{c}estice
+po cikloidi. Zanimljiva je Huygensova konstrukcija njihala,
+\v{c}iji se uteg giba to\v{c}no po cikloidi. Uteg pri\v{c}vrstimo
+na kraj uzice duljine $4R$, a nju objesimo o spojnicu dvaju krutih
+cikloida $S$, kao na donjoj slici. Dok se njihalo klati lijevo-desno, uzica \'{c}e se
+priljubljivati uz lijevu i desnu cikloidu. Huygens je pokazao da
+se uteg pritom giba po tre\'{c}oj cikloidi, pa takvo cikloidno
+njihalo\index{cikloidno njihalo} predstavlja teorijski savršen sat.
+
+%\slika %slika 1013, str. 21.
+%\stavisliku{eps/SL_13}
+\begin{center}
+\includegraphics{eps/SL_13}
+\end{center}
+
+\item \textbf{Jednad\v{z}ba brahistohrone}
+\index{brahistohrona}
+\index{diferencijalna jednadžba!brahistohrone}
+
+Pretpostavimo da \v{c}esticu ispustimo u to\v{c}ki $O$
+te da ona pod utjecajem sile teže klizi po zadanoj krivulji
+od toèke $O$ do toèke
+$A$. Kakva mora biti zadana krivulja da èestica
+najbrže stigne od toèke $O$ do
+toèke $A$?
+ Tra\v{z}enu krivulju zovemo brahistohrona\index{brahistohrona}
+ (grè.~``najkra\'{c}e vrijeme'').
+
+%\slika %slika 1014, str. 22.
+\stavisliku{eps/SL_14}
+
+Prva je misao da bi to trebala biti najkra\'{c}a krivulja koja
+spaja $O$ i $A$, dakle du\v{z}ina $OA$. Me\dj{}utim, mi \v{z}elimo
+posti\'{c}i najkra\'{c}e vrijeme, a mogu\'{c}e je da se
+najkra\'{c}e vrijeme ne posti\v{z}e na najkra\'{c}em putu. Naime,
+upotrijebimo li put koji kre\'{c}e iz $O$ strmije od spojnice
+$OA$, \v{c}estica \'{c}e zbog visinske razlike posti\'{c}i
+ve\'{c}u brzinu (usp. \eqref{eq:1.14}) od one na spojnici $OA$,
+barem u po\v{c}etku, pa \'{c}e mo\v{z}da zakrivljeni put
+prije\'{c}i br\v{z}e no kra\'{c}i nezakrivljeni.
+
+Razmotrimo dakle putanju od $O$ do $A$. Odabrali smo koordinatni
+sustav s ishodištem u po\v{c}etnoj to\v{c}ki gibanja $O$ i sa osi
+$y$ u smjeru sile te\v{z}e. Iz \eqref{eq:1.14} slijedi da je
+brzina \v{c}estice u to\v{c}ki s koordinatama $(x,y)$
+\begin{equation}\label{eq:1.15}
+ \frac{ds}{dt}=\sqrt{2g}\sqrt{y}.
+\end{equation}
+jer je $y_0=0$, a $y$ mijenja predznak u odnosu na \eqref{eq:1.14}
+zbog suprotne usmjerenosti osi $y$. To vrijedi za svaku krivulju.
+Što je karakteristika brahistohrone, vremenski najkra\'{c}e
+krivulje? Brzina \v{c}estice mijenja se na svakoj razini $y$ prema
+zakonu \eqref{eq:1.15}. No poznato je (Snellov zakon loma) da
+\v{c}estica koja na odre\dj{}enoj razini promijeni brzinu $v_1$ u
+$v_2$ ide vremenski najkra\'{c}om putanjom ako je
+ $$\frac{\sin\alpha_1}{v_1}=\frac{\sin\alpha_2}{v_2},$$
+
+%\slika %0115, str. 23.
+\stavisliku{eps/SL_15}
+
+tj. ako se omjer $\displaystyle\frac{\sin\alpha}{v}$  ne promijeni
+s promjenom brzine $v$ i kuta $\alpha$. To zna\v{c}i da na
+vremenski najkra\'{c}oj putanji, brahistohroni, vrijedi
+% $$\frac{\sin\alpha}{v}=k,$$
+
+%\slika %0116, str. 23.
+
+\begin{center}
+{
+
+\setlength\unitlength{1mm}
+\begin{picture}(115,44)
+\put(35,0){\includegraphics{eps/SL_16}}
+\put(0,37){ $\D \frac{\sin\alpha}{v}=k,$ }
+
+\end{picture}
+}
+\end{center}
+
+gdje je $k$ neka konstanta. Budu\'{c}i da je
+ $$\sin\alpha=\frac{dx}{ds}\ \text{ i }\ v=\frac{ds}{dt}$$
+slijedi da brahistohrona zadovoljava diferencijalnu jednad\v{z}bu
+ $$\frac{dx}{ds}=k\frac{ds}{dt},\ \text{ tj. }\
+ \frac{1}{\frac{ds}{dx}}=k\frac{ds}{dt}.$$
+Iz \eqref{eq:1.15} i \v{c}injenice da je
+$\displaystyle\frac{ds}{dx}=\sqrt{\frac{dx^2+dy^2}{dx^2}}=
+ \sqrt{1+\left(\frac{dy}{dx}\right)^2}$ slijedi
+ $$\frac{1}{\sqrt{1+\left(\frac{dy}{dx}\right)^2}}=k\sqrt{2g}\sqrt{y},$$
+\v{s}to uz pokratu $\displaystyle K=\frac{1}{2k^2g}$ daje
+ $$\sqrt{1+\left(\frac{dy}{dx}\right)^2}=\sqrt{\frac{K}{y}}.$$
+Rije\v{s}imo li jednad\v{z}bu po $\displaystyle \frac{dx}{dy}$,
+dobit \'{c}emo
+\begin{gather*}
+ 1+\left(\frac{dy}{dx}\right)^2=\frac{K}{y}, \\
+ \frac{dy}{dx}=\sqrt{\frac{K}{y}-1}=\sqrt{\frac{K-y}{y}}
+\end{gather*}
+ili
+$$\frac{dx}{dy}=\frac{\sqrt{y}}{\sqrt{K-y}}.$$
+Integracijom po $y$ lako nalazimo kako $x$ ovisi o $y$:
+ $$x=\int\frac{\sqrt{y}}{\sqrt{K-y}}dy.$$
+Taj \'{c}emo integral najlak\v{s}e rije\v{s}iti supstitucijom
+ $$y=K\sin^2u.$$
+Tada je
+\begin{align*}
+x & =\int\frac{\sqrt{K}\sin u}{\sqrt{K}\sqrt{1-\sin^2 u}}2K\sin
+u\cos u du = \\
+ & =\int 2K\sin^2 udu=\int 2K\frac{1}{2}(1-\cos 2u)du = \\
+ & =K\int (1-\cos 2u)du=\frac{K}{2}(2u-\sin 2u)+c.
+\end{align*}
+Budu\'{c}i da je $x=0$ za $y=0$ (tj. za $u=0$), slijedi da je
+$c=0$, pa je
+ $$x=\frac{K}{2}(2u-\sin 2u),$$
+uz
+ $$y=K\sin^2 u=\frac{K}{2}(1-\cos 2u).$$
+
+To su parametarske jednad\v{z}be tra\v{z}ene krivulje.
+Prije\dj{}emo li na novi parametar $\vartheta=2u$, uz pokratu
+$\displaystyle\frac{K}{2}=R$, vidimo da je brahistohrona zapravo
+cikloida\index{cikloida} (usp. sliku)
+ $$x=R\vartheta-R\sin\vartheta,\quad y=R-R\cos\vartheta.$$
+
+%\slika %1017, str. 25.
+%\stavisliku{eps/SL_17}
+\begin{center}
+  %\includegraphics[width=8cm]{eps/SL_17}
+  \includegraphics{eps/SL_17}
+\end{center}
+
+
+Konstanta $R$ odre\dj{}ena je to\v{c}kom $A$. Naime, ako su $(x_1,
+y_1)$ koordinate od $A$, onda je
+\begin{align*}
+ x_1 & = R(\vartheta_1-\sin\vartheta_1), \\
+ y_1 & =R(1-\cos\vartheta_1)
+\end{align*}
+za neki parametar $\vartheta_1$. Ove dvije jednad\v{z}be
+odre\dj{}uju kako parametar $\vartheta_1$, tako i konstantu $R$.
+
+
+
+
+\end{enumerate}

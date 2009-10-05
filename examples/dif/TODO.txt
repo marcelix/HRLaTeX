@@ -1,0 +1,7 @@
+http://www.adelux.fr/libre/howto/latex-ps-pdf
+	latex <file>.tex && latex <file>.tex
+	dvips -Ppdf -Pcmz -Pamz -G0 <file>.dvi
+	ps2pdf <file>.ps
+	
+	
+Dovrsi fajl.

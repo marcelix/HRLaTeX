@@ -1,0 +1,224 @@
+\title{\mbox{Matematika} za \mbox{informati\v{c}are}}
+\author{Bla\v{z}enka Divjak, Tihomir Hunjak}
+\date{}
+
+
+\sloppy
+%\fussy
+
+\let\mybox\fbox
+\let\mybox\relax
+
+
+
+
+\usepackage[stilovi]{amsthm}
+
+
+
+\newenvironment{rjzad}
+{} {}
+
+\usepackage{enumerate}
+\usepackage{paralist}
+\usepackage{longtable}
+
+
+\newcommand{\chapterwithquote}[2]{
+\chapter{#1}
+\begin{flushright}
+\small \emph{\parbox[t]{25em}{#2}}
+\end{flushright}}
+
+\DeclareMathOperator{\diag}{diag}
+
+\DeclareMathOperator{\modulo}{mod} \DeclareMathOperator{\rad}{rad}
+
+
+
+
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\displaystyle}
+\newcommand{\F}{\mathbf{F}}
+
+
+
+\newtheorem{theorem}{Teorem}[chapter]
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algoritm}
+\newtheorem{axiom}[theorem]{Aksiom}
+\newtheorem{case}{Tip}
+\newtheorem{claim}[theorem]{Tvrdnja}
+\newtheorem{conclusion}[theorem]{Zakljucak}
+\newtheorem{condition}[theorem]{Uvjet}
+\newtheorem{conjecture}[theorem]{Slutnja}
+\newtheorem{corollary}[theorem]{Korolar}
+\newtheorem{criterion}[theorem]{Kriterij}
+\newtheorem{definition}[theorem]{{Definicija}}
+
+
+
+%\newtheorem{problem}{Problem}
+
+
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{notation}[theorem]{Notacija}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Propozicija}
+\newtheorem{remark}[theorem]{Primjedba}
+%\newtheorem{solution}[theorem]{Rjesenje}
+%\newtheorem*{solution}{Rjesenje}
+\newtheorem{summary}[theorem]{Apstrakt}
+
+%\newenvironment{proof}[1][Dokaz]{\noindent \textbf{#1.} }
+%{\hfill \rule{0.5em}{0.5em}\smallskip}
+
+
+\theoremstyle{exercise}
+\newtheorem{project}{Projekt}[chapter]
+\newtheorem{exercise}{Zadatak}[chapter]
+
+%\def\example\null
+
+\theoremstyle{napomena}
+\newtheorem{example}[theorem]{Primjer}
+
+
+
+\renewcommand{\arctan}{\mathop{arctg}\,}
+\DeclareMathOperator{\sign}{sign}
+
+
+
+
+\newenvironment{widepar}{
+\par}
+
+\newenvironment{preface}[1]{
+  \chapter*{#1}
+  \markboth{\MakeUppercase \prefacename}{\MakeUppercase  \prefacename}
+  \addcontentsline{toc}{chapter}{#1}
+  }
+  {}
+
+
+% \graphicspath{{slike/}}
+
+
+
+\newcommand{\stavisliku}[1]{
+\begin{center}
+\includegraphics{#1}
+\end{center}
+}
+
+\newcommand{\stavislikux}{
+\begin{center}
+\textcolor{gray}{\Huge \fbox{\textbf{SLIKA}}}
+\end{center}
+}
+
+%\frenchspacing
+
+
+%\setlength{\paperheight}{22cm}
+%\setlength{\paperheight}{22cm}
+
+
+%\@lowpenalty   51
+%\@medpenalty  151
+%\@highpenalty 301
+\setcounter{topnumber}{5}
+\renewcommand\topfraction{1}
+\setcounter{bottomnumber}{3}
+\renewcommand\bottomfraction{.3}
+\setcounter{totalnumber}{5}
+\renewcommand\textfraction{0}
+\renewcommand\floatpagefraction{.5}
+\setcounter{dbltopnumber}{2}
+\renewcommand\dbltopfraction{.7}
+\renewcommand\dblfloatpagefraction{.5}
+
+
+
+
+
+
+
+
+\newcommand{\plavapozadina}[1]{
+\par
+\colorbox{myblue!30}{
+%\raisebox{3ex}[25pt][0pt]{
+\belowdisplayskip=6pt plus 3pt minus 3pt
+\belowdisplayshortskip=0pt
+\parbox{\linewidth-3\fboxsep-2\fboxrule}{
+#1
+}}
+%}
+}
+
+\newcommand{\denseplavapozadina}[1]{
+\colorbox{myblue!30}{
+%\raisebox{3ex}[25pt][0pt]{
+\belowdisplayskip=6pt plus 3pt minus 3pt
+\belowdisplayshortskip=0pt
+\parbox{\linewidth-3\fboxsep-2\fboxrule}{
+#1
+\hfill}}
+%}
+}
+
+\newcommand{\tamnoplavapozadina}[1]{
+\colorbox{myblue!70}{
+\parbox{\linewidth-3\fboxsep-2\fboxrule}{
+#1
+}}
+}
+
+
+
+\newcommand{\zadacizaponavljanje}
+{ \markboth{Zadaci za ponavljanje}{Zadaci za ponavljanje}
+\addcontentsline{toc}{section}{Zadaci za ponavljanje}
+\tamnoplavapozadina{
+  \textcolor{white}{\textbf{\hfil
+  \vphantom{\large Marcel}
+  \renewcommand{\familydefault}{\sfdefault}
+  \textsf{{\bf Zadaci za ponavljanje} }} }}
+  \par
+  \nobreak
+  %\nopagebreak
+  \smallskip
+}
+
+\newcommand{\projekti}
+{ \markboth{Projekti}{Projekti}
+\addcontentsline{toc}{section}{Projekti}
+\tamnoplavapozadina{
+  \textcolor{white}{\textbf{\hfil
+  \vphantom{\large Marcel}
+  \renewcommand{\familydefault}{\sfdefault}
+  \textsf{{\bf Projekti} }} }}
+  \par
+  \nobreak
+  %\nopagebreak
+  \smallskip
+}
+
+
+\newenvironment{okvir}[1][Naslov okvira]
+{
+\begin{list}{}
+{ \setlength{\topsep}{0.4ex}
+  \setlength{\leftmargin}{0pt} }
+  \centering\item\relax \large\textbf{\textsf{{\MakeUppercase{#1}}}}
+\end{list}}
+{
+}
+

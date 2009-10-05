@@ -1,0 +1,17 @@
+ovdje su sve originalne datoteke koje se iskopiraju na odgovarajuca mjesta u hr-text
+
+
+cp ../../src/hr_* hr-text/usr/share/hr-text/
+
+
+
+fakeroot dpkg -b hr-text
+
+
+dependencies: RECODE
+suggests: tetex, enca
+
+
+debian-binary
+control.tar.gz
+data.tar.gz

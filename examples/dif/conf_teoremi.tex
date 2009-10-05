@@ -1,0 +1,53 @@
+% theorem environments
+
+\usepackage[stilovi]{amsthm}
+
+% ---------------------------------------------------------------
+
+\newtheoremstyle{primjer}
+{12pt}{9pt}%
+{\normalfont}%
+{0em}{\large\sffamily\bfseries}%
+{.}%
+{ }%
+{\thmname{#1} \thmnumber{#2}\thmnote{ \textup{(#3)}}%
+}
+
+
+% ---------------------------------------------------------------
+
+\newtheorem{theorem}{Teorem}[chapter]
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algoritm}
+\newtheorem{axiom}[theorem]{Aksiom}
+\newtheorem{case}{Tip}
+\newtheorem{claim}[theorem]{Tvrdnja}
+\newtheorem{conclusion}[theorem]{Zakljuèak}
+\newtheorem{condition}[theorem]{Uvjet}
+\newtheorem{conjecture}[theorem]{Slutnja}
+\newtheorem{corollary}[theorem]{Korolar}
+\newtheorem{criterion}[theorem]{Kriterij}
+\newtheorem{definition}[theorem]{Definicija}
+
+
+
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{notation}[theorem]{Notacija}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Propozicija}
+\newtheorem{remark}[theorem]{Primjedba}
+%\newtheorem{solution}[theorem]{Rjesenje}
+%\newtheorem*{solution}{Rjesenje}
+\newtheorem{summary}[theorem]{Apstrakt}
+
+\theoremstyle{exercise}
+\newtheorem{exercise}{Zadatak}[chapter]
+
+
+\theoremstyle{napomena}
+
+
+
+\theoremstyle{primjer}
+\newtheorem{innerexample}[theorem]{Primjer}
+\newtheorem{example}[theorem]{Primjer}

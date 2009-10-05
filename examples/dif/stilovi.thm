@@ -1,0 +1,112 @@
+\def\th@teorem{
+  \thm@headfont{\bfseries}
+  \thm@notefont{\bfseries}
+  \thm@preskip\topsep
+  \divide\thm@preskip\tw@
+  \thm@postskip\thm@preskip
+  \itshape
+}
+\def\th@exercise{
+  \thm@headfont{\bfseries}
+  \thm@notefont{\bfseries}
+  \thm@preskip\topsep
+  \divide\thm@preskip\tw@
+  \thm@postskip\thm@preskip
+  \small
+}
+\def\th@napomena{
+  \thm@headfont{\large\sffamily\bfseries}
+  \thm@notefont{\textsf\textbf}
+  \thm@preskip\topsep
+  \divide\thm@preskip\tw@
+  \thm@postskip\thm@preskip
+  \normalfont
+  %\par
+}
+
+\newenvironment{dokaz}[1][Dokaz]{
+\par
+\noindent\hspace{-40pt}
+  \normalfont\bfseries
+  \colorbox{myblue}{\textcolor{white}{\textsf{\textbf{#1}}}}
+  \topsep6\p@\@plus6\p@
+  \trivlist
+  \item[\hskip\labelsep
+    \colorbox{myblue}{\textcolor{white}{#1}}
+    \@addpunct{.}]\normalfont\ignorespaces
+}{
+  \qed\endtrivlist
+}
+
+
+\newenvironment{rj}[1][Rje\v{s}enje]{
+  \par
+  \noindent
+  \normalfont\bfseries
+  \topsep6\p@\@plus6\p@
+  \begin{list}{Rje\v{s}enje}  %\trivlist
+  {
+    \setlength{\leftmargin}{2em}
+    \setlength{\topsep}{0pt}
+  }
+  \item[\hskip\labelsep{\large\textsf{#1}\@addpunct{:}}] 
+  \normalfont\ignorespaces\mbox{}%\\   %\par%\newline%   \\[1ex]
+  % vidi Lentry u companionu
+}{
+  \leavevmode\unskip\qed
+  %\endtrivlist
+  %\ignorespaces
+  \end{list}
+  \par\medskip
+}
+
+\newenvironment{solution}[1][Rje\v{s}enje]{\par
+  \normalfont\bfseries
+  \topsep3\p@\@plus6\p@ \trivlist
+  \item[\hskip\labelsep
+    #1\@addpunct{.}] \small\normalfont\ignorespaces
+}{
+  \qed\endtrivlist
+}
+
+\newenvironment{exm}[1][]{
+\begin{innerexample}[#1]
+  \normalfont\bfseries
+  \topsep0\p@\@plus0\p@
+  \begin{list}{}  %\trivlist
+  {
+    \setlength{\leftmargin}{2em}
+    \setlength{\topsep}{10pt}
+  }
+  \item[] \normalfont\ignorespaces \par
+  % vidi Lentry u companionu
+}
+{
+  %\leavevmode\unskip\qed
+  %\endtrivlist
+  %\ignorespaces
+  \end{list}
+  \end{innerexample}
+}
+
+%\newenvironment{example}[1][]{
+%\setlength{\topsep}{15pt}
+%  \begin{list}{}%
+%  %\trivlist
+%  {
+%    \setlength{\leftmargin}{2em}
+%    \setlength{\labelwidth}{0pt}
+%    \setlength{\topsep}{4pt}
+%    \setlength{\partopsep}{2ex plus 4pt minus 3pt}
+%    \topsep0\p@\@plus0\p@
+%  }
+%  \item[]  \begin{innerexample}[#1]
+%  \ignorespaces
+%}
+%{
+%  %\leavevmode\unskip\qed
+%  \end{innerexample}
+%  %\endtrivlist
+%  %\ignorespaces
+%  \end{list}
+%}

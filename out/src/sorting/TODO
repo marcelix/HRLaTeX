@@ -1,0 +1,8 @@
+napraviti Makefile, i 'install' target
+
+dodati usage() funkciju, version, parsanje argumenata
+- latin2...
+
+
+usage
+	- verbose (na stderr pise koji encoding koristim)

@@ -1,0 +1,96 @@
+\documentclass[a4paper,12pt]{amsart}
+\usepackage[croatian]{babel}
+\usepackage{amssymb,latexsym}
+\theoremstyle{plain}
+\newtheorem{teorem}{Teorem}[section]
+\newtheorem{propozicija}{Propozicija}[section]
+\newtheorem{korolar}{Korolar}[section]
+\newtheorem{lema}{Lema}[section]
+
+\theoremstyle{definition}
+\newtheorem{definicija}{Definicija}[section]
+
+\theoremstyle{remark}
+\newtheorem*{primjedba}{Primjedba}
+
+\begin{document}
+
+\title[kratki naslov]{naslov prvi red\\
+   naslov drugi red}
+
+%------------------autor(i)----------------------------------
+\author{autor1}
+\address{adresa1\\
+         adresa1\\
+         adresa1}
+\email[ime prvog autora(opcijski parametar)]{email adresa prvog autora}
+\urladdr[ime prvog autora(opcijski parametar)]{url web stranice prvog autora}
+\thanks{...} %ako je vi\v{s}e autora naglasiti o kojem se autoru radi
+
+\author{autor2}
+\address{adresa2\\
+         adresa2\\
+         adresa2}
+\email[ime drugog autora(opcijski parametar)]{email adresa drugog autora}
+\urladdr[ime drugog autora(opcijski parametar)]{url web stranice drugog autora}
+\thanks{...} %ako je vi\v{s}e autora naglasiti o kojem se autoru radi
+
+\author{autor3}
+\address{adresa3\\
+         adresa3\\
+         adresa3}
+\email[ime treceg autora(opcijski parametar)]{email adresa treceg autora}
+\urladdr[ime treceg autora(opcijski parametar)]{url web stranice treceg autora}
+\thanks{...} %ako je vi\v{s}e autora naglasiti o kojem se autoru radi
+%-----------------autor(i) kraj------------------------------
+
+\keywords{...}
+\date{unesite datum}
+
+\begin{abstract}
+Kratki uvodni tekst
+\end{abstract}
+
+\maketitle
+
+%--------prva sekcija i njene podsekcije--------------------
+\section{sekcija1}
+neki tekst
+\subsection{podsekcija1}
+neki tekst
+\subsubsection{podpodsekcija1}
+neki tekst
+\paragraph{odlomak}
+neki tekst
+\subparagraph{pododlomak}
+neki tekst
+%-------prva sekcija i njene podsekcije kraj----------------
+
+%--------druga sekcija i njene podsekcije--------------------
+\section{sekcija2}
+neki tekst
+\subsection{podsekcija2}
+neki tekst
+\subsubsection{podpodsekcija2}
+neki tekst
+\paragraph{odlomak}
+neki tekst
+\subparagraph{pododlomak}
+neki tekst
+%-------druga sekcija i njene podsekcije kraj----------------
+
+%i sad dalje sekcija3 i njene podsekcije, pa sekcija4 i tako dalje po potrebi
+
+
+%-----------------------------------------------------------------------------
+%-------------bibliografija---------------------------------------------------
+
+\begin{thebibliography}{99} %ako je manje od 10 referenci stavimo 9 umjesto 99
+\bibitem{oznaka1} referenca1
+\bibitem{oznaka2} referenca2
+\end{thebibliography}
+
+%-------------bibliografija kraj-----------------------------------------------
+%------------------------------------------------------------------------------
+
+\end{document}

@@ -1,0 +1,242 @@
+#!/usr/bin/perl
+# ------------------------------------------------------------------
+#    	sort_hr
+# 	Perl script for Croatian sorting.
+# 
+#	This program is released under GNU GPL license
+# 
+#	Copyright HRLaTeX project, 31.12.2005
+# 	http://www.tug.hr/
+#
+# ------------------------------------------------------------------
+
+
+use integer;
+
+
+# defaults to cp1250
+$set_encoding = \&set_cp1250_encoding;
+
+# BEGIN
+
+	&$set_encoding();
+	
+	@Popis=(); #globalna lista
+	while(<STDIN>) {
+		&ubaci_na_pravo_mjesto($_);
+	}
+	
+	for (@Popis) {
+		print;
+	}
+
+# END
+
+sub set_cp1250_encoding
+{
+	# windows cp1250 encoding
+	$CARON_C = 'È';
+	$CARON_c = 'è';
+	$ACUTE_C = 'Æ';
+	$ACUTE_c = 'æ';
+	$dj      = 'ð';
+	$DJ      = 'Ð';
+	$CARON_s = 'š';
+	$CARON_S = 'Š';
+	$CARON_z = 'ž';
+	$CARON_Z = 'Ž';
+}
+
+sub set_latin2_encoding
+{
+	exit(1);
+	# iso8859-2 alias iso latin2 encoding
+	$CARON_C = 'È';
+	$CARON_c = 'è';
+	$ACUTE_C = 'Æ';
+	$ACUTE_c = 'æ';
+	$dj      = 'ð';
+	$DJ      = 'Ð';
+	$CARON_s = 'š';
+	$CARON_S = 'Š';
+	$CARON_z = 'ž';
+	$CARON_Z = 'Ž';
+}
+
+sub ubaci_na_pravo_mjesto
+{
+	my $element = shift;
+	my $len = $#Popis;
+	
+	#ako je @Popis prazan
+	if ($len == -1) {
+		push @Popis, $element;
+		return;
+	} 
+
+	# -----binarni search & insert --------------------------
+	
+	my $low=0;
+	my $high=$len;
+	my $i = $len/2; #integer division
+
+	while (($i!=$low)&&($i!=$high)) {
+		if (&compare_strings($element, $Popis[$i])<0)
+		{
+			$high = $i;
+		}
+		else 
+		{
+			$low = $i;
+		}
+		$i = ($low + $high)/2;	
+	}
+
+	# ---- tri mogucnosti:   $low, $high ili $high+1
+
+	if (&compare_strings($element, $Popis[$low])<0) {
+		# -x-|---|--- 
+		splice(@Popis, $low, 0, $element);
+		return;
+	}	
+
+	if (&compare_strings($element, $Popis[$high])<0) {
+		# ---|-x-|--- 
+		splice(@Popis, $high, 0, $element);
+		return;
+	}
+
+	# ---|---|-x- 
+	splice(@Popis, $high+1, 0, $element);
+}
+
+
+
+sub compare_strings {
+	my $a = shift;
+	my $b = shift;
+		
+# 	$a =~ tr/a-z/A-Z/;
+# 	$b =~ tr/a-z/A-Z/;
+	
+	my @ach = split //, $a;
+	my @bch = split //, $b;
+	
+	
+	my $minlen;
+
+	if ($#ach < $#bch) {
+		$minlen = $#ach;
+	} else {
+		$minlen = $#bch;
+	}	
+
+	my $i=0;
+	my $j=0;
+	
+	my $t1 = 0; #&hr_ord($i, \@ach);
+	my $t2 = 0; #&hr_ord($j, \@bch);
+
+	while (($t1 == $t2) &&  ($i<=$minlen) && ($j <= $minlen))
+	{
+		$t1 = &hr_ord($i, \@ach);
+		$t2 = &hr_ord($j, \@bch);
+	}
+	
+	return $t1-$t2;
+}
+
+
+sub hr_ord { # $pos, @array
+	my $pos=@_[0];
+	my ($aref)=@_[1];
+	
+ 	@chars = @$aref; # 
+	
+# 	print $#chars." broj elemenata\n";
+
+	my $char = $chars[$pos];
+	$char =~ tr/a-z/A-Z/;
+
+# 	my $letter = $char;
+
+	$pos++;
+	$retval = ord($char);	
+
+
+	if ($retval > 127) {	# "c, 'c, "s, "z
+
+		$_[0]=$pos; # position ide pass-by-reference
+
+# 		ovdje bi (da znam) rel. frekvencije mogao na taj nacin poredati usporedbe.. 
+# 		i ustediti neki sitnis vremena, ali vrlo vjerojatno je zanemarivo.
+
+		if (($char eq $CARON_c)||($char eq $CARON_C))  {
+			return 3*ord('C')+1;
+		}
+		if (($char eq $ACUTE_c)||($char eq $ACUTE_C))  {
+			return 3*ord('C')+2;
+		}
+		
+		if (($char eq $CARON_s)||($char eq $CARON_S))  {
+			return 3*ord('S')+1;
+		}
+		
+		if (($char eq $CARON_z)||($char eq $CARON_Z))  {
+			return 3*ord('Z')+1;
+		}
+
+		if (($char eq $dj)||($char eq $DJ))  {
+			return 3*ord('D')+1;
+		}
+
+		# GRESKA! - ovdje se ne bi smjelo dolaziti
+		# program je naletio na character koji nije
+		# u hrvatskoj abecedi.
+	}
+
+	$retval = 3*$retval;
+# 	print $retval."\n";
+
+	# NJ, LJ
+	if (($char eq 'L')||($char eq 'N')) {
+		# pogledaj da li je sljedeci znak 'j'
+		$maxlen=$#chars;
+		if ($pos <= $maxlen) {
+	
+			$char = $chars[$pos]; #!!! VIDI GORE
+			$char =~ tr/a-z/A-Z/;
+	
+			if ($char eq 'J') {
+			# imas LJ ili NJ, vrati broj.
+				$pos++;
+				$retval++;
+# 				$letter .= $char;
+			
+				$_[0]=$pos; # position ide pass-by-reference
+				return $retval;
+			}
+		}
+	}
+
+	# Dž
+	if ($char eq 'D') {
+		# pogledaj da li je sljedeci znak 'ž'
+		$maxlen=$#chars;
+		if ($pos <= $maxlen) {
+	
+			$char = $chars[$pos]; #!!! VIDI GORE
+	
+			if (($char eq 'ž')||($char eq 'Ž')) {
+				# imas Dž ili DŽ
+				$pos++;
+				$retval++;
+# 				$letter .= $char;
+			}
+		}
+	}
+
+# 	print "\n $letter \n";
+	$_[0]=$pos; # position ide pass-by-reference
+	return $retval;
+}

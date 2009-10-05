@@ -1,0 +1,21 @@
+[Config]
+Relative path=1
+Compilator.SaveAll=0
+Compilator.Capture=0
+Compilator.HideOutput=0
+DefaultCPIndex=0
+LogtoEnd=1
+DontOpen=0
+FileFormat=0
+[Project tree]
+pspad-projekt
+	+Folder
+		hrlatex.installer.nsi
+[Open project files]
+0=hrlatex.installer.nsi
+[Selected Project Files]
+Main=hrlatex.installer.nsi
+Selected=hrlatex.installer.nsi
+[hrlatex.installer.nsi]
+TopLine=1
+Caret=18,18

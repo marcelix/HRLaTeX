@@ -1,0 +1,69 @@
+%Napomena: linkovi i animacije kod prijelaza sa slajda na slajd funkcioniraju samo u PDF-u.
+\documentclass[%
+%a4paper,
+fyma,pdf,colorBG,slideColor]{prosper}
+
+
+% \hypersetup{pdfpagemode=FullScreen}%
+
+
+%
+\usepackage[croatian]{babel}%
+\usepackage{amsmath}%
+\usepackage{graphicx}%
+%
+
+
+
+\title{Moja nova \LaTeX prezentacija}
+	\subtitle{ podnaslov }
+	\author{Ivan Ivanovi\'c, Petar Petrovi\'c}
+	\email{ime1@tug.hr, ime2@tug.hr}
+	\institution{\href{http://www.foi.hr/}{Moja institucija}}
+
+%
+%  kod prezentacija su novost prijelazi (transitions). to
+%  treba protumaciti 
+%
+
+\begin{document}
+\maketitle
+
+\begin{slide}%[Box]
+{Apsolutna vrijednost}
+Definiramo funkciju $|\ \ |:\mathbb{R}\rightarrow \mathbb{R}$ sa
+$$
+|x|=\begin{cases}
+\hphantom{-} x,  & \text{ako je } x\geqslant 0\\
+            -x,  & \text{ako je } x<0
+\end{cases}
+$$
+koju zovemo {\red apsolutna vrijednost}. Kliknite: 
+\hyperlink{RAVNINA}{\blue ravnina}. \hypertarget{APS}{}
+\end{slide}
+
+
+
+\overlays{5}{
+\begin{slide}[Box]{Svojstva apsolutne vrijednosti}
+\untilSlide{3}{Apsolutna vrijednost ima sljede\'ca svojstva:}
+\begin{itemstep}
+\item $|x|\geqslant 0$
+\item $|x|=0\Leftrightarrow x=0$
+\item $|xy|=|x||y|$
+\item $\big|\frac{x}{y}\big|=\frac{|x|}{|y|}$
+\item $|x+y|\leqslant |x|+|y|$
+\end{itemstep}
+\onlySlide{5}{za sve $x,y\in\mathbb{R}$}
+\end{slide}
+}
+
+
+
+
+\begin{slide}[Box]{Ravnina}
+$\Pi\ldots T_0(x_0,y_0,z_0),\ \vec{a}=(a_x,a_y,a_z),\ \vec{b}=(b_x,b_y,b_z)$\\[3pt]
+\hypertarget{RAVNINA}  Kliknite: \hyperlink{APS}{\blue apsolutna vrijednost}
+\end{slide}
+
+\end{document}

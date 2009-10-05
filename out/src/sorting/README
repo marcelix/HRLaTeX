@@ -1,0 +1,15 @@
+Koristite kao 'filter' program, npr.
+
+cat filename | perl sort_hr 
+
+
+
+
+
+INSTALL
+
+1. Na *nix-ima
+   stavite link na 'sort_hr' u /usr/local/bin. Napravite 'chmod +x sort_hr'
+
+2. WIN 
+   preporucam instalirati cygwin ili ActiveState perl.

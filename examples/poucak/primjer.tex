@@ -1,0 +1,323 @@
+\documentclass{ppclanak}
+
+
+\begin{document}
+
+
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\autortoc{Zvonimir \v{S}iki\'{c}}%
+\clanak{Zvonimir \v{S}iki\'{c}}{Rje\v{s}enja pet zadataka iz
+vjerojatnosti}
+
+U Pou\v{c}ku br....\fixme{referenca} objavili smo 5 zadataka iz
+vjerojatnosti koje ste, nadamo se, uspje\v{s}no rije\v{s}ili.
+Ovdje nudimo na\v{s}a rje\v{s}enja u koja smo upleli dosta
+zanimljive matematike (geometrijski red, Eulerovu konstantu
+$\gamma$, beskona\v{c}no protegnutu povr\v{s}inu Nikole Oresma,
+razvoj od $e^{-x}$ u red potencija itd.~). Ukoliko su va\v{s}a
+rje\v{s}enja zanimljiva i bitno razli\v{c}ita, javite nam.
+
+\begin{enumerate}
+\item Ve\'{c}ina ljudi nekako osje\'{c}a da je odgovor 6. To je
+jedan od rijetkih slu\v{c}ajeva u kojima nas vjerojatnosni
+osje\'{c}aj ne vara.
+
+Mi \'{c}emo dokazati ne\v{s}to op\'{c}enitiji rezultat.
+Pretpostavimo da je vjerojatnost \v{z}eljenog ishoda nekog
+eksperimenta $p$. Tada ne\v{z}eljeni ishod ima vjerojatnost
+$q=1-p$. Vjerojatnost da se \v{z}eljeni ishod polu\v{c}i tek u
+$n$-tom ponavljanju me\dj usobno nezavisnih eksperimenata je
+$P_n=pq^{n-1}$ ($n-1$ puta mora se zbiti ne\v{z}eljeni ishod
+\v{c}ija je vjerojatnost $q$, a zatim se jedanput mora zbiti
+\v{z}eljeni ishod \v{c}ija je vjerojatnost $p$). O\v{c}ekivana
+vrijednost potrebnog broja poku\v{s}aja zato je
+\[ E= 1P_1 +  2P_2 + \ldots =\sum _{n=1}^{\infty} nP_n= p + 2pq + 3pq^2 + \ldots = \sum _{n=1}^{\infty}npq^{n-1} .\]
+
+O\v{c}ekivanu vrijednost $E$ mo\v{z}emo izra\v{c}unati metodom
+kojom se obi\v{c}no ra\v{c}una suma geometrijskog reda:
+\begin{align*}
+E =& p + 2pq + 3pq^2 + 4pq^3 + 5pq^4 + \ldots\\
+qE =& \;\;\;\;\;\;\;\; pq + 2pq^2 + 3pq^3 + 4pq^4 + \ldots\\
+E - qE=& p + \;\: pq + \;\: pq^2 + \;\: pq^3 + \;\: pq^4 + \ldots
+\end{align*}
+\fixme{Kakva je ovo formula?}
+
+% \begin{align*}
+% E =& p &+& 2pq &+& 3pq^2 &+& 4pq^3 &+& 5pq^4 &+& \ldots\\
+% qE =& &pq &+& 2pq^2 &+& 3pq^3 &+& 4pq^4 &+& \ldots \\
+% E - qE=& p &+& pq &+& pq^2 &+& pq^3 &+& pq^4 &+& \ldots
+% \end{align*}
+Primjenom formule za sumu geometrijskog reda sada lako nalazimo:
+\[ E(1-q)=p(1+q +q^2 +q^3 + q^4 + \ldots) = \frac{p}{1-q} = \frac{p}{p}=1 . \]
+Dakle, $E=1/(1-q)=1/p$. To zna\v{c}i da, u prosjeku, eksperiment
+moramo ponoviti $1/p$ puta da bismo do\v{s}li do \v{z}eljenog
+ishoda. Ako je $p=1/6$, kao u na\v{s}em zadatku, eksperiment
+trebamo provjeriti prosje\v{c}no $6$ puta.
+
+Isti problem mo\v{z}emo rije\v{s}iti i bez ra\v{c}unanja
+beskona\v{c}nih suma. Uo\v{c}imo da prvi u nizu eksperimenata
+mo\v{z}e dati ne\v{z}eljeni ishod (s vjerojatno\v{s}\'{c}u $q$)
+ili \v{z}eljeni ishod (s vjerojatno\v{s}\'{c}u $p$). U prvom
+slu\v{c}aju kre\'{c}emo ispo\v{c}etka, tj.~o\v{c}ekivani broj
+eksperimenata do \v{z}eljenog ishoda sada je $1+E$. U drugom
+slu\v{c}aju do\v{s}li smo do \v{z}eljenog ishoda,
+tj.~o\v{c}ekivani broj eksperimenata do \v{z}eljenog ishoda je 1.
+Sada je
+\[ E=(1+E)q +1p,\]
+odakle odmah slijedi
+\[ E(1-q)= q+ p =1, \;\;\;\; E=\frac{1}{1-q} = \frac{1}{p}.\]
+
+\item U prvoj kutiji sigurno \'{c}ete na\'{c}i jedan broj.
+Vjerojatnost da u sljede\'{c}oj kutiji na\dj ete novi broj iznosi
+$4/5$. Prema rje\v{s}enju prethodnog zadatka, prosje\v{c}no
+trebate kupiti $1/(4/5)=5/4$ kutije da bi se to desilo.
+Vjerojatnost da u sljede\'{c}oj kutiji na\dj ete novi broj je
+$3/5$ i u prosjeku trebate kupiti $1/(3/5)=5/3$ kutija da bi se to
+desilo. Zadnja dva broja, u prosjeku, zahtijevaju kupnju
+$1/(2/5)=5/2$ i $1/(1/5)=5$ kutija. Ukupan (prosje\v{c}ni) broj
+kutija koje trebate kupiti je
+\[ 1 + \frac{5}{4} + \frac{5}{3} + \frac{5}{2} + 5= 5\left(\frac{1}{5} + \frac{1}{4} + \frac{1}{3} +\frac{1}{2} + \frac{1}{1}\right)\approx 11.4 .\]
+Kada bi DEX u svojoj nagradnoj igri koristio $n$ brojeva,
+prosje\v{c}an broj kutija koji biste trebali kupiti bio bi
+\[ n\left(1 + \frac{1}{2} +\frac{1}{3}+\ldots + \frac{1}{n}\right).\]
+Tu vrijednost mo\v{z}emo lako izra\v{c}unati koriste\'{c}i se
+aproksimacijom
+\[ H_n= 1 +\frac{1}{2} +\frac{1}{3}+\ldots + \frac{1}{n} \approx \ln n + \gamma +\frac{1}{2n},\]
+gdje je $\gamma$ slavna Eulerova konstanta,
+$\gamma=0.577218\ldots$.
+
+Na primjer, za $n=5$ nalazimo
+\[ 5\left(1 + \frac{1}{2} +\frac{1}{3}+\frac{1}{4} + \frac{1}{5}\right)\approx 5\ln 5 +5\gamma +\frac{1}{2}\approx 11.4 \]
+\v{s}to je, na jednu decimalu, ista vrijednost koju dobijemo i
+direktnim ra\v{c}unanjem vrijednosti $5(1+1/2+\ldots +1/5)$.
+
+Objasnit \'{c}emo kako mo\v{z}emo do\'{c}i do te aproksimacije, i
+do same konstante $\gamma$. Krenimo od iznosa povr\v{s}ina na
+sl......\fixme{referenca na sl.1, ubacit sl. 1...}
+
+Ukupna povr\v{s}ina nezatamnjenih pravokutnika, \v{c}ije se
+osnovice prote\v{z}u od 0 do $n$, ima iznos
+\[ H_n= 1 +\frac{1}{2} +\frac{1}{3}+\ldots + \frac{1}{n}.\]
+Isti iznos ima i ukupna povr\v{s}ina pravokutnika sa zatamnjenim
+vrhovima, \v{c}ije se osnovice prote\v{z}u od 1 do $n+1$.
+Povr\v{s}ina od osi $x$ do grafa $y=1/x$, nad intervalom $[1,n]$,
+iznosi $\ln n$. Odavde, uz pokrate $\overline{\delta} _n=\delta _1
++\delta _ 2 + \ldots + \delta _{n-1}$ i $\overline{\gamma}
+_n=\gamma _1 +\gamma _ 2 + \ldots + \gamma _{n-1}$, lako slijedi
+(v.~sl.~ \fixme{ref na sliku 1})
+\begin{equation}\label{Eq1}
+H_n= 1 +\frac{1}{2} +\frac{1}{3}+\ldots + \frac{1}{n}= \ln{(n+1)}
+- (\delta _1 +\delta _ 2 + \ldots + \delta _{n-1})= \ln{(n+1)} -
+\overline{\delta} _{n},
+\end{equation}
+\begin{equation}\label{Eq2}
+H_n= 1 +\frac{1}{2} +\frac{1}{3}+\ldots + \frac{1}{n}= \ln{(n+1)}
++ (\gamma _1 +\gamma _ 2 + \ldots + \gamma _{n})= \ln{(n+1)} +
+\overline{\gamma} _{n+1}.
+\end{equation}
+Prika\v{z}emo li sve povr\v{s}ine $\gamma _1, \gamma _2,\ldots ;
+\delta _1, \delta _2 ,\ldots$ u $1\times 1$ pravokutniku
+(v.~sl.~\fixme{referenca na sliku 2} lako \'{c}emo se uvjeriti da
+vrijede sljede\'{c}e tvrdnje: \fixme{ubacit sliku 2}
+\begin{equation}\label{Eq3}
+\sum _{n=1}^{\infty} \gamma _n = \lim _{n \rightarrow\infty}
+{\overline{\gamma} _n} =\gamma > \frac{1}{2}, \;\;\;\; \sum
+_{n=1}^{\infty} \delta _n = \lim _{n \rightarrow\infty}
+{\overline{\delta} _n} =\delta < \frac{1}{2}, \;\;\;\; \gamma +
+\delta = 1
+\end{equation}
+
+\begin{equation}\label{Eq4}
+(\gamma -\overline\gamma _n ) + (\delta - \overline\delta _ n) =
+\frac{1}{n}, \;\;\;\; \delta - \overline\delta _n
+\approx\frac{1}{2n} \approx\gamma -\gamma _n
+\end{equation}
+
+Iz (\ref{Eq1}) i (\ref{Eq4}) sada lako slijedi
+\begin{equation*}
+H_n= 1+ \ln n -\overline\delta _n = 1+ \ln n + (\delta -\delta _n)
+-\delta = \ln n + \gamma + (\delta - \delta _n)\approx \ln n +
+\gamma + \frac{1}{2n} ,
+\end{equation*}
+\v{s}to je na\v{s}a aproksimacija. Osim toga, iz (\ref{Eq2}) i
+(\ref{Eq4}) slijedi:
+
+\begin{equation*}
+\begin{split}
+H_n &=\ln{(n+1)} +\overline\gamma _{n+1} = 1+ \ln{(n+1)}
++\overline\gamma _{n+1} -\gamma + \gamma \approx \ln{(n+1)} +
+\gamma
+-\\
+& - \frac{1}{2(n+1)}\approx \ln{n} + \frac{1}{n+1} + \gamma -
+\frac{1}{2(n+1)} = \ln n +\gamma -\frac{1}{2(n+1)}.
+\end{split}
+\end{equation*}
+
+Naime, $\ln{(n+1)} -\ln n=1/(n+1) +\delta _n \approx 1/(n+1)$,
+\v{s}to se lako vidi na sl.~\fixme{ref na sliku 3} \fixme{anpak
+slika tri}
+
+Sve u svemu, imamo sljede\'{c}u procjenu:
+\[ \ln n +\gamma - \frac{1}{2(n+1)}<H_n<\ln n +\gamma +\frac{1}{2n} .\]
+
+\item Vjerojatnost pisma je $1/2$. Vjerojatnost 2 pisma u niza je
+$1/4$. Vjerojatnost 3 pisma u nizu je $1/8$. Vjerojatnost 4 pisma
+u nizu je $1/16$. I tako dalje. Dakle, vjerojatnost bloka duljine
+$n$ je $1/2^n$. Slijedi da je prosje\v{c}na duljina bloka
+\[D=\frac{1}{2}\cdot 1 + \frac{1}{4}\cdot 2 + \frac{1}{8}\cdot 3 +\ldots +\frac{1}{2^n}\cdot n + \ldots\]
+
+Ovaj beskona\v{c}ni zbroj mo\v{z}emo izra\v{c}unati na razne
+na\v{c}ine. Pokazat \'{c}emo kako ga je (u sasvim drugom
+kontekstu) izra\v{c}unao Nikola Oresme u 14.~st. On je konstruirao
+sljede\'{c}u povr\v{s}inu koja predstavlja tu sumu: \fixme{nabac,
+Marc, sliku4}
+
+Zatim je tu povr\v{s}inu preslo\v{z}io na sljede\'{c}i na\v{c}in:
+\fixme{obrni, deder, Marc -slika 5}
+
+Dakle, $D=2$, tj.~prosje\v{c}na duljina bloka pisama je 2.
+
+I ovdje mo\v{z}emo zaobi\'{c}i beskona\v{c}na zbrajanja. Zapitajmo
+se na koliko promjena (iz glave u pismo ili iz pisma u glavu)
+prosje\v{c}no nailazimo u nizu od $n$ bacanja nov\v{c}i\'{c}a.
+Budu\'{c}i da je vjerojatnost promjene $1/2$, prosje\v{c}no
+nailazimo na $n/2$ promjena. To zna\v{c}i da je prosje\v{c}na
+duljina bloka 2. Uistinu jednostavnije rje\v{s}enje.
+
+\item Ve\'{c}ina ljudi nekako osje\'{c}a da je vjerojatnost ista u
+svim trima slu\v{c}ajima. (Prosje\v{c}an broj \v{s}estica na
+\v{s}est ba\v{c}enih kocki je 1, na 12 je 2, na 18 je 3, a
+$1:6=2:12=3:18$.) Na\v{z}alost, to je jedan od \v{c}estih
+slu\v{c}ajeva kad nas vjeroajatnosni osje\'{c}aj vara. (Prosjeci i
+vjerojatnost nisu isto). Zaboravimo zato osje\'{c}aje i krenimo
+ra\v{c}unati. Vjerojatnost od $x$ \v{s}estica u $n$ bacanja je
+\[\binom{n}{x}\left(\frac{1}{6}\right)^x \left(\frac{5}{6}\right) ^{n-x} \;\;\;\; x=0,1,\ldots ,n \]
+Kada bacimo $6n$ kocaka vjerojatnost od $n$ ili vi\v{s}e
+\v{s}estica je
+\[ \sum _{x=n}^{6n} \binom{n}{x}\left(\frac{1}{6}\right)^x\left(\frac{5}{6}\right)^{n-x}\]
+
+Newton je izra\v{c}unao ove vrijednosti "ru\v{c}no", a mi se danas
+mo\v{z}emo poslu\v{z}iti tablicama kumulativne binomne
+distribucije, ili ra\v{c}unalnim paketima koji ih sadr\v{z}e, i
+dobit \'{c}emo sljede\'{c}e vrijednosti:
+
+\begin{center}
+\begin{tabular}{c|c|c}
+$n$ & $6n$ & $P(\geq n$ \v{s}estica$)$\\
+\hline 1 & 6 & 0.665\\
+2 & 12 & 0.619 \\
+3 & 18 & 0.597 \\
+4 & 24 & 0.584 \\
+5 & 30 & 0.576 \\
+\vdots & \vdots & \vdots \\
+100 & 600 & 0.517
+\end{tabular}
+\end{center}
+
+Dakle, najvjerojatnija je barem 1 \v{s}estica u 6 bacanja, a
+najmanje vjerojatne su barem 3 \v{s}estice u 18 bacanja. To je
+bilo i Newtonovo rje\v{s}enje. Samuel Peppys je doznao na \v{s}to
+se treba kladiti.
+
+\item Ve\'{c}ina ljudi ima osje\'{c}aj da je u skupini
+veli\v{c}ine \v{s}kolskog razreda vjerojatnost podudarnog ro\dj
+endana puno manja od $50\%$. I to je jedan od \v{c}estih
+slu\v{c}ajeva lo\v{s}eg osje\'{c}aja za vjerojatnost. Naime, u
+skupini te veli\v{c}ine podudarnost je oko $70\%$. Okrenimo se
+opet ra\v{c}unu. Neka je $N=365$ broj jednako vjerojatnih dana
+(zanemarit \'{c}emo prijestupne godine), a $s$ broj ljudi u
+promatranoj skupini. Izra\v{c}unajmo vjerojatnost svih da svih $s$
+ljudi ima me\dj usobno razli\v{c}ite ro\dj endane.
+
+Ro\dj endan prvoga od $s$ ljudi mo\v{z}e biti bilo kojeg od $N$
+dana. Drugi mora biti razli\v{c}it, pa zato mo\v{z}e tek biti bilo
+koji od preostalih $N-1$ dana. Tre\'{c}i mo\v{z}e biti bilo koji
+od preostalih $N-2$, itd., do preostalih $N-s+1$ dana. Dakle,
+ukupan broj na\v{c}ina na koji se mogu realizirati svi me\dj
+usobno razli\v{c}iti ro\dj endani je
+\[N(N-1)(N-2)\ldots (N-s+1)=\frac{N!}{(N-s)!}.\]
+
+S druge strane, ukupan broj na\v{c}ina na koji se mogu realizirati
+svi mogu\'{c}i ro\dj endani je  $N\cdot N\cdot N\cdot \ldots \cdot
+N=N^s$.
+
+Odavde slijedi da vjerojatnost svih me\dj usobno razli\v{c}itih
+ro\dj endana iznosi
+\[\frac{N}{N}\frac{N-1}{N}\frac{N-2}{N}\ldots \frac{N-s+1}{N}=\frac{N!}{(N-s)! N^s} \]
+
+Komplementarna vjerojatnost,
+\[P_s=1-\frac{N!}{(N-s)!N^s} ,\]
+je vjerojatnost da skupina od $s$ ljudi ima barem jedan podudarni
+ro\dj endan.U sljede\'{c}oj tablici dani su iznosi te
+vjerojatnosti za $N=365$ i neke $s$.
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline $s$ & 5& 10 & 20 & 23 & 30 & 40 & 60\\
+\hline $P_s$ & 0.027 & 0.117 & 0.411 & 0.507 & 0.706 & 0.891 &
+0.994\\
+\hline
+\end{tabular}
+\end{center}
+
+Vidimo da je vjerojatnost podudarnog ro\dj endana ve\'{c}a od
+$50\%$ ve\'{c} u skupini od 23 \v{c}ovjeka. U skupini od 60 ljudi
+podudaran ro\dj endan gotovo je siguran.
+
+Najte\v{z}i problem u gornjemu izvodu je ra\v{c}unanje vrijednosti
+$P_s$. Naime, $365!$, $(365-23)!$ i $365^{23}$ ogromni su brojevi
+koji zahtijevaju ogromne ra\v{c}une. Zato te ra\v{c}une ovdje
+nismo ni uveli, nego smo (u tablici) dali samo njihove kona\v{c}ne
+rezultate.
+
+Puno je lak\v{s}e provesti pribli\v{z}ne ra\v{c}une, poput
+sljede\'{c}eg koji se koristi dobro poznatom aproksimacijom:
+\[e^{-x}=1-x +\frac{x^2}{2!}-\frac{x^3}{3!}+\frac{x^4}{4!}-\ldots \approx 1-x .\]
+
+Ta je aproksimacija dobra za male vrijednosti $x$ i obi\v{c}no se
+koristi tako da desnom stranom $1-x$ aproksimiramo lijevu stranu
+$e^{-x}$. Mi \'{c}emo je koristiti u obrnutom smjeru.
+
+\begin{equation*}
+\begin{split}
+\frac{N!}{(N-s)!N^s} &=\frac{N}{N}\frac{N-1}{N}\frac{N-2}{N}\ldots
+\frac{N-s+1}{N}=\\
+&=\Bigl(1-\frac{1}{N}\Bigr)\Bigl(1-\frac{2}{N}\Bigr)\ldots\Bigl(1-\frac{s-1}{N}\Bigr)\approx\\
+& \approx e^{-\frac{1}{N}}e^{-\frac{2}{N}}\ldots
+e^{-\frac{s-1}{N}}=e^{-\frac{1+2+\ldots +(s-1)}{N}}=\\
+&= e^{-\frac{s(s-1)}{2N}}
+\end{split}
+\end{equation*}
+
+Uo\v{c}imo da je ta aproksimacija (zbog $e^{-x}>1-x$) ve\'{c}a od
+tra\v{z}ene vrijednosti. Sada lako zaklju\v{c}ujemo da je
+\[P_s=1-\frac{N!}{(N-s)!N^s}\approx 1-e^{-\frac{s(s-1)}{2N}}\]
+
+i da je ta aproksimacija manja od tra\v{z}ene vrijednosti.
+\v{Z}elimo li na\'{c}i $s$ za koji je $P_s>0.5$, valja nam
+rije\v{s}iti jednad\v{z}bu
+\[1-e^{-\frac{s(s-1)}{2\cdot 365}}=0.5, \;\;\; e^{-\frac{s(s-1)}{830}}=0.5, \;\;\; \frac{-s(s-1)}{830}=\ln{0.5},\]
+\[s^2 -s + 830 \ln{0.5}=0.\]
+
+Ta kvadratna jednad\v{z}ba ima pozitivno rje\v{s}enje $24<s<25$.
+Dakle, za $s=25$ sigurno vrijedi $P_s>0.5$. S obzirom na to da su
+na\v{s}e aproksimacije bile manje od tra\v{z}ene vrijednosti,
+mo\v{z}da je $P_s >0.5$ i za $s=23$ ili \v{c}ak $s=22$. To ovaj
+ra\v{c}un s $e^{-x}$ ne mo\v{z}e odlu\v{c}iti. Me\dj utim,
+to\v{c}niji rezultati pokazuju da je $s=23$ prvi $s$ za koji je
+$P_s>0.5$.
+
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+{\scriptsize \listoffixmes }
+
+
+\end{document}

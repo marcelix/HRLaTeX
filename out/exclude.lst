@@ -1,0 +1,14 @@
+*.svn/*
+exclude* 
+tmp/*
+Makefile
+*unizg.eps
+.svn
+*.log
+*.aux 
+*.backup
+*~
+*.dvi 
+*.ps
+*.tar.bz2
+*.zip

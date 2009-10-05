@@ -1,0 +1,65 @@
+\def\th@teorem{
+  \thm@headfont{\bfseries}
+  \thm@notefont{\bfseries}
+  \thm@preskip\topsep
+  \divide\thm@preskip\tw@
+  \thm@postskip\thm@preskip
+  \itshape
+}
+\def\th@exercise{
+  \thm@headfont{\bfseries}
+  \thm@notefont{\bfseries}
+  \thm@preskip\topsep
+  \divide\thm@preskip\tw@
+  \thm@postskip\thm@preskip
+  \small
+}
+\def\th@napomena{
+  \thm@headfont{\bfseries}
+  \thm@notefont{\bfseries}
+  \thm@preskip\topsep
+  \divide\thm@preskip\tw@
+  \thm@postskip\thm@preskip
+  \normalfont
+}
+\newenvironment{dokaz}[1][Dokaz]{
+\par
+\noindent\hspace{-40pt}
+  \normalfont\bfseries
+  \colorbox{myblue}{\textcolor{white}{\textsf{\textbf{#1}}}}
+  \topsep6\p@\@plus6\p@ 
+  \trivlist
+  \item[\hskip\labelsep
+    \colorbox{myblue}{\textcolor{white}{#1}}
+    \@addpunct{.}]\normalfont\ignorespaces
+}{
+  \qed\endtrivlist
+}
+\newenvironment{rj}[1][Rje\v{s}enje]{\par
+\noindent
+  \normalfont\bfseries
+  %\topsep6\p@\@plus6\p@ 
+  \begin{list}{Rje\v{s}enje}  %\trivlist
+  {
+    \setlength{\leftmargin}{2em}
+    \setlength{\topsep}{0pt}
+  }
+  \item[{\,\large\textsf{#1}\@addpunct{:}}] \normalfont\ignorespaces \ \\[1ex]
+  % vidi Lentry u companionu
+}{
+  \leavevmode\unskip\qed
+  %\endtrivlist
+  %\ignorespaces
+  \end{list}
+  \par\medskip
+}
+
+\newenvironment{solution}[1][Rje\v{s}enje]{\par
+  \normalfont\bfseries
+  \topsep6\p@\@plus6\p@ \trivlist
+  \item[\hskip\labelsep
+    #1\@addpunct{.}] \small\normalfont\ignorespaces
+}{
+  \qed\endtrivlist
+} 
+

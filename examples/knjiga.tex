@@ -1,0 +1,154 @@
+\documentclass[
+b5cijeli,
+11pt,
+twoside,
+]{hrbook}
+
+
+\usepackage{makeidx}
+\usepackage{amsmath, amssymb}
+\usepackage[stilovi]{amsthm}
+
+\usepackage[croatian]{babel}
+
+\usepackage[dvips]{graphicx}
+
+
+
+\usepackage[
+noinfo,
+a4,
+center,
+cam,
+frame,
+dvips,
+]{crop}
+
+
+\usepackage{pst-node}
+\usepackage{calc}
+\usepackage{wrapfig}
+
+
+
+
+\makeindex
+
+
+\input{preambula}
+
+
+
+
+\nofiles
+
+\begin{document}
+
+
+
+
+
+\frontmatter
+
+\thispagestyle{empty}
+\begin{flushright}
+\MakeUppercase{Ud\v{z}benici sveu\v{c}ili\v{s}ta u Zagrebu}\\
+\MakeUppercase{Manualia Universitatis Studiorum Zagrabiensis}
+\end{flushright}
+\vfill
+\begin{flushright}
+%\fbox{[Pe\v{c}at sveu\v{c}ili\v{s}ta]}
+\includegraphics[width=2.5cm]{unizg}
+\end{flushright}
+
+
+
+\newpage
+
+    \input{impressum}
+
+\newpage
+
+    \maketitle
+
+\newpage
+
+
+
+
+
+
+
+    {
+    \small
+    \tableofcontents
+    }
+
+    \input{predgovor}
+
+
+\mainmatter
+
+
+    \part{Diskretna matematika}
+
+
+    \input{pogl01_mat_modeli}%
+    \input{pogl02_logika}
+%\input{pogl04_skupovi_relacije}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\part{Linearna algebra}
+%
+%
+%\input{pogl05_matrice}
+%\input{pogl07_sustavi_lin_jdbi}
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%\part{Matemati\v{c}ka Analiza}
+%
+%\input{pogl08_realne_fje}
+%\input{pogl09_nizovi}
+%\input{pogl10_limes}
+%\input{pogl11_derivacija}
+%\input{pogl12_primjena_derivacija}
+%\input{pogl13_integrali}
+%%%
+%
+
+
+
+
+
+
+
+\backmatter
+
+
+
+\chapter*{Rje\v{s}enja zadataka}
+\addcontentsline{toc}{chapter}{Rje\v{s}enja zadataka}
+
+    \begin{multicols}{2}
+    \raggedright
+    \makeatletter
+    \@starttoc{rjesenja}
+    \makeatother
+    \end{multicols}
+
+    \input{literatura}
+
+
+%   I N D E K S
+
+    \clearpage
+    \renewcommand{\indexname}{Kazalo}
+    \phantomsection
+    \addcontentsline{toc}{chapter}{Kazalo}
+    \printindex
+
+
+\end{document}
