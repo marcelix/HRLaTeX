@@ -192,7 +192,8 @@
 
 \newtheorem{primjer}{Primjer}
 \newtheorem*{napomena}{Napomena}
-\theoremstyle{definition}
+
+% \theoremstyle{definition}
 
 \newtheoremstyle{zadatakstyle}%
 {\topsep}{\topsep}%
@@ -202,6 +203,16 @@
 {}%
 {0pt}%
 {\makebox[0cm]{{\makebox[1cm][r]{\thmnumber{ #2}.\,}}}}%
+
+
+\newtheoremstyle{zzadatakstyle}%
+{\topsep}{\topsep}%
+{\rmfamily}%
+{0cm}%{-0.145cm}%-12pt}%
+{\bfseries}%
+{}%
+{0pt}%
+{\makebox[0cm]{{\makebox[1cm][r]{\thmnumber{ #2}.\!$^{*}$\,}}}}%
 
 \newtheoremstyle{zvjezdastibrojac}%
 {\topsep}{\topsep}%
@@ -214,20 +225,16 @@
 
 
 
-\newenvironment{indtpar}[1]{%
-   \par\noindent\hspace*{#1}%
-   \minipage[t]{\linewidth-#1}}{\strut\endminipage\par} 
+
 
 %\theoremstyle{plain}
-{
-\theoremstyle{zadatakstyle}
-\newtheorem{zad}{}
-}
 
-{
-\theoremstyle{zvjezdastibrojac}
-\newtheorem{zzad}[zad]{}
-}
+\theoremstyle{zadatakstyle}%
+\newtheorem{zad}{}%
+
+\theoremstyle{zzadatakstyle}%
+\newtheorem{zzad}[zad]{}%
+
 
 % ======================================
 
@@ -252,26 +259,33 @@
 \bigskip% 
 }
 
-\newenvironment{zzadatak}{\begin{zzad}%%
+\newenvironment{zzadatak}[1][]{
+\bodovi{#1}
+\begin{zzad}% 
 \begin{list}{}{%
-\settowidth\leftmargin{\makebox{\textbf{\textsf{8. }}\ }}
-% \setlength{\labelwidth}{0cm}%
-% \setlength{\labelsep}{0pt}%
+\setlength\leftmargin{0.8165cm}%\makebox{\textbf{\textsf{111.\  }}\ }}
+% \setlength{\labelwidth}{1cm}%
+\setlength{\labelsep}{0pt}%
 \setlength{\listparindent}{0cm}%
-% \setlength{\itemindent}{0.3cm}%}%
-}%
-\item\hspace*{-1.72em}
-}%
-{\end{list}\end{zzad}%
-    \medskip%
+\setlength{\itemindent}{0cm}%
 }
+\item 
+}%
+{%END environment
+\end{list}%
+\end{zzad}%
+\fsbShowBodovi\relax
+\bigskip% 
+}
+
+
 
 
 \setlength{\parindent}{0pt}
 
 
 %BEGIN  RJESENJA ...............
-% otvori novi fajl desc.
+% otvori novi filedescriptor
 \newwrite\tf@rjesenja
 
 \newcommand{\rjesenje}[1]{%
@@ -295,17 +309,6 @@
 
 %BEGIN ispis rjesenja
 
-% %BEGIN ispis rjesenja
-% \section*{Rje\v{s}enja zadataka}
-% \addcontentsline{toc}{section}{Rje\v{s}enja zadataka}
-% 
-%     \begin{multicols}{2}
-%     \raggedright
-%     \makeatletter
-%     \@starttoc{rjesenja}
-%     \makeatother
-%     \end{multicols}
-% %END ispis rjesenja
 
 \newcommand{\printRjesenja}{%
 \section*{Rje\v{s}enja zadataka}
@@ -319,9 +322,9 @@
     \vfill 
     \end{multicols*}
 % 
-%END ispis rjesenja
 }
 
+%END ispis rjesenja
 
 
 \newcommand{\stopRjesenja}{
@@ -333,3 +336,36 @@
 %     \let\rjesenje\oldrjesenjeMacro
 
 %END rjesenja
+
+
+% BEGIN OBSOLETE
+
+% %BEGIN ispis rjesenja
+% \section*{Rje\v{s}enja zadataka}
+% \addcontentsline{toc}{section}{Rje\v{s}enja zadataka}
+% 
+%     \begin{multicols}{2}
+%     \raggedright
+%     \makeatletter
+%     \@starttoc{rjesenja}
+%     \makeatother
+%     \end{multicols}
+% %END ispis rjesenja
+% \newenvironment{zzadatak}{\begin{zzad}%%
+% \begin{list}{}{%
+% \settowidth\leftmargin{\makebox{\textbf{\textsf{8. }}\ }}
+% % \setlength{\labelwidth}{0cm}%
+% % \setlength{\labelsep}{0pt}%
+% \setlength{\listparindent}{0cm}%
+% % \setlength{\itemindent}{0.3cm}%}%
+% }%
+% \item\hspace*{-1.72em}
+% }%
+% {\end{list}\end{zzad}%
+%     \medskip%
+% }
+
+% \newenvironment{indtpar}[1]{%
+%    \par\noindent\hspace*{#1}%
+%    \minipage[t]{\linewidth-#1}}{\strut\endminipage\par} 
+% END OBSOLETE
