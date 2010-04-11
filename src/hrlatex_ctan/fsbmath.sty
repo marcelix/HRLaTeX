@@ -91,8 +91,13 @@
 
 
 \let\@fsbZadatakBodovi\empty
-\def\bodovi#1{\def\@fsbZadatakBodovi{#1}}
-\newcommand{\fsbShowBodovi}{\medskip\hfill \small(\@fsbZadatakBodovi\relax)}
+\def\bodovi#1{%
+\ifthenelse{\equal{#1}{}}%
+{\def\@fsbZadatakBodovi{}}%
+{\def\@fsbZadatakBodovi{(#1)}}%
+}
+
+\newcommand{\fsbShowBodovi}{\medskip\hfill \small \@fsbZadatakBodovi\relax}
 
 
 \newenvironment{zadaca}[1]
@@ -238,10 +243,17 @@
 
 % ======================================
 
-\newlength{\marclength}
+\RequirePackage{ifthen}
 
 \newenvironment{zadatak}[1][]{
+% \if\notempty{##1}%d
+% \relax
+% \else 
+% \ifthenelse{\equal{#1}{}}%
+% {\bodovi{}}%
 \bodovi{#1}
+% \bodovi{#1}
+% \fi
 \begin{zad}% 
 \begin{list}{}{%
 \setlength\leftmargin{0.8165cm}%\makebox{\textbf{\textsf{111.\  }}\ }}
@@ -259,7 +271,7 @@
 \bigskip% 
 }
 
-\newenvironment{zzadatak}[1][]{
+\newenvironment{zzadatak}[1][]{%kopija zadatak environmenta
 \bodovi{#1}
 \begin{zzad}% 
 \begin{list}{}{%
@@ -277,7 +289,6 @@
 \fsbShowBodovi\relax
 \bigskip% 
 }
-
 
 
 
@@ -340,6 +351,7 @@
 
 % BEGIN OBSOLETE
 
+% \newlength{\marclength}
 % %BEGIN ispis rjesenja
 % \section*{Rje\v{s}enja zadataka}
 % \addcontentsline{toc}{section}{Rje\v{s}enja zadataka}
