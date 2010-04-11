@@ -18,6 +18,7 @@
 
 
 \RequirePackage{calc}
+\RequirePackage{ifthen}
 
 \RequirePackage[enc=cp1250]{hrlatex}
 
@@ -92,6 +93,7 @@
 
 \let\@fsbZadatakBodovi\empty
 \def\bodovi#1{%
+%  PROVJERI jel #1 prazan string:
 \ifthenelse{\equal{#1}{}}%
 {\def\@fsbZadatakBodovi{}}%
 {\def\@fsbZadatakBodovi{(#1)}}%
@@ -243,7 +245,7 @@
 
 % ======================================
 
-\RequirePackage{ifthen}
+
 
 \newenvironment{zadatak}[1][]{
 % \if\notempty{##1}%d
@@ -263,6 +265,7 @@
 \setlength{\itemindent}{0cm}%
 }
 \item 
+\setlength{\labelsep}{1ex}%
 }%
 {%END environment
 \end{list}%

@@ -1,0 +1,42 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath}
+\usepackage[croatian]{babel}
+\usepackage{amssymb} \usepackage{fancybox}
+\addtolength{\hoffset}{-1cm} \addtolength{\textwidth}{2cm}
+\addtolength{\topmargin}{-1cm} \addtolength{\textheight}{3cm}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\begin{center}
+\shadowbox{Naziv kolegija}\\[2pt]
+\textbf{smjer}\\[2pt]
+datum
+\end{center}
+
+\vspace{10pt}
+\renewcommand{\labelenumi}{\shadowbox{\arabic{enumi}.}}
+\renewcommand{\labelenumii}{\doublebox{\alph{enumii}.}}
+
+\begin{enumerate}
+
+\item prvi zadatak
+\begin{enumerate}
+\item (a) dio prvog zadatka
+\item (b) dio prvog zadatka
+\end{enumerate}
+
+\item drugi zadatak
+
+\item tre\'ci zadatak
+\begin{enumerate}
+\item (a) dio tre\'ceg zadatka
+\item (b) dio tre\'ceg zadatka
+\item (c) dio tre\'ceg zadatka
+\end{enumerate}
+
+%i dalje na isti nacin po potrebi
+
+\end{enumerate}
+\end{document}

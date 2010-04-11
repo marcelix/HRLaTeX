@@ -1,0 +1,86 @@
+[General]
+img_extIsRegExp=false
+img_extensions=.eps .pdf .dvi .ps .fig .gif .jpg .jpeg .png
+lastDocument=file:///home/marcelix/work/hrlatex/src/hyphenation/Makefile
+masterDocument=
+name=HRLaTeX-HYPH
+pkg_extIsRegExp=false
+pkg_extensions=.cls .sty .dtx
+src_extIsRegExp=false
+src_extensions=.tex .ltx .bib .mp
+
+[Tools]
+MakeIndex=
+QuickBuild=
+
+[item:Makefile]
+archive=true
+column=42
+encoding=CP 1250
+highlight=Makefile
+line=30
+open=true
+
+[item:do.py]
+archive=true
+column=0
+encoding=CP 1250
+highlight=LaTeX
+line=12
+open=false
+
+[item:hip-rjecnik.dic]
+archive=true
+column=10
+encoding=CP 1250
+highlight=None
+line=13
+open=true
+
+[item:hr.tra]
+archive=true
+column=19
+encoding=CP 1250
+highlight=None
+line=7
+open=false
+
+[item:hrlatex-hyph.kilepr]
+archive=true
+column=0
+encoding=CP 1250
+highlight=None
+line=0
+open=false
+
+[item:new.hrhyphen.tex]
+archive=true
+column=14
+encoding=CP 1250
+highlight=LaTeX
+line=27
+open=false
+
+[item:patterns.marc.tex]
+archive=true
+column=4
+encoding=CP 1250
+highlight=LaTeX
+line=21
+open=true
+
+[item:patterns.out.txt]
+archive=true
+column=3
+encoding=CP 1250
+highlight=None
+line=25
+open=true
+
+[item:testiranje_hipenacije.tex]
+archive=true
+column=0
+encoding=CP 1250
+highlight=LaTeX
+line=150
+open=true

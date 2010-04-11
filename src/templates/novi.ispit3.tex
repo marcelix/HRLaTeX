@@ -1,0 +1,157 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage{amsfonts}
+\usepackage{array}
+\usepackage{fancybox}
+\usepackage{amsmath}
+\usepackage[croatian]{babel}
+
+\addtolength{\voffset}{-2cm} \addtolength{\textheight}{3cm}
+\addtolength{\textwidth}{2cm} \addtolength{\hoffset}{-2cm}
+\pagestyle{empty}
+
+\begin{document}
+\newcounter{grupe}
+
+\begin{center}
+\shadowbox{Naziv kolegija}\\[5pt]
+datum\\[5pt]
+-- pismeni ispit --
+\end{center}
+
+\vspace*{10pt}
+
+\noindent IME I PREZIME:\, \rule{6cm}{0.5pt}\\[0.5cm]
+
+\noindent\textbf{popunjava profesor:}\\[5pt]
+{\setlength{\arrayrulewidth}{0.8pt} \setlength{\extrarowheight}{8pt}
+\begin{tabular}{|c|c|c|c|c|c|c!{\vrule width 3pt}c!{\vrule width 3pt}c|}
+\hline
+\raisebox{2pt}{ZADATAK} & \raisebox{2pt}{1.} & \raisebox{2pt}{2.} & \raisebox{2pt}{3.} & \raisebox{2pt}{4.} & \raisebox{2pt}{5.} & \raisebox{2pt}{6.} & \raisebox{2pt}{UKUPNO} & \raisebox{2pt}{OCJENA} \\
+\hline
+\raisebox{2pt}{BROJ BODOVA} & & & & & & & & \\
+\hline
+\end{tabular}
+}\\[0.5cm]
+
+\noindent \textbf{Uputa.} U svakoj grupi zadataka treba za prolaznu ocjenu
+imati barem 10 bodova i ukupni broj bodova mora biti ve\'{c}i od 30.\\[5pt]
+
+\vspace{15pt}
+
+\noindent\shadowbox{I. grupa}
+
+\begin{enumerate}
+\item prvi zadatak
+\begin{enumerate}
+\item a) dio prvog zadatka
+\item b) dio prvog zadatka
+\item c) dio prvog zadatka
+\end{enumerate}
+
+\marginpar{
+\vspace*{-2cm}                %za vertikalno poravnjanje tablice (dizanje i spustanje)
+\small                        %velicina slova u tablici
+\begin{tabular}{|c|c|}
+\hline
+(a) & 3 boda\\ \hline
+(b) & 4 boda\\ \hline
+(c) & 3 boda \\ \hline
+\end{tabular}
+}
+
+\item drugi zadatak
+\begin{enumerate}
+\item a) dio drugog zadatka
+\item b) dio drugog zadatka
+\end{enumerate}
+
+\marginpar{
+\vspace*{-1cm}
+\small
+\begin{tabular}{|c|c|}
+\hline
+(a) & 5 bodova\\ \hline
+(b) & 5 bodova\\ \hline
+\end{tabular}
+}
+
+\item Odredite domenu, nulto\v{c}ke, ekstreme, intervale monotonosti, asimptote i nacrtajte graf funkcije $$f(x)=\frac{x^2}{4+x^2}\,.$$
+
+\marginpar{
+\vspace*{-40pt}
+\scriptsize
+\begin{tabular}{|c|c|}
+\hline
+domena & 1 bod\\ \hline
+nulto\v{c}ke & 1 bod\\ \hline
+int. mon. & 2 boda \\ \hline
+ekstremi & 2 boda \\ \hline
+asimptote & 2 boda \\ \hline
+graf & 2 boda \\ \hline
+\end{tabular}
+}
+\setcounter{grupe}{\value{enumi}}
+\end{enumerate}
+
+\vspace*{0.5cm}
+
+\noindent\shadowbox{II. grupa}
+
+\begin{enumerate}
+\setcounter{enumi}{\value{grupe}}
+
+\item \v{c}etvrti zadatak
+\begin{enumerate}
+\item a) dio zadatka
+\item b) dio zadatka
+\end{enumerate}
+
+\marginpar{
+\vspace*{-1.5cm}
+\small
+\begin{tabular}{|c|c|}
+\hline
+(a) & 5 bodova\\ \hline
+(b) & 5 bodova\\ \hline
+\end{tabular}
+}
+
+\newpage %ako zelimo ici na novu stranicu
+
+\item peti zadatak
+\begin{enumerate}
+\item a) dio
+\item b) dio
+\item c) dio
+\end{enumerate}
+
+\marginpar{
+\vspace*{-1.5cm}
+\small
+\begin{tabular}{|c|c|}
+\hline
+(a) & 2 boda\\ \hline
+(b) & 2 boda\\ \hline
+(c) & 6 bodova\\ \hline
+\end{tabular}
+}
+
+\item \v{s}esti zadatak
+\begin{enumerate}
+\item a) dio zadatka
+\item b) dio zadatka
+\end{enumerate}
+Nastavak \v{s}estog zadatka.
+
+\marginpar{
+\vspace*{-1.5cm}
+\small
+\begin{tabular}{|c|c|}
+\hline
+(a) & 5 bodova\\ \hline
+(b) & 5 bodova\\ \hline
+\end{tabular}
+}
+\end{enumerate}
+
+\end{document}

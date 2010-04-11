@@ -1,0 +1,4 @@
+cat primjer.tex |cp1250..tex|hr_tex-to-cp1250|recode -f cp1250..latin2 | aspell -a --lang=hr --mode=tex > spell.log
+
+cat primjer.tex |aspell -a --mode=tex -d hr --encoding=cp1250
+                                                                                                               

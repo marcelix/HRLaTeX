@@ -1,0 +1,61 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[croatian]{babel}
+\usepackage{amsfonts} \usepackage{amssymb}
+\usepackage{amsmath} \usepackage{fancybox}
+\addtolength{\voffset}{-2cm} \addtolength{\textheight}{3cm}
+\addtolength{\textwidth}{2cm} \addtolength{\hoffset}{-1cm}
+\pagestyle{empty}
+
+\begin{document}
+\newcounter{grupe} %ne brisati!!!
+
+\begin{center}
+\shadowbox{Naziv kolegija}\\[5pt]
+datum\\[5pt]
+-- pismeni ispit --
+\end{center}
+
+\vspace{0.1cm}
+
+\paragraph{Napomena.} Za prolaznu ocjenu, iz svake grupe treba rije\v{s}iti najmanje jedan zadatak
+u potpunosti i ukupni broj bodova treba biti ve\'{c}i od 50\%.\\[0.8cm]
+
+\noindent\shadowbox{I. grupa}
+
+\begin{enumerate}
+\item prvi zadatak
+\item drugi zadatak
+\item tre\'ci zadatak
+\begin{enumerate}
+\item a) dio tre\'ceg zadatka
+\item b) dio tre\'ceg zadatka
+\end{enumerate}
+
+\setcounter{grupe}{\value{enumi}} %ne brisati!!!
+\end{enumerate}
+
+\vspace{1cm}
+
+\noindent\shadowbox{II. grupa}
+
+\begin{enumerate}
+\addtocounter{enumi}{\value{grupe}} %ne brisati!!!
+
+\item \v{c}etvrti zadatak
+\item peti zadatak
+\item \v{s}esti zadatak
+
+\setcounter{grupe}{\value{enumi}} % izbrisati ako nema trece grupe zadataka
+\end{enumerate}
+
+\vspace{1cm}
+
+\noindent\shadowbox{III. grupa}
+
+\begin{enumerate}
+\addtocounter{enumi}{\value{grupe}}
+\item sedmi zadatak
+\item osmi zadatak
+\end{enumerate}
+
+\end{document}

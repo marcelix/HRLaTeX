@@ -1,0 +1,1 @@
+../hrlatex_ctan/hrdipl.cls
