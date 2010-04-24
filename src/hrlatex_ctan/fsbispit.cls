@@ -12,20 +12,18 @@ bottom=2cm%
 ]{geometry}
 
 
+
+
 \RequirePackage{fsbmath} % fsbmath poziva hrlatex.sty
 % 
 % \ProcessOptions
+
+\RequirePackage{txfonts}
+
 \ProcessOptions*
 
 
-% \newcommand{\R}{\mathbb{R}}
-% \newcommand{\Q}{\mathbb{Q}}
-% \newcommand{\Z}{\mathbb{Z}}
-% \newcommand{\N}{\mathbb{N}}
-% \newcommand{\C}{\mathbb{C}}
-% \newcommand{\D}{\displaystyle}
-% \newcommand{\F}{\mathbf{F}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 
 
@@ -77,15 +75,14 @@ bottom=2cm%
 
 
 \newcommand{\printtitle}{\@title}
+
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5555
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-%%%%%%%%%%%%%5555
 
 \let\@grupa\empty
 \newcommand{\grupa}[1]{\def\@grupa{#1}}

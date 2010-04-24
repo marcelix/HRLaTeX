@@ -18,8 +18,10 @@ docs:
 	pdflatex hrlatex.dtx
 
 pack:hrlatex.sty docs 
+	-rm hrlatex.zip
 	-zip -9 hrlatex.zip \
 	hrlatex.dtx hrlatex.ins hrlatex.sty\
+	fsbmath.sty fsbispit.cls \
 	hrdipl.cls \
 	README \
 	sample.*.tex novi.*.tex \
@@ -35,7 +37,7 @@ test:    pack
 
 # =============================================================
 
-.PHONY:clean
+.PHONY:clean test
 
 clean:
 	-@echo "Cleaning up"

@@ -1,4 +1,4 @@
-HRLaTeX Package, version 0.24
+HRLaTeX Package, version 0.23
 
 Author: Marcel Maretic
 
@@ -15,20 +15,18 @@ Author: Marcel Maretic
 	
 	HRLaTeX consists of the following files:
 
-	----
-	hrlatex.dtx
-	hrlatex.ins
-	hrlatex.sty
-	hrdipl.cls
-	README
-	sample.diplomski-rad.tex
-	sample.minimal.cp1250.tex
-	sample.minimal.latin2.tex
-	sample.minimal.utf8.tex
-	hrlatex.pdf
-	-----
-
-
+        ----
+        hrlatex.dtx
+        hrlatex.ins
+        README
+        sample.fsbispit.tex
+        sample.minimal.cp1250.tex
+        sample.minimal.latin2.tex
+        sample.minimal.utf8.tex
+        sample.prezentacija.tex
+        novi.ispit.tex
+        hrlatex.pdf
+        -------
 
 
 * Description

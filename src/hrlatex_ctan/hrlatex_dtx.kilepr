@@ -4,8 +4,8 @@ img_extIsRegExp=false
 img_extensions=.eps .jpg .jpeg .png .pdf .ps .fig .gif .dvi
 kileprversion=2
 kileversion=2.0.84
-lastDocument=sample.fsbispit.tex
-masterDocument=sample.fsbispit.tex
+lastDocument=fsbispit.cls
+masterDocument=
 name=HRLaTeX projekt
 pkg_extIsRegExp=false
 pkg_extensions=.cls .sty .bbx .cbx .lbx
@@ -18,13 +18,13 @@ QuickBuild=LaTeX+DVItoPS+PStoPDF+ViewPDF
 
 [item:Makefile]
 archive=true
-column=12
-encoding=CP 1250
+column=0
+encoding=UTF-8
 highlight=Makefile
-line=5
-mode=
-open=false
-order=-1
+line=0
+mode=Makefile
+open=true
+order=1
 
 [item:README]
 archive=true
@@ -48,20 +48,20 @@ order=3
 
 [item:fsbispit.cls]
 archive=true
-column=22
+column=0
 encoding=UTF-8
 highlight=LaTeX
-line=2
+line=118
 mode=LaTeX
 open=true
-order=1
+order=3
 
 [item:fsbmath.sty]
 archive=true
-column=2
+column=0
 encoding=UTF-8
 highlight=LaTeX
-line=244
+line=29
 mode=LaTeX
 open=true
 order=2
@@ -141,7 +141,7 @@ archive=true
 column=0
 encoding=windows-1250
 highlight=LaTeX
-line=17
+line=4
 mode=LaTeX
 open=true
 order=0
@@ -196,6 +196,10 @@ mode=
 open=false
 order=10
 
+[view-settings,view=0,item:Makefile]
+CursorColumn=0
+CursorLine=0
+
 [view-settings,view=0,item:README]
 CursorColumn=11
 CursorLine=21
@@ -205,12 +209,12 @@ CursorColumn=0
 CursorLine=0
 
 [view-settings,view=0,item:fsbispit.cls]
-CursorColumn=22
-CursorLine=2
+CursorColumn=0
+CursorLine=118
 
 [view-settings,view=0,item:fsbmath.sty]
-CursorColumn=2
-CursorLine=244
+CursorColumn=0
+CursorLine=29
 
 [view-settings,view=0,item:hrlatex.dtx]
 CursorColumn=12
@@ -226,7 +230,7 @@ CursorLine=23
 
 [view-settings,view=0,item:sample.fsbispit.tex]
 CursorColumn=0
-CursorLine=17
+CursorLine=4
 
 [view-settings,view=0,item:sample.minimal.cp1250.tex]
 CursorColumn=0
