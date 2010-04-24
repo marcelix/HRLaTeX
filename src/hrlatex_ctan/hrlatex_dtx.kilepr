@@ -4,7 +4,7 @@ img_extIsRegExp=false
 img_extensions=.eps .jpg .jpeg .png .pdf .ps .fig .gif .dvi
 kileprversion=2
 kileversion=2.0.84
-lastDocument=fsbispit.cls
+lastDocument=README
 masterDocument=
 name=HRLaTeX projekt
 pkg_extIsRegExp=false
@@ -18,23 +18,23 @@ QuickBuild=LaTeX+DVItoPS+PStoPDF+ViewPDF
 
 [item:Makefile]
 archive=true
-column=0
+column=37
 encoding=UTF-8
 highlight=Makefile
-line=0
+line=22
 mode=Makefile
 open=true
 order=1
 
 [item:README]
 archive=true
-column=11
+column=19
 encoding=UTF-8
 highlight=None
-line=21
+line=28
 mode=
-open=false
-order=10
+open=true
+order=6
 
 [item:deskriptivna.tex]
 archive=true
@@ -61,40 +61,30 @@ archive=true
 column=0
 encoding=UTF-8
 highlight=LaTeX
-line=29
+line=353
 mode=LaTeX
 open=true
 order=2
 
-[item:hrdipl.cls]
-archive=true
-column=30
-encoding=CP 1250
-highlight=progress
-line=1
-mode=
-open=false
-order=-1
-
 [item:hrlatex.dtx]
 archive=true
-column=12
+column=42
 encoding=UTF-8
 highlight=LaTeX
-line=90
+line=85
 mode=LaTeX
-open=false
-order=0
+open=true
+order=4
 
 [item:hrlatex.ins]
 archive=true
-column=11
+column=58
 encoding=UTF-8
 highlight=LaTeX
-line=15
+line=40
 mode=LaTeX
-open=false
-order=1
+open=true
+order=5
 
 [item:hrlatex.sty]
 archive=true
@@ -115,26 +105,6 @@ line=0
 mode=
 open=false
 order=-1
-
-[item:novi.diplomski-rad.tex]
-archive=true
-column=0
-encoding=CP 1250
-highlight=LaTeX
-line=16
-mode=
-open=false
-order=4
-
-[item:sample.diplomski-rad.tex]
-archive=true
-column=0
-encoding=CP 1250
-highlight=LaTeX
-line=54
-mode=
-open=false
-order=5
 
 [item:sample.fsbispit.tex]
 archive=true
@@ -197,12 +167,12 @@ open=false
 order=10
 
 [view-settings,view=0,item:Makefile]
-CursorColumn=0
-CursorLine=0
+CursorColumn=37
+CursorLine=22
 
 [view-settings,view=0,item:README]
-CursorColumn=11
-CursorLine=21
+CursorColumn=19
+CursorLine=28
 
 [view-settings,view=0,item:deskriptivna.tex]
 CursorColumn=0
@@ -214,15 +184,15 @@ CursorLine=118
 
 [view-settings,view=0,item:fsbmath.sty]
 CursorColumn=0
-CursorLine=29
+CursorLine=353
 
 [view-settings,view=0,item:hrlatex.dtx]
-CursorColumn=12
-CursorLine=90
+CursorColumn=42
+CursorLine=85
 
 [view-settings,view=0,item:hrlatex.ins]
-CursorColumn=11
-CursorLine=15
+CursorColumn=58
+CursorLine=40
 
 [view-settings,view=0,item:hrlatex.sty]
 CursorColumn=18
