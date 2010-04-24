@@ -18,23 +18,26 @@ Author: Marcel Maretic
         ----
         hrlatex.dtx
         hrlatex.ins
+        fsbispit.cls
+        fsbmath.sty
         README
         sample.fsbispit.tex
         sample.minimal.cp1250.tex
         sample.minimal.latin2.tex
         sample.minimal.utf8.tex
         sample.prezentacija.tex
-        novi.ispit.tex
         hrlatex.pdf
         -------
+
+
 
 
 * Description
 =============
 
 	This package simplifies creation of new documents for (average) croatian user.
-	As an example - a class file hrdipl.cls (graduation thesis at the University 
-	of Zagreb) and sample thesis documents are included.
+	As an example - a class file fsbispit.cls (exam style for FSB at University 
+	of Zagreb) and a sample document are included.
 
 
 
@@ -45,8 +48,7 @@ Author: Marcel Maretic
 	
 	- Run LaTeX on the file `hrlatex.ins' to create the style file `hrlatex.sty'.
 	- Run LaTeX on the file `hrlatex.dtx' to create the doc   file `hrlatex.dvi'.
-	- Install these files anywhere you see fit. I recommend to do it locally 
-	(current directory) for now.
+	- Install these files anywhere you see fit.
 
 
 

@@ -20,7 +20,7 @@ docs:
 pack:hrlatex.sty docs 
 	-rm hrlatex.zip
 	-zip -9 hrlatex.zip \
-	hrlatex.dtx hrlatex.ins hrlatex.sty\
+	hrlatex.dtx hrlatex.ins hrlatex.sty \
 	fsbmath.sty fsbispit.cls \
 	hrdipl.cls \
 	README \
