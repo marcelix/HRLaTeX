@@ -1,6 +1,8 @@
 #
 #      Makefile for hrlatex package
 #
+HRLATEX_INSTALL_DIR=~/texmf/tex/hrlatex
+
 
 hrlatex.sty:hrlatex.dtx hrlatex.ins
 	yes|latex hrlatex.ins
@@ -18,7 +20,7 @@ docs:
 	pdflatex hrlatex.dtx
 
 pack:hrlatex.sty docs 
-	-rm hrlatex.zip
+	-rm     hrlatex.zip
 	-zip -9 hrlatex.zip \
 	hrlatex.dtx hrlatex.ins hrlatex.sty \
 	fsbmath.sty fsbispit.cls \
@@ -35,13 +37,20 @@ test:    pack
 	-(cd tmp; yes|unzip ../hrlatex.zip; ls -la *)
 
 
+
+install:
+	-mkdir -p           $(HRLATEX_INSTALL_DIR)
+	-cp    *.cls *.sty  $(HRLATEX_INSTALL_DIR)
+	-ls    -la          $(HRLATEX_INSTALL_DIR)
+	-texhash
+
 # =============================================================
 
-.PHONY:clean test
+.PHONY:clean test install
 
 clean:
 	-@echo "Cleaning up"
-	-@rm -f \
+	-@rm -f     \
 	hrlatex.sty \
 	hrlatex.zip \
 	*.dvi *.aux *.out *.log *~ *.backup \
