@@ -1,0 +1,67 @@
+\documentclass[%
+a4paper,
+12pt,%
+% draft,%
+openright,%
+]{unizgphd}
+
+
+\usepackage[%
+sika-komentari,% 
+% none,%
+]{optional}
+
+
+
+\input{preambula}
+\fxsetup{nomarginclue,noinline,silent}
+
+
+% ----------------------------------------------------------------
+% \onehalfspacing %   <---- 1.5 prored...  ONE-HALF-SPACING
+% \doublespacing%     <---- DOUBLE SPACING (nenormalno lose)
+%-----------------------------------------------------------------
+
+
+
+
+\title%
+{%
+   Naslov disertacije%
+}%  
+% 
+\author{%
+      Ime Prezime%
+}
+
+
+
+
+
+\makeindex
+
+
+\begin{document}
+
+\frontmatter
+    
+    \include{tekst/frontmatter}
+
+\mainmatter
+
+    \include{tekst/p01}
+    \include{tekst/p02}
+    \include{tekst/p03}
+
+    \include{tekst/zakljucak}
+
+\appendix
+
+
+
+\backmatter
+    
+    \include{tekst/backmatter}  %  bibliografija i indeks
+
+
+\end{document}

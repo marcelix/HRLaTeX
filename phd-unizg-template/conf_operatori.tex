@@ -1,0 +1,161 @@
+% conf_operatori.tex
+
+\DeclareMathOperator{\modulo}{mod}
+\DeclareMathOperator{\rad}{rad}
+
+
+% \DeclareMathOperator{\Arsh}{Ar\,sh}
+% \DeclareMathOperator{\sh}{sh}
+
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\displaystyle}
+\newcommand{\F}{\mathbf{F}}
+
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\UU}{\ensuremath{U}}
+
+\newcommand{\U}{U}
+
+% \DeclareMathOperator{\ctg}{ctg} \DeclareMathOperator{\tg}{tg}
+% \DeclareMathOperator{\arcctg}{arcctg}
+% \DeclareMathOperator{\arctg}{arctg}
+% \DeclareMathOperator{\sign}{sign} \DeclareMathOperator{\ch}{ch}
+
+
+\newcommand{\kond}{\rightarrow}
+\newcommand{\bi}{\leftrightarrow}
+\newcommand{\impl}{\Rightarrow}
+\newcommand{\nimpl}{\nRightarrow}
+\newcommand{\ekvi}{\Leftrightarrow}
+\newcommand{\nekvi}{\nLeftrightarrow}
+\newcommand{\non}[1]{\overline{#1}}
+\newcommand{\modelss}{\models _s}
+
+\newcommand{\forallm}[1]{\forall #1 \,} 
+\newcommand{\existsm}[1]{\exists #1 \,}
+% \def{\iff}{\ekvi}
+\let\iff\ekvi
+\let\bkond\leftrightarrow
+
+
+\newcommand*{\nDiamond}{%
+\mathrel{%
+\vcenter{\offinterlineskip%
+\hbox{\ensuremath{\Diamond}}\vskip-1.6ex\hbox{\ensuremath{\diagup}}
+}}}
+% \newcommand*{\nDiamond}{\not\mathrel{\Diamond}}
+% {\Diamond\!\!\!\!\raisebox{1pt}{\ensuremath{\diagup}}}}}
+% \newcommand{\nBox}{\ensuremath{\not\!\!\Box}}
+% \newcommand{\nBox}{\ensuremath{\not\mathrel{\Box}}}
+\newcommand{\nBox}{\ensuremath{\centernot\Box}}
+
+\newcommand{\mybox}{\Box}
+\newcommand{\mydi}{\Diamond}
+
+\newcommand{\nbox}{\nBox} % a sta rec, brkam nazive
+\newcommand{\ndi}{\nDiamond}
+
+\newcommand{\nmodels}{\mathrel{\not\! |=}}
+
+\newcommand{\rulef}{\upshape\sffamily}
+\newcommand{\rulen}[1]{{\smaller\rulef{(#1)}}}
+\newcommand{\srulen}[1]{\footnotesize (\rulef{#1})}
+\newcommand{\rulep}[1]{(#1)}
+\newcommand{\rulem}[1]{($ #1$)}
+% 
+% \newcommand{\elim}[1]{{\text{\upshape\smaller({\rulef E}} {\ensuremath{#1}}}\text{\upshape\smaller)}}
+
+\newcommand{\elim}[1]{{  \text{\smaller\rulef (E{\ensuremath{#1}})}}}
+\newcommand{\intr}[1]{{  \text{\smaller\rulef (I{\ensuremath{#1}})}}}
+% \newcommand{\intr}[1]{{\text{\upshape\smaller({\rulef I}} {\ensuremath{#1}}}\text{\upshape\smaller)}}
+% 
+
+% \newcommand{\andown}[1]{{  \text{  {\ensuremath{  \smash      { \boxed{#1} \atop {\larger[4] \downarrow }  }  }}}  }}
+% \newcommand{\anup}[1]{{    \text{  {\ensuremath{  \smash       {{{\larger[4] \uparrow} \atop \boxed{#1}}  } }}}  }}
+% 
+\newcommand{\anup}[1]{{%
+    \text{ \smaller {\ensuremath{  \smash{\begin{array}{c} {\uparrow}\\ \boxed{#1} \\ \vphantom{\uparrow} \end{array}} }}}  }}
+
+\newcommand{\andown}[1]{{%
+    \text{ \smaller {\ensuremath{  \smash{\begin{array}{c} \vphantom{\uparrow}\\ \boxed{#1} \\ {\downarrow} \end{array}} }}}  }}
+
+
+\newcommand{\gentzi}[1]{$(|- #1)$}
+\newcommand{\gentze}[1]{$(#1 |-)$}
+
+
+\newcommand{\ext}{\mathsf{ext}}
+\newcommand{\inte}{\mathsf{int}}
+\newcommand{\Atom}{\mathcal{A}t}
+
+
+
+\newcommand{\odbaci}[1]{\footnotesize{(#1)}}
+
+
+\newcommand{\subs}[2]{\ensuremath(#1 / #2 )}
+
+
+\newlength{\wedgelen}
+\settowidth{\wedgelen}{$\wedge\,\,$}
+
+\newcommand{\wedgeveekond}{
+% \ensuremath{
+% 
+\mathop{
+\makebox[\wedgelen]{
+\ensuremath{
+\begin{array}{c}
+ \strut \\
+ \strut \\
+ \wedge \\
+ \vee   \\
+ \kond
+\end{array}}}}\,\,}
+% }
+
+
+%  FIX/HACK -- Sikic zeli produljiti |-  u |--
+% \mathlig{|-}{\mathop{\vdash\!\!\!\!{-}}}
+
+% Jednostavna izvodivost s multiplarnim izvodima
+% SK -- Standardne Kneale dedukcije
+\def\skder{|-_{_{\!\!\!\tiny \textsf{\textup{KN}}}}}
+
+% Multiplarna izvodivost (s jednostavnim ciklusima)
+% MD -- Multiplarne Dedukcije
+\def\mdder{|-_{_{\!\!\!\tiny \textsf{\textup{MD}}}}}
+
+
+\newcommand{\marcfrac}[2]{\ \begin{array}{c}  #1 \\ \hline\hline #2 \end{array}}
+\newcommand{\qfrac}[2]{\ \begin{array}{c}  #1 \\ \hline #2 \end{array}}
+\newcommand{\nfrac}[2]{\ \begin{array}{c}  #1 \\  #2 \end{array}}
+% \newcommand{\nfrac}[2]{   {#1 \atop  #2 }}
+
+
+\newlength{\foralllen}
+\settowidth{\foralllen}{$\forall\,$}
+
+\newcommand{\forallexists}{
+\mathop{
+\makebox[\foralllen]{
+\ensuremath{
+\smash{
+\begin{array}{c}
+ \strut \\
+%  \strut \\
+ \forall \\
+ \exists   
+% \\
+%  \kond
+\end{array}}}}}}
+
+\newcommand\bsrule[1]{%
+\boxed{#1}\quad%
+}
+

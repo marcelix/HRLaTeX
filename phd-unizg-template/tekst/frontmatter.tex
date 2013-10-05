@@ -1,0 +1,39 @@
+% frontmatter
+
+
+% \frontmatter
+
+%     \ifoptionfinal{}}
+    \ifdraft{%
+      \maketitle%
+      \pagebreak%
+    }{% OVO JE AKO NIJE DRAFT 
+    % (znaci ide u FINAL)
+%     \includepdf[pages={1}]{tekst/unutarnji_dio.pdf}%
+      \includepdf[pages={2-7}]{tekst/unutarnji_dio.pdf}%
+    }
+    
+%     \titlepage
+
+
+    \input{tekst/posveta}
+
+    \input{tekst/sazetak}
+    
+    \input{tekst/abstract}
+ 
+%     \ifoptionfinal{\input{tekst/posveta}}
+
+ 
+    \tableofcontents
+    
+    
+% BEGIN popis slika i tablica, bez CLEARDOUBLEPAGE
+    \makeatletter\@openrightfalse
+    \listoffigures
+    \listoftables
+    \@openrighttrue\makeatother
+% END popis slika i tablica
+    
+    
+    \input{tekst/predgovor}

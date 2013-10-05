@@ -1,0 +1,58 @@
+% backmatter
+
+
+% Ovdje sam stavio bibliografiju i vezu na
+% zivotopis, i na kraju index/kazalo
+
+\nocite{
+gentzen_1938,%
+gentzen_dokaz_normalizacije,%
+beth,%
+marcel_sd2012,%
+prawitz,%
+takeuti2013proof,%
+negri2011proof,%
+negri2008structural,%
+shoesmithsmiley,
+gabbay1996labelled,
+buss1998handbook,
+gentzen_1935,
+gentzen1969collected,
+sika-disertacija,%
+sikic-logika,%
+kneale,%
+smullyan,%
+schutte1977proof,%
+ungar1992normalization,%
+mendelson,%
+pfenning,%
+vukovic_primlogika,%
+fitting1996first,%
+fitting1983proof,%
+analytic_natural_deduction,
+gallier1986logic,
+jaskowski,
+troelstra2000basic,%
+}
+
+
+
+      % BIBLATEX HACK jer nema 'croatian' % provjeri jel to bas tako...
+      % \addtocontents{toc}{section}{Literatura} % rijeseno s bibintoc
+      \renewcommand{\bibname}{Literatura}
+      \renewcommand{\refname}{Literatura}
+
+      \clearpage
+      \printbibliography[heading=bibintoc]% literatura u TOC
+
+      \input{tekst/zivotopis}
+
+
+      \renewcommand{\indexname}{Kazalo}
+      \phantomsection
+      \printindex
+
+      \newpage
+      {\smaller 
+      \listoffixmes
+      }

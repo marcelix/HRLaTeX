@@ -1,0 +1,511 @@
+% dodatak.tex
+\chapter{Dodatak}
+
+
+
+% \section*{Dokaz neadekvatnosti  Kneale izvoda}
+% 
+% \newpage
+
+
+
+
+\section{Tekst prijave teme (OBAD)}
+
+
+\subsection*{Sažetak HR}
+% 
+Metoda semantičkih stabala je potpuni postupak za logiku prvog reda. Okretanje semantičkih stabala naopako daje
+Gentzenov sustav multiplarnih sekventi bez reza. Ovaj dobro poznati rezultat pokazuje kako je Gentzenov sustav
+multiplarnih sekventi ustvari notacijska varijacija Bethove metode semantičkih stabala.
+
+Mi ćemo pokazati kako se sustav multiplarnih prirodnih dedukcija (prirodnih dedukcija s multiplarnom relacijom
+posljedice) može povezati s Bethovim semantičkim stablima. Pokazati ćemo da i za multiplarni sustav prirodnih dedukcija
+vrijedi algoritamska ekvivalentnost s metodom semantičkih stabala.
+
+
+\subsection*{Abstract EN}
+% 
+\textit{The method of Beth semantic trees is a complete procedure in logic. Semantic trees turned upside down give
+Gentzen’s cut-free multiple sequent proofs. This is a well known fact which reveals that we can regard Gentzen’s
+cut-free multiple sequents system as a notational variation of Beth’s semantic tree method.}
+
+\textit{%
+We would like to prove that multiple conclusion natural deduction systems can, similarly to sequent systems, be
+associated with Beth’s semantic trees. We will show there is an algorithmic equivalnce between multiple conclusion
+natural deduction sytems and Beth's semantic tree method.}
+
+
+
+\subsection*{Uvod i pregled dosadašnjih istraživanja}
+% 
+Metoda semantičkih stabala (tabloa) razvijala se potpuno nezavisno od Gentzenovih sustava prirodne dedukcije. Bethova
+semantička stabla proizlaze iz semantičkog pristupa logici i orjentirana su na klasičnu logiku i njezinu semantiku.
+
+Prirodne dedukcije, s druge strane, proizlaze iz sintaktičkog pristupa logici - iz izgradnje dokaza i pravila
+zaključivanja. U tom su smislu prirodne dedukcije prikladne za minimalnu i intuicionističku logiku iz kojih se klasična
+logika dobije tek dodatkom pravila "tertium non datur" (TND) ili pravila "reductio ad absurdum" (RAA).
+
+Mi ćemo pokazati kako se sustav multiplarnih prirodnih dedukcija (prirodnih dedukcija s multiplarnom relacijom
+posljedice) može povezati s Bethovim semantičkim stablima. Pokazati ćemo da i za multiplarni sustav prirodnih dedukcija
+vrijedi algoritamska ekvivalentnost s metodom semantičkih stabala. Na ovaj način pokazali bi semantički pristup
+sustavima multiplarnih prirodnih dedukcija.
+
+Posljedica ovoga je potpunost našeg sustava multiplarnih prirodnih dedukcija (za razliku od Kneale sustava). Za razliku
+od Shoesmith i Smileyevog pristupa naš sustav multiplarnih prirodnih dedukcija je dobro motiviran i jednostavan.
+
+
+
+\subsection*{Cilj i hipoteze istraživanja}
+% 
+Hipoteza istraživanja je da postoji algoritam koji pokazuje algoritamsku ekvivalenciju multiplarnih prirodnih dedukcija
+(sintaktičkog pristupa) i Bethovih semantičkih stabala.
+Cilj istraživanja je potvrditi hipotezu izradom korektnog algoritma.
+
+
+\newpage
+
+\section{Skica predgovora}
+\vspace*{10cm}
+
+
+U nekim dijelovima izostavljeni su neki dijelovi standardnih definicija koji se odnose isključivo na intuicionističku logiku.
+
+ \bigskip
+ \centerline{***}
+ \bigskip
+
+
+
+\newpage
+\section{Post Scriptum}
+
+\subsection*{Prednosti}
+\begin{enumerate}
+ \item Nema hipotetskih pravila: Sva pravila zaključivanja su lokalna; \newline
+       pravila izvoda su REZ/SPOJ i  KONTRAKCIJA/DUPLIKACIJA
+ \item Direktna analitičnost
+ \item Semantički postupak, direktno prepisivanje u tabloe i sekvente
+ \item "Prirodnost" očuvana: pravila introdukcije i eliminacije su ili jednaka ili "prirodnija"
+\end{enumerate}
+
+
+\subsection*{Nedostaci}
+\begin{enumerate}
+ \item Razilaženje s intuicionističkom logikom (nema više "2 za 1") 
+ \item Razilaženje sa "prirodnošću" (prema Gentzenu) singularne konkluzije
+\end{enumerate}
+
+
+
+
+
+% +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++=
+% 
+\chapter{Razvrstati}
+
+\section{Singularna konkluzija u LJ}
+\begin{itemize}
+ \item Gentzenov račun sekventi LJ za intuicionističku logiku ima restrikciju singularne konzekvente -- ograničavanjem
+sekventi na 
+       točno jednu premisu dobije se račun intuicionističke logike. 
+       Ovo ograničenje nije nužno u svim pravilima. Maheara\index{Maheara} je 1954.~predstavio račun LJ' (vidi
+\cite{negri2008structural}) u kojem 
+       restrikcija singularne konkluzije vrijedi samo  za sekventna pravila \rulem{|- -} i  \rulem{|-\to}.
+ 
+	Ostala pravila su iz računa LK klasične logike (vidi str.~\pageref{gentzen:LK}).
+
+\item \textit{Što to znači za multiplarne prirodne dedukcije za intuicionističku logiku?}\newline
+       U MPD računu moramo najprije izbaciti aksiom \rulen{TND}. Od ostalih "novih" multiplarnih pravila nužno je
+izbaciti \intr{\to}
+% 
+\begin{mathpar}
+ \inferrule{\ }{A \\ A\to B}
+\end{mathpar}
+(ako stavimo $B \equiv \neg A$ ponovno dobijemo \rulen{TND}).
+% 
+\end{itemize}
+
+
+\begin{center}
+ \includegraphics[width=\textwidth]{LJm-manu.pdf}
+\end{center}
+
+
+\sik{Propozicijska logika ili logika prvog reda? -- odluci se, jer inace fali jos jedno restr. pravilo za LJ'}
+
+
+
+
+
+\section{O analitičkim logičkim računima}
+% \sik{Vidi Gentzen - pronadji, Smullyan - pocetak}
+% \sik{Pojam analitckog racuna uveo je Smullyan u cite-FOL. Ideja je... }
+
+Za logički račun kažemo da je \textbf{analitički}\index{analitički!račun} ako u njemu vrijedi svojstvo 
+potformulnosti\index{potformulnost} 
+--- 
+svaki dokaz/izvod/dedukcija može se prevesti u izvod u kojem su sve formule potformule  premisa i konkluzija.
+
+Račun semantičkih tabloa je trivijalno analitički račun. Sekventni račun LK je analitički (naopaki tabloi, Hauptsatz).
+Smullyan svoju verziju semantičkih stabala zove analitička semantička stabla.
+
+Prirodne dedukcije nisu   \textit{a priori} analitičke. Teoremi o normalnoj formi daju
+egzistenciju analitičke dedukcije, ali postupak nije jednostavan -- direktan (referenca, vidi \ref{})
+\fxnote{ovo ne razumijem, kako RAA ulazi u to...}
+
+
+
+
+% \begin{center}
+% %  \includegraphics[width=\textwidth]{Image-0252.png}
+% \end{center}
+
+
+Vidi\newline
+{\smaller
+\url{http://en.wikipedia.org/wiki/Analytic_proof}
+}
+
+\sik{pojam analiticki racun -- prvi spominje Smullyan. Nema ne-kontroverzne definicije, ali 
+za prirodne dedukcije i sekvente je nesporno\newline 
+A) analiticki izvod prirodnih dedukcija je...\newline
+B) u racunu sekventi analiticki izvodu su izvodi bez reza.
+}
+
+
+
+
+
+\newpage
+\section{Razgranati Hilbertovi dokazi}
+\begin{defn}[Razgranati Hilbertov dokaz]
+ TODO. Vidi \cite{sika-disertacija}.
+\end{defn}
+
+\begin{pr}[Prepisivanje Kneale dedukcije u razgranati Hilbertov dokaz]\strut\newline 
+\begin{center}
+ \includegraphics[width=12cm]{pic/dropbox-pics/Image-0298.png}
+\end{center}
+\end{pr}
+
+
+\subsubsection*{Algoritam prepisivanja....}
+\begin{verbatim}
+ 1: kreni iz neke premise
+ 2: kotrljaj nizbrdo (fork je ok, p
+\end{verbatim}
+
+
+% \vfill
+
+\newpage
+\begin{pr}[A što je s ciklusima (u multiplarnim dedukcijama)?]\strut\newline 
+\begin{center}
+ \includegraphics[width=14cm]{pic/dropbox-pics/Image-0296.png}
+\end{center}
+\end{pr}
+
+
+
+\newpage
+\section{Parsing trees i semantičko stablo}
+\centerline{"parse tree" $\mapsto$ stablo raščlambe}
+
+
+\vspace*{3cm}
+
+
+
+\newpage
+
+ 
+\begin{longsik}
+
+\section*{Ilustracija Prawitzovog principa inverzije}
+ \subsection*{Introdukcije definiraju značenje veznika}
+\subsubsection*{Multiplarna ilustracija principa inverzije}
+% 
+
+Neka je $A'\in \{A, -A\}$ i $B'\in \{B, -B\}$.
+Neka su formule $A'$ i $B'$ nužne i dovoljne za uvođenje veznika $A\circ B$. 
+Tada imamo sljedeću introdukciju:
+\begin{mathpar}
+   \inferrule*[Left={\intr{\circ}}]{A' \\ B'}{A\circ B}
+\end{mathpar}
+Iz $A\circ B$ se $\circ$ može eliminirati  i zaključiti  $A'$ ili $B'$:
+% 
+\begin{mathpar}
+ \inferrule*[Left={\elim{\circ}}]{A\circ B}{A'} \and \inferrule*[Left={\elim{\circ }}]{A\circ B}{B'}
+\end{mathpar}
+Pripadna eliminacija je
+ 
+
+
+Umjesto $\circ$ mogli smo ubaciti bilo koji veznik $\wedge, \vee$ i $\to$.
+
+
+Slično, ako je $A'$ dovoljna za $A\circ B$ i ako je $B'$ dovoljna za zaključiti $A\circ B$.
+
+
+Po kontrapoziciji 
+Ako je za zaključiti $A\circ B$ dovoljna formula $A'$ ili formula $B'$, pripadna 
+introdukcija veznika $\circ$ glasi
+\begin{mathpar}
+ \inferrule*[Left={\intr{\circ}}]{A'}{A\circ B}
+ \and 
+ \inferrule*[Left={\intr{\circ}}]{B'}{A\circ B}
+\end{mathpar}
+% 
+Pripadna eliminacija je:
+% 
+\begin{mathpar}
+   \inferrule*[Left={\elim{\circ}}]{A\circ B}{A' \\ B'}
+\end{mathpar}
+
+Pravila za kondicional $\to$ možemo prilagoditi da se uklope u ovu priču.
+% 
+\begin{mathpar}
+ \inferrule{-A}{A\to B} \and \inferrule{B}{A\to B} \and \inferrule{A\to B}{-A \\ B}\ .
+\end{mathpar}
+
+Svaki od ovih veznika dovoljno je definirati preko introdukcije ili eliminacije. 
+Drugo skup pravila je posljedica definicije.
+
+\begin{align*}
+  A \circ B & \iff A' \wedge B' \Rightarrow A' \\
+  A \circ B & \iff A' \wedge B'   \Rightarrow B'\\
+% \intertext{ slijedi }
+%  \inferrule*{ A' \\ B' }{A \circ B} \qquad  
+\end{align*}
+\begin{mathpar}
+  \inferrule*{ A' \\ B' }{A \circ B} \and \inferrule*{A\circ B}{A'} \and \inferrule*{A\circ B}{B'}
+\end{mathpar}
+
+
+\begin{align*}
+  A \circ B & \iff A' \vee B' \Leftarrow A' \\
+  A \circ B & \iff A' \vee B' \Leftarrow B'\\
+% \intertext{ slijedi }
+%  \inferrule*{ A' \\ B' }{A \circ B} \qquad  
+\end{align*}
+\begin{mathpar}
+  \inferrule*{A \circ B}{ A' \\ B' } \and \inferrule*{A'} {A\circ B}\and \inferrule*{B'}{A\circ B}
+\end{mathpar}
+
+
+
+
+\end{longsik}
+
+
+
+
+
+\newpage
+\begin{longsik}
+
+\subsection*{\textit{Ex falso sequitur quodlibet} -- što s $\pmb{\top}$ i $\pmb{\bot}$?}
+
+Među multiplarnim pravilima nismo eksplicitno naveli pravila za $\top$ i $\bot$ --
+eliminaciju \elim{\bot} (\textit{ex falso quodlibet}), introdukciju \intr{\top} i \intr{\bot}:
+% 
+\begin{mathpar}
+\inferrule*{\bot}{\quad * \quad }
+  \and 
+\inferrule*{\quad * \quad}{\top}
+%   \and 
+% (\textit{ex falso quodlibet})
+\end{mathpar}
+% 
+ili originalne Kneale verzije
+% 
+\begin{mathpar}
+ \inferrule*{ A \\ -A}{*}
+ \and 
+ \inferrule*{ * }{A \\ A\to B}
+ \and 
+ \inferrule*{ * }{A \\ -A}
+ \ .
+\end{mathpar}
+% 
+pri čemu se na mjestu simbola "$*$" može pojaviti proizvoljna formula, ili čak prazna premisa odnosno konkluzija (kao u
+našoj verziji).
+
+Za našu verziju multiplarnih pravila, s praznim premisama i praznim konkluzijama vrijedi potformulnost, što se pokazalo
+dobrim u 
+traženju analitičkih dedukcija.
+
+\bigskip
+
+Uočimo da je u definiciju dedukcija ugrađeno da je $\Pi$ dedukcija od $\Delta$ iz $\Gamma$ 
+ako je skup premisa podskup od $\Gamma$ i skup konkluzija podskup od $\Delta$.
+
+Tako je dedukcija
+\begin{mathpar}
+   \inferrule*{ A \\ -A}{  }
+\end{mathpar}
+s praznom konkluzijom dedukcija od $A, -A |- C$.
+% slabljenje nije potrebno.
+
+\bigskip 
+
+Što ako u formulama $\Gamma$ i $\Delta$ ima konstanti $\bot, \top$? 
+Možemo ih pokušati eliminirati primjenama pravila apsorpcije 
+($A\vee\bot \equiv A$, $A\vee \top \equiv \top$ i sl.). 
+% 
+
+Ako neka od konstanti ostane kao formula sekvente, imamo sljedeće slučajeve:
+% Apsorpcija na sekventama:
+% 
+\begin{mathpar}
+%   \text{\textup{(a)}} \ 
+  \inferrule{\Gamma, \top |- \Delta}{\Gamma |- \Delta} 
+  \and
+  \inferrule{\Gamma |- \Delta, \bot}{\Gamma |- \Delta}
+  \and
+  \inferrule{\Gamma, \bot |- \Delta}{ \bot |- \Delta}
+  \and
+  \inferrule{\Gamma |- \top, \Delta}{ \Gamma |- \top }
+\end{mathpar}
+
+
+
+    % 
+    U prva dva slučaja $\top$ i $\bot$ ignoriramo.
+    Treći i četvrti slučaj su trivijalni.
+    % 
+
+    Ostaje pitanje kako napraviti dedukciju od $\bot |- A$? 
+    Mogu li u tom slučaju $\bot$ zamijeniti s $A\wedge -A$?, i $\top$ s $A\vee -A$?
+
+
+    Dodati pravila?
+    \begin{mathpar}
+      \inferrule*[Left={\elim{\bot}}]{\quad \bot\quad }{\phantom{\bot} } \and \inferrule*[Left={\intr{\top}}]{ }{\quad
+\top\quad }
+    \end{mathpar}
+    % 
+\end{longsik}
+
+
+
+\begin{longsik}
+Ekvivalentna disjunktivna forma je
+\[
+ AB \vee ABC \vee A\overline{C}B = AB(\top + C +\overline{C}) = AB
+\]
+
+
+U nastavku ćemo slobodno koristiti klauze u formulama umjesto odgovarajućih disjunkcija njihovih elemenata.
+Na primjer, pisati ćemo
+\[
+ \{A, -B\} \wedge \{C, D\}, \text{ ili } \mathcal{L}_1 \wedge \mathcal{L}_2
+\]
+
+
+\end{longsik}
+
+
+
+
+
+
+
+
+
+\newpage
+
+
+
+
+
+\subsection*{Priča o konkatenaciji stabala}
+ 
+\begin{defn}[Konkatenacija stabala]
+Neka su $\tau_1$ i $\tau_2$ korjenska stabla. Stablo koje nastaje dopisivanjem po jedne kopije stabla $\tau_2$ na svaki
+list stabla $\tau_1$ zovemo \textbf{konkatenacija stabala}\index{konkatenacija!stabala} $\tau_1$ i $\tau_2$.
+
+Konkatenacija semantičkih stabala je semantičko stablo:
+\begin{itemize}
+ \item $\tau_1$ i $\tau_2$ se spajaju samo na otvorenim granama od $\tau_1$
+ \item Na dobivenom stablu zatvorimo grane koje se mogu zatvoriti
+\end{itemize}
+
+\end{defn}
+
+
+\begin{center}
+ \input{pic/dropbox-pics/phd_konjunkcija.pgf}
+\end{center}
+
+
+\sik{-- begin --}
+% =================================================
+\begin{pr}[Primjer konkatenacije stabala]\strut \ 
+
+\sik{nije dobro, fale zahtjevi... ovo je sazetak koji jos nisam definirao}
+\begin{center}
+\input{pic/phd_konjunkcija_stabala.pgf}
+\end{center}
+
+\end{pr}  
+\sik{a kaj je s korijenima? Ova stabla nemaju korijene... a neka bi mogla...}
+% =================================================
+\sik{-- end --}
+ 
+\begin{defn}[Konkatenacija semantičkih stabala]\index{konkatenacija!semantičkih stabala}%
+ Semantičko stablo koje nastaje konkatenacijom otvorenih dijelova semantičkih stabala $\tau_1$ i $\tau_2$, te zatvaranjem
+grana koje se mogu zatvoriti zovemo \textbf{konkatenacija semantičkih stabala} $\tau_1$ i $\tau_2$.
+\end{defn}
+
+Uobičajenu izgradnju Bethovog semantičkog stabla možemo interpretirati kao niz konkatenacija stabla
+kojeg gradimo i (malih) stabala zahtjeva.
+
+%  
+%  \bigskip
+%  \centerline{***}
+%  \bigskip
+ 
+ 
+U nastavku će nam biti posebno zanimljiva semantička stabla konjunktivnih formi. 
+
+
+
+
+\section{Konjunkcija semantičkog sekventnog stabla}
+
+
+% \newpage
+% 
+% \sik{Ovo u neki dodatak...}
+
+
+Sekventna semantička stabla također su \textit{semantička} stabla (kao i Bethova): na njima  smo definirali pojmove
+završene, zatvorene i otvorene grane. Zato možemo definirati i 
+konjunkciju sekventnih semantičkih stabala.
+
+\begin{defn}[Konjunkcija sekventnih semantičkih stabala]
+Neka su $S_1$ i $S_2$ semantička sekventna stabla
+\begin{itemize}
+ \item Sve sekvente od $S_1$ dopuniti: u premisu (konkluziju) prepisati premisu (konkluziju) od korijena od $S_2$.
+ \item U svaku dopisanu kopiju od $S_2$ treba u sve sekvente dopuniti: u premise (konkluzije) dopisati premise
+(konkluzije) iz spojnog lista
+\end{itemize}
+\end{defn}
+\fxnote{napraviti konjunkciju sekventnih sem. stabala}
+
+
+\subsection*{Slabljenje za $\nmodels$}
+
+\sik{ 
+O tome kad budem pisao o prepisivanju sparivanja u sekventni dokaz...
+}
+
+
+\sik{%
+Račun multiplarnih dedukcija je adekvatan za Knealejev sustav pravila \newline
+(tj. za relaciju logičke posljedice koju ona induciraju)
+\newline
+(ref: Sikin PhD)
+}

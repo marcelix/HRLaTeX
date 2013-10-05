@@ -1,0 +1,272 @@
+% 
+% Kompilirati s XeLaTeX-om.
+% 
+% xelatex
+
+
+% Formalni umetak za UniZG PhD disertaciju
+% 
+\documentclass[a4paper,12pt]{article}
+
+
+
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{tgpagella}
+
+
+\geometry{
+        %       papersize={168mm, 240mm},
+        papersize={210mm,297mm}, % ovo je A4
+        %        
+        inner=3cm, 
+        outer=3cm,
+        top=30mm,
+        bottom=30mm, % povecao donju marginu za 3mm...
+%         bindingoffset=5mm,
+        verbose,
+%         includeheadfoot,
+%         dvips=true,
+        %       mag=1120,       
+}
+
+\usepackage{fontspec}
+\setsansfont{Arial} % xelatex
+
+
+% ========================================================================================
+
+% AUTOR:
+% Marcel Maretić
+
+% TITLE_HR:
+% ALGORITAMSKA EKVIVALENCIJA MULTIPLARNIH DEDUKCIJA I BETHOVIH SEMANTIČKIH STABALA
+
+% TITLE_EN:
+% Algorithmic Equivalenc of Multiple Conclusion Deductions and Beth's Semantic Trees
+
+% MENTOR:
+% Zvonimir Šikić
+% 
+% DATE:
+% 2013.
+
+% FACULTY_HR:
+% PRIRODOSLOVNO-MATEMATIČKI FAKULTET\\ MATEMATIČKI ODSJEK
+
+% FACULTY_EN:
+% FACULTY OF SCIENCE\\ DEPARTMENT OF MATHEMATICS
+
+% =========================================================================================
+
+
+
+
+
+
+\begin{document}
+ 
+
+
+\pagestyle{empty}
+
+
+
+%  PRVA STRANICA
+\begin{center}
+
+% \includegraphics{../pic/unizg_black.pdf}
+% \begin{center}
+\includegraphics[width=6cm]{../pic/logo_ver5hr.pdf}
+% \end{center}
+
+\fontsize{16pt}{30pt}\selectfont
+ \textsf{PRIRODOSLOVNO-MATEMATIČKI FAKULTET\\ MATEMATIČKI ODSJEK}
+
+
+
+\vspace*{2.5cm}
+\textsf{Marcel Maretić}
+
+\vspace*{2.5cm}
+{\fontsize{22pt}{30pt}\selectfont
+\textbf{
+\textsf{ALGORITAMSKA EKVIVALENCIJA MULTIPLARNIH DEDUKCIJA I BETHOVIH SEMANTIČKIH STABALA}
+}
+}
+
+
+\vspace*{3cm}
+\textsf{DOKTORSKI RAD}
+
+\vfill{
+\textsf{Zagreb, 2013.}
+}
+
+\end{center}
+
+\newpage
+
+
+\thispagestyle{empty}
+
+\begin{center}
+
+% \includegraphics{../pic/unizg_black.pdf}
+% \begin{center}
+\includegraphics[width=6cm]{../pic/logo_ver5en.pdf}
+% \end{center}
+
+\fontsize{16pt}{30pt}\selectfont
+ \textsf{FACULTY OF SCIENCE\\ DEPARTMENT OF MATHEMATICS}
+
+
+
+\vspace*{2.5cm}
+{\fontsize{14pt}{16pt}\selectfont
+\textsf{Marcel Maretić}
+}
+
+\vspace*{2.5cm}
+{\fontsize{22pt}{30pt}\selectfont
+\textbf{
+\textsf{ALGORITHMIC EQUIVALENCE OF MULTIPLE CONCLUSION DEDUCTIONS AND BETH'S SEMANTIC TREES}
+}
+}
+
+
+\vspace*{3cm}
+\textsf{DOCTORAL THESIS}
+
+\vfill{
+\fontsize{14pt}{20pt}\selectfont
+\textsf{Zagreb, 2013.}
+}
+
+\end{center}
+
+
+\newpage
+\strut \cleardoublepage
+
+\begin{center}
+
+% \begin{center}
+\includegraphics[width=6cm]{../pic/logo_ver5hr.pdf}
+% \end{center}
+
+\fontsize{16pt}{30pt}\selectfont
+ \textsf{PRIRODOSLOVNO-MATEMATIČKI FAKULTET\\ MATEMATIČKI ODSJEK}
+
+
+
+\vspace*{2.5cm}
+\textsf{MARCEL MARETIĆ}
+
+\vspace*{2.5cm}
+{\fontsize{22pt}{30pt}\selectfont
+\textbf{
+\textsf{ALGORITAMSKA EKVIVALENCIJA MULTIPLARNIH DEDUKCIJA I BETHOVIH SEMANTIČKIH STABALA}
+}
+}
+
+
+\vspace*{2cm}
+\textsf{DOKTORSKI RAD}
+
+\vspace*{1cm}
+\textsf{Mentor:\\
+Zvonimir Šikić}
+
+\vfill{
+\textsf{Zagreb, 2013.}
+}
+
+\end{center}
+
+\newpage
+\strut \cleardoublepage
+
+
+\thispagestyle{empty}
+
+\begin{center}
+
+% \includegraphics{../pic/unizg_black.pdf}
+% \begin{center}
+\includegraphics[width=6cm]{../pic/logo_ver5en.pdf}
+% \end{center}
+
+\fontsize{16pt}{30pt}\selectfont
+ \textsf{FACULTY OF SCIENCE\\ DEPARTMENT OF MATHEMATICS}
+
+
+
+\vspace*{2.5cm}
+{\fontsize{16pt}{26pt}\selectfont
+\textsf{Marcel Maretić}
+}
+
+\vspace*{2.5cm}
+{\fontsize{22pt}{30pt}\selectfont
+\textbf{
+\textsf{ALGORITHMIC EQUIVALENCE OF MULTIPLE CONCLUSION DEDUCTIONS AND BETH'S SEMANTIC TREES}
+}
+}
+
+
+\vspace*{1.5cm}
+\textsf{DOCTORAL THESIS}
+
+\vspace*{1cm}
+\textsf{Supervisor:\\
+Zvonimir Šikić}
+
+\vfill{
+\fontsize{14pt}{20pt}\selectfont
+\textsf{Zagreb, 2013.}
+}
+
+\end{center}
+
+\newpage
+\strut \cleardoublepage
+
+% {
+% \Huge
+% \textmd{
+% Sveučilište u Zagrebu
+% }
+% }
+
+
+
+\newpage
+
+\noindent 
+Pretpostavka je da se za pisanje disertacije koristi pdflatex.
+
+\begin{enumerate}
+ \item 
+\noindent U preambuli uključiti:
+\begin{verbatim}
+\usepackage{pdfpages}
+\end{verbatim}
+
+
+ \item 
+\noindent Na početku dokumenta ubaciti sljedeće:
+\begin{verbatim}
+\includepdf[pages={2-7}]{tekst/unutarnji_dio.pdf}%
+\end{verbatim}
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+\end{document}

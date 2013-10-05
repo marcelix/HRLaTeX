@@ -1,0 +1,543 @@
+%  PREAMBULA za PhD rad.
+% 
+% 
+% defs....
+% preambula.tex
+
+% BEGIN ucitavanje paketa
+\usepackage{etex} % nuzno, jer trosim puno paketa.
+
+
+\usepackage{xparse}  % za bolji newcommand
+
+
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+
+\usepackage{array}
+
+
+
+% BEGIN TikZ
+\usepackage{tikz}
+\usetikzlibrary{%
+    trees,%
+    calc,%
+    shapes.symbols,%
+    shapes.arrows,%
+    chains,%
+    snakes,shapes,%
+}
+
+\usepackage{tikz-qtree}% za tabloe.
+\usepackage{forest}% za gusta,siroka stabla
+% END TikZ
+
+
+
+
+% Indeks
+\usepackage{makeidx}
+\usepackage[nottoc,numbib]{tocbibind}
+
+
+
+\usepackage{pdfpages}
+
+
+
+
+
+% BEGIN Matematika (AMS,...)
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage[thicklines]{cancel}
+\usepackage{mathtools}
+\usepackage{dashrule}
+
+
+\usepackage[a4paper]{geometry}
+
+% END Matematika
+
+\usepackage[croatian,%
+% draft,
+noinline,%
+% silent,%
+footnote,%
+% final,%
+]{fixme}
+
+
+% BEGIN bloody FLOAT sekcija
+
+% \usepackage{float}
+\usepackage{newfloat}
+\usepackage{subfig}
+\usepackage{caption}
+\usepackage{floatrow}
+\usepackage{placeins} %FloatBarrier?
+
+
+
+\DeclareFloatingEnvironment[name={},placement=H]{fakefloat}
+
+
+\DeclareCaptionFormat{fakefloat}{format=hang,justification=raggedright}
+\captionsetup[figure]{
+  format=hang,
+  labelfont=bf,
+  textfont={small},
+  justification=justified,
+%   width=.75\textwidth,
+}
+
+\captionsetup[table]{
+  format=hang,
+  labelfont=bf,
+  textfont={small},
+  justification=justified,
+%   width=.75\textwidth,
+}
+
+\usepackage[algoruled,vlined,algochapter]{algorithm2e}
+\renewcommand{\algorithmcfname}{Algoritam}%
+
+% END FLOAT sekcija
+
+
+% \usepackage{caption}
+
+\usepackage{pgfplots} % ? mislim da ne treba
+
+% BEGIN Fontovi
+
+\usepackage{times}
+\usepackage{relsize}
+\usepackage{microtype}
+\usepackage{turnstile}
+\usepackage{centernot}
+\usepackage{manfnt}
+\usepackage{bbding}
+% 
+
+% -------------  FONT => PALATINO 
+\usepackage{tgpagella}
+\usepackage{mathpazo}
+% \onehalfspacing %   <---- 1.5 prored...  ONE-HALF-SPACING
+% 
+% \usepackage[scaled]{beramono}
+\usepackage[scaled]{inconsolata} % TT fixed font
+%---------------------------------
+
+% END Fontovi
+
+
+
+
+
+
+%BEGIN  za typesetting logickih stvari
+
+% \usepackage{centernot}
+%END Logika
+
+
+
+
+
+% BEGIN Liste, Okviri i sl.
+
+\usepackage{framed}
+
+\usepackage{paralist}
+\usepackage{enumerate}
+\usepackage[shortlabels]{enumitem} %  
+
+% END Liste, Okviri i sl.
+
+
+\usepackage{url}
+
+
+
+% END ucitavanja paketa
+
+
+
+% NIJE PODESENO 
+\geometry{
+        %       papersize={168mm, 240mm},
+        papersize={210mm,297mm}, % ovo je A4
+        %        
+        inner=2.5cm, 
+        outer=2.50cm,
+        top=25mm,
+        bottom=25mm, % povecao donju marginu za 3mm...
+        bindingoffset=5mm,
+        verbose,
+        includeheadfoot,
+%         dvips=true,
+        %       mag=1120,       
+}
+
+% \geometry{
+%         %       papersize={168mm, 240mm},
+%         papersize={210mm,297mm}, % ovo je A4
+%         %        
+%         inner=2.91cm, 
+%         outer=2.00cm,
+%         top=21mm,
+%         bottom=22mm, % povecao donju marginu za 3mm...
+%         bindingoffset=1mm,
+%         verbose,
+%         includeheadfoot,
+% %         dvips=true,
+%         %       mag=1120,       
+% }
+
+\input{conf_operatori}
+
+
+% BEGIN Hacks
+\newcommand{\zbox}[1]{\makebox[0cm][l]{#1}}
+\newcommand{\zcbox}[1]{\makebox[0cm][c]{#1}}
+\newcommand{\zrbox}[1]{\makebox[0cm][r]{#1}}
+
+
+
+
+
+
+
+
+\newcommand{\sik}[1]{%
+% 
+\protect\opt{sika-komentari}{%
+\par 
+\begingroup
+\RaggedRight
+% \marginpar[$\Rightarrow$]{\XSolidBold }%
+% \begin{snugshade*}%
+\textcolor{violet}{
+% \begin{leftbar}%
+% 
+\zrbox{\smaller \XSolidBold \hspace*{0.5cm}\strut}%
+\textcolor{violet}{\small \texttt{#1}}%
+% \par\relax
+% \end{leftbar}%
+}%
+% \end{snugshade*}%
+\endgroup
+\par 
+}
+}
+
+\newenvironment{longsik}{%
+\sik{\centerline{-------- BEGIN -------}}
+\color{red}\begingroup \smaller 
+\begin{quote}%
+% \begin{leftbar}
+% end color
+}
+{
+% \end{leftbar}%
+\end{quote}
+\endgroup
+\sik{\centerline{-------\ \ END\ \   -------}}
+}
+
+
+\newcommand{\CC}[1]{%%
+\tikz[baseline=(o.base),inner sep=1pt, minimum size=0pt] \node (o) [draw,circle]{\ensuremath{#1}};%
+}
+
+\newcommand{\rREC}[1]{%
+\tikz[baseline=(o.base),inner sep=3pt, minimum size=0pt] \node (o) [draw,rounded corners=2pt]{\ensuremath{#1}};
+}
+\providecommand{\non}[1]{\overline{#1}}
+
+\newcommand{\semT}[1]{%
+\ensuremath{(#1\top)}%
+}
+% 
+\newcommand{\semF}[1]{%
+\ensuremath{(#1\bot)}%
+}
+
+% END Hacks
+
+
+
+
+\graphicspath{{pic/}{pic/dropbox-pics}}
+
+
+
+% ======================================
+
+% BEGIN teoremi
+
+\theoremstyle{plain}
+
+
+\newtheorem{teorem}{Teorem}[chapter]
+\newtheorem*{hauptsatz}{Hauptsatz}
+\newtheorem{kor}[teorem]{Korolar}
+\newtheorem{lema}[teorem]{Lema}
+
+
+\newtheorem{prop}[teorem]{Propozicija}
+% \newtheorem{kor}{Korolar}[chapter]
+\newtheorem{tm}[teorem]{Teorem}
+\newtheorem{pr}[teorem]{Primjer}
+\newtheorem{korolar}[teorem]{Korolar}
+\newtheorem*{princip:inverzije}{Princip inverzije}
+\newtheorem*{hintikkina:lema}{Hintikkina lema}
+
+% \theoremstyle{remark}
+\newtheorem*{notabene}{N.B}
+\newtheorem{napomena}[teorem]{Napomena}
+
+
+
+
+\newtheoremstyle{mydef}% name of the style to be used
+{2\topsep}% measure of space to leave above the theorem. E.g.: 3pt
+{2\topsep}% measure of space to leave below the theorem. E.g.: 3pt
+{\itshape}% name of font to use in the body of the theorem
+{}% measure of space to indent
+{\bfseries}% name of head font
+{.}% punctuation between head and body
+{\newline}% space after theorem head; " " = normal interword space
+{}% Manually specify head
+
+\theoremstyle{mydef}
+\newtheorem{defn}[teorem]{Definicija}
+
+
+% END teoremi
+
+
+% ======================================
+
+
+
+\hypersetup{
+  pdftitle={Multiplarne prirodne dedukcije, PhD Thesis},
+  pdfauthor={Marcel Maretic},
+  pdfsubject={Mathematics},
+  pdfcreator={pdfLaTeX},
+}
+\hypersetup{colorlinks=true, linkcolor=blue}
+% \usepackage[backend=biber]{biblatex}
+
+
+%BEGIN biblatex, umjesto bibtex
+\usepackage[%
+sortcites=true,
+% style=numeric,
+style=alphabetic,
+% style=authoryear,
+clearlang=true,
+% babel=none,
+backend=biber,
+backrefsetstyle=setandmem,
+]{biblatex}
+\addbibresource{reference.bib}
+
+% % % % \DeclareFieldFormat{formaturl}{\newline #1}
+% % % % \newbibmacro*{url+urldate}{%
+% % % % \printtext[formaturl]{%
+% % % %   \printfield{url}}%
+% % % %   \iffieldundef{urlyear}
+% % % %     {}
+% % % %     {\setunit*{\addspace}%
+% % % %      \printtext[urldate]{\printurldate}}}
+     
+     
+%      ZA NEWLINE prije URL-a u BIBLIOGRAFIJI
+\DeclareFieldFormat{url}{\newline\mkbibacro{URL}\addcolon\space\url{#1}}
+\newbibmacro*{url+urldate}{%
+ \printfield[url]{url}%   
+ \iffieldundef{urlyear}     
+ {}     
+ {\setunit*{\addspace}%      
+ \printtext[urldate]{\printurldate}}}
+
+
+\DefineBibliographyStrings{english}{%
+editor={Urednik},
+in = {},
+phdthesis = {Doktorska disertacija},
+and={i},
+}
+
+
+
+\definecolor{shadecolor}{RGB}{250,250,255}%,240,240}
+
+\ExecuteBibliographyOptions{
+firstinits=true,
+% url=false,
+}
+
+\AtBeginBibliography{\def\UrlFont{\small\tt}}
+
+ 
+
+%END biblatex
+
+
+
+%opening
+
+
+
+
+
+
+
+% \write18{sudo apt-get update}
+
+% \makeindex
+% 
+\newcommand*{\lettergroup}[1]{%
+{\hfil\sffamily\bfseries {\large #1} \hfil\hfil\hfil%
+% \strut\\[-0.25ex]
+}}
+
+
+
+\newcommand{\sectionBreak}{%
+\centerline{$\star \ \star \ \star$}%
+}
+
+
+
+
+% >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+%  TABLO makroi za TikZ
+
+
+
+% \newcommand{\TT}[1]{%
+% \node at ($(#1.east) + (0.8,0)$) {$\top$};
+% }
+\newcommand{\mTT}[2]{%
+\node at ($(#1.east) + (0.5,0)$) {$\top$};
+}
+
+% \newcommand{\CTT}[1]{%
+% \node[circle,draw,inner sep=1.3pt] at ($(#1.east) + (0.8,0)$) {$\top$};
+% }
+
+\newcommand{\rTT}[2]{%
+\node[anchor=west] at ($(#1.east) + (0.8,0)$) {#2};
+}
+
+
+\DeclareDocumentCommand{\TT}{O{0.8} m}{%#
+\node at ($(#2.east) + (#1,0)$) {$\top$};
+}
+
+\DeclareDocumentCommand{\CTT}{O{0.8} m}{%#
+\node[circle,draw,inner sep=1.3pt] at ($(#2.east) + (#1,0)$) {$\top$};
+}
+
+
+\DeclareDocumentCommand{\FF}{O{0.8} m}{%#
+\node at ($(#2.east) + (#1,0)$) {$\bot$};
+}
+
+\DeclareDocumentCommand{\CFF}{O{0.8} m}{%#
+\node[circle,draw,inner sep=1.3pt] at ($(#2.east) + (#1,0)$) {$\bot$};
+}
+
+ 
+
+
+
+
+\newcommand{\drawFork}[3]{%
+% #1 je branch, #2 i #3 su donji cvorovi...
+% 
+    %     Odredi vertikalnu sredinu
+    \coordinate (cy) at ($(#1.south)!0.5!(#2.north)$);
+
+    %         Pomakni vertikalnu sredinu ispod (branch) cvora.
+    \coordinate (cr) at (cy -| #1.south);
+    
+    \draw [  thick, shorten >=2pt ] (cr) -- (#1.south)
+           [ thick, shorten >=2pt ] (cr) -| (#2.north)   
+           [ thick, shorten >=2pt ] (cr) -| (#3.north)
+}
+
+% % % % % % \DeclareDocumentCommand{\potcrtajCvor}{O{0.4} m}{%#
+% % % % % % % Potcrtavanje cvorova (zatvaranje grana tabloa)
+% % % % % % % \newcommand{\potcrtajCvor}[1]{%
+% % % % % % \draw[very thick] (#2.south west) +(-#1,0) -- ($(#2.south east) + (#1,0)$);
+% % % % % % % let p1 = (#1.south - #1.east)
+% % % % % % }
+
+\DeclareDocumentCommand{\potcrtajCvor}{O{0.4} m O{0}}{%#
+% Potcrtavanje cvorova (zatvaranje grana tabloa)
+% \newcommand{\potcrtajCvor}[1]{%
+% #1 optional  -- prosirivanje crte
+% #2 ime cvora
+% #3 spustanje crte... (negativan broj)
+\draw[ultra thick] (#2.south west) +(-#1,#3) -- ($(#2.south east) +(#1,#3)$);
+% let p1 = (#1.south - #1.east)
+}
+
+
+% labela lijevo od D
+\newcommand{\desnaLabela}[2]{%
+\node at (#2 -| mr) {$(#1)$};
+}
+
+\newcommand{\lijevaLabela}[2]{%
+\node at (#2 -| lr) {$(#1)$};
+}
+
+\newcommand{\rDesnaLabela}[2]{%
+\node  at (#2 -| mr) {#1};
+}
+
+
+
+\newcommand{\minfup}[2]{%
+\displaystyle {{#1} \atop {\phantom{#2}}}%
+}
+
+\newcommand{\minfdown}[2]{%
+\displaystyle {\phantom{#1} \atop {#2}}%
+}
+
+
+
+
+% >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+%     \usepackage{showidx} % ili % \showlabels{index}
+
+% \usepackage[right]{showlabels,rotating}  % \usepackage[notref]{showkeys} % obsolete by 'showlabels'
+% \renewcommand{\showlabelsetlabel}[1]{\begin{turn}{80} \showlabelfont \smaller\smaller\smaller\smaller%
+% \ttfamily #1\end{turn}}%
+% 
+% 
+% \showlabels{index}
+
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2ex}
+% -------------  OLD
+% \linespread{1.2}  % ?
+% \linespread{1.3}  % <-- PhD formalni zahtjevi (ublazeni)
+% \linespread{1.5}  % <-- PhD formalni zahtjevi
+    
+\newcommand{\RLC}{%
+\ensuremath{\mathrel{|\!\!\!\sim}}%
+}

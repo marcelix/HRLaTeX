@@ -1,0 +1,160 @@
+\documentclass[
+% draft,
+serif,
+t,%
+% plain,
+% gray,
+compress,%
+% nopause,%
+% handout,
+notheorems,
+ams style,
+]{beamer}
+% etex je vec u preambuli  \usepackage{etex}
+\usepackage{hrlatex}
+
+\usepackage[%
+sika-komentari,%
+none,%
+]{optional}
+
+
+\setbeamertemplate{theorems}[ams style] 
+\input{preambula-slajdovi}
+
+
+\usepackage[ruled,vlined]{algorithm2e}
+% \renewcommand{\ALG@name}{Algoritam}
+\renewcommand{\algorithmcfname}{Algoritam}%
+
+\title{Algoritamska ekvivalencija multiplarnih dedukcija i Bethovih semantičkih stabala}%
+%  (1)}% za disertaciju}
+\author{Marcel Maretić}
+
+\hypersetup{
+  pdftitle={MPD},
+  pdfauthor={Marcel Maretic},
+  pdfsubject={Mathematics},
+  pdfcreator={pdfLaTeX},
+}
+
+ 
+
+% BEGIN fontovi...
+\usepackage[scaled]{beramono}
+\usefonttheme{professionalfonts}
+\usepackage{tgpagella}
+\usepackage{mathpazo}
+% \usepackage{times}
+% END fontovi
+
+
+ 
+
+
+
+
+
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>[plain]{}
+      \begin{multicols}{2}
+      {\smaller
+	  \tableofcontents[currentsection,hideothersubsections]%,currentsubsection]
+      }
+      \end{multicols}
+  \end{frame}
+}
+
+
+% \definecolor{shadecolor}{rgb}{0.73,0.73,0.73}
+
+% BEGIN MY THEME
+\mode<presentation>
+{
+
+  \usetheme{Torino}
+  \usetheme{Warsaw}
+%   \usetheme{EastLansing}
+  \usecolortheme{marcel}
+  %      \usecolortheme{freewilly}
+  \setbeamercovered{dynamic}
+     \useoutertheme{infolines} % ovo promijeni boju *na bolje*
+%      \useinnertheme{rectangles}
+  %    \useinnertheme[shadow=false]{rounded}
+     \setbeamertemplate{title page}[default][rounded=false]
+%      \setbeamertemplate{blocks}[rounded][shadow=false]
+
+\setbeamertemplate{headline}{}
+
+\setbeamertemplate{footline}{\hspace*{.5cm}\scriptsize{\insertshorttitle
+\hspace*{50pt} \hfill\insertframenumber\hspace*{.5cm}}\\
+\vspace{9pt}} 
+}
+% END MY THEME
+
+% ==================================================================================
+
+
+\setbeamercovered{invisible}
+
+
+% SEKCIJE
+
+
+\AtBeginSection[]
+{
+  \begin{frame}[c,plain]\relax
+	\begin{columns}[c]
+	\column[t]{2.5cm}
+	    \Huge{\strut\hfill \thesection.}
+	\column[t]{8cm}
+	    \Huge{\insertsection}
+	\end{columns}
+  \end{frame}
+}
+
+
+
+\AtBeginSubsection[]
+{
+  \begin{frame}<handout:0>[c,plain]
+    \begin{columns}[c]
+     \column[t]{3cm}
+	  {\Huge\strut\hfill  \thesection.\thesubsection}
+     \column[t]{8cm}
+         {\LARGE \insertsubsection }
+    \end{columns}
+  \end{frame}
+}
+
+
+
+
+\setbeamertemplate{footline}[page number]{}%
+
+
+% \includeonly{sem_dio2}
+
+
+
+
+\begin{document}
+
+
+
+      \begin{frame}[plain]{}
+      \maketitle
+      \end{frame}
+
+      \begin{frame}
+       \tableofcontents 
+      \end{frame}
+
+
+
+\include{sem_dio1}
+\include{sem_dio2}
+
+
+\end{document}
