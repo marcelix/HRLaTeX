@@ -94,6 +94,6 @@ list-targets:
 
 template-phd-unizg:
 	-@rm "phd-template.zip"
-	@git archive  --format=zip --output "phd-template.zip"  --prefix="phd-unizg-template/" bojko-phd
+	@git archive  --format=zip --output "phd-template.zip"  --prefix="phd-unizg-template/" master
 	-@zip -Tv phd-template.zip
 	
